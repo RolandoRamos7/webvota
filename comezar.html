@@ -14,7 +14,7 @@
     }
 
     body{
-      background:#ececec;
+      background:#e9e9e9;
       height:100vh;
       display:flex;
       flex-direction:column;
@@ -22,13 +22,14 @@
 
     /* HEADER */
     .topbar{
+      width:100%;
       display:flex;
       justify-content:space-between;
       align-items:flex-start;
       padding:10px 40px;
     }
 
-    .logo-left{
+    .logo{
       width:180px;
     }
 
@@ -40,14 +41,14 @@
       gap:5px;
     }
 
-    .guide-title{
+    .guide-text{
       font-size:18px;
       color:#000;
       margin-top:10px;
     }
 
-    .logo-right{
-      width:65px;
+    .small-logo{
+      width:70px;
     }
 
     /* MAIN CONTENT */
@@ -58,60 +59,35 @@
       justify-content:center;
       align-items:center;
       text-align:center;
-      margin-top:-20px;
+      margin-top:-40px;
     }
 
-    /* IMAGES AREA */
-    .images-area{
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      gap:40px;
-      margin-bottom:50px;
+    .machine{
+      width:320px;
+      margin-bottom:30px;
     }
 
-    .cedula{
-      width:140px;
-    }
-
-    .arrow{
-      font-size:90px;
-      color:#16a9e6;
-      font-weight:bold;
-    }
-
-    .boletin{
-      width:110px;
-    }
-
-    /* TEXT */
-    .description{
-      max-width:950px;
-      font-size:32px;
-      line-height:1.25;
+    .title{
+      font-size:48px;
       color:#000;
-      margin-bottom:80px;
-      padding:0 20px;
-    }
-
-    .description strong{
-      font-weight:700;
+      font-weight:400;
+      margin-bottom:120px;
     }
 
     /* BUTTON */
-    .btn{
-      background:#3d7db8;
+    .btn-start{
+      background:#5cb85c;
       color:#fff;
       border:none;
       padding:18px 70px;
-      font-size:20px;
-      border-radius:5px;
+      font-size:22px;
+      border-radius:6px;
       cursor:pointer;
       transition:0.3s;
     }
 
-    .btn:hover{
-      background:#2f6da6;
+    .btn-start:hover{
+      background:#4cae4c;
     }
 
     /* RESPONSIVE */
@@ -123,22 +99,18 @@
         gap:20px;
       }
 
-      .images-area{
-        flex-direction:column;
-        gap:20px;
+      .title{
+        font-size:34px;
+        padding:0 20px;
       }
 
-      .arrow{
-        transform:rotate(90deg);
-        font-size:70px;
+      .machine{
+        width:240px;
       }
 
-      .description{
-        font-size:24px;
-      }
-
-      .btn{
+      .btn-start{
         padding:15px 50px;
+        font-size:20px;
       }
     }
   </style>
