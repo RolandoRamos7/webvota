@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Guía de Votación</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body{
+      background:#ececec;
+      height:100vh;
+      display:flex;
+      flex-direction:column;
+    }
+
+    /* HEADER */
+    .topbar{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      padding:10px 40px;
+    }
+
+    .logo-left{
+      width:180px;
+    }
+
+    .right-section{
+      text-align:center;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:5px;
+    }
+
+    .guide-title{
+      font-size:18px;
+      color:#000;
+      margin-top:10px;
+    }
+
+    .logo-right{
+      width:65px;
+    }
+
+    /* MAIN CONTENT */
+    .main{
+      flex:1;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      margin-top:-20px;
+    }
+
+    /* IMAGES AREA */
+    .images-area{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:40px;
+      margin-bottom:50px;
+    }
+
+    .cedula{
+      width:140px;
+    }
+
+    .arrow{
+      font-size:90px;
+      color:#16a9e6;
+      font-weight:bold;
+    }
+
+    .boletin{
+      width:110px;
+    }
+
+    /* TEXT */
+    .description{
+      max-width:950px;
+      font-size:32px;
+      line-height:1.25;
+      color:#000;
+      margin-bottom:80px;
+      padding:0 20px;
+    }
+
+    .description strong{
+      font-weight:700;
+    }
+
+    /* BUTTON */
+    .btn{
+      background:#3d7db8;
+      color:#fff;
+      border:none;
+      padding:18px 70px;
+      font-size:20px;
+      border-radius:5px;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    .btn:hover{
+      background:#2f6da6;
+    }
+
+    /* RESPONSIVE */
+    @media(max-width:768px){
+
+      .topbar{
+        flex-direction:column;
+        align-items:center;
+        gap:20px;
+      }
+
+      .images-area{
+        flex-direction:column;
+        gap:20px;
+      }
+
+      .arrow{
+        transform:rotate(90deg);
+        font-size:70px;
+      }
+
+      .description{
+        font-size:24px;
+      }
+
+      .btn{
+        padding:15px 50px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="topbar">
+
+    <!-- Logo izquierda -->
+    <img 
+      class="logo-left"
+      src="https://simuladoroficial.tsje.gov.py/img/logo_eleccion.png"
+      alt="Logo elecciones"
+    >
+
+    <!-- Texto derecha -->
+    <div class="right-section">
+
+      <div class="guide-title">
+        GUÍA RÁPIDA PARA VOTAR EN LA MÁQUINA DE VOTACIÓN
+      </div>
+
+      <img 
+        class="logo-right"
+        src="https://simuladoroficial.tsje.gov.py/img/header.png"
+        alt="Logo"
+      >
+
+    </div>
+
+  </header>
+
+  <!-- MAIN -->
+  <main class="main">
+
+    <!-- IMÁGENES -->
+    <div class="images-area">
+
+
+      <img 
+        class="grafico" 
+        src="https://simuladoroficial.tsje.gov.py/img/boleta-troquel.png"
+        alt="Boletín"
+      >
+
+    </div>
+
+    <!-- TEXTO -->
+    <div class="description">
+      Presentá tu <strong>cédula de identidad civil</strong> 
+      a los miembros de la mesa receptora de votos, quienes te entregarán 
+      el <strong>boletín</strong> firmado por los dos vocales.
+    </div>
+
+    <!-- BOTÓN -->
+    <button  onclick="window.location.href='p3.html'"  class="btn">
+      Continuar
+    </button>
+
+  </main>
+
+</body>
+</html>
