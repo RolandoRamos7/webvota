@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Candidatos a Intendente Municipal</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body{
+      background:#2d2d2d;
+      padding:20px;
+    }
+
+    .contenedor{
+      width:1100px;
+      margin:auto;
+      background:#d9d9d9;
+      border:2px solid #bdbdbd;
+    }
+
+    .topbar{
+      background:#3b3b3b;
+      color:white;
+      padding:10px;
+      text-align:center;
+      font-weight:bold;
+      font-size:28px;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:5px;
+      padding:5px;
+    }
+
+    .card{
+      background:#efefef;
+      border:1px solid #cfcfcf;
+      min-height:250px;
+      padding:20px;
+      position:relative;
+    }
+
+    .partido{
+      text-align:center;
+      font-size:22px;
+      font-weight:bold;
+      margin-bottom:25px;
+    }
+
+    .contenido{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      gap:40px;
+    }
+
+    .foto img{
+      width:120px;
+      height:140px;
+      object-fit:cover;
+    }
+
+    .lista{
+      text-align:center;
+    }
+
+    .lista h2{
+      font-size:22px;
+    }
+
+    .numero{
+      font-size:70px;
+      font-weight:bold;
+      line-height:70px;
+    }
+
+    .sigla{
+      font-size:20px;
+      margin-top:5px;
+    }
+
+    .nombre{
+      text-align:center;
+      margin-top:20px;
+      font-size:22px;
+    }
+
+    .blanco{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      font-size:32px;
+      font-weight:bold;
+    }
+
+    .footer{
+      height:40px;
+      background:#cfcfcf;
+      margin:5px;
+    }
+
+  </style>
+</head>
+
+<body>
+  
+
+  <div class="contenedor">
+
+    <div class="topbar">
+      Candidatos a INTENDENTE MUNICIPAL
+    </div>
+
+    <div class="grid" onclick="window.location.href='p4.html'">
+
+      <!-- CARD 1 -->
+      <div class="card" class="btn-start">
+
+        <div class="partido">
+          HONOR COLORADO
+        </div>
+
+        <div class="contenido">
+
+          <div class="foto">
+            <img src="https://simuladoroficial.tsje.gov.py/imagenes_candidaturas/paraguay_internas_municipales_2026/3878.25858.webp" alt="">
+          </div>
+
+          <div class="lista">
+            <h2>LISTA</h2>
+            <div class="numero">2</div>
+            <div class="sigla">MHC</div>
+          </div>
+
+        </div>
+
+        <div class="nombre">
+          Christian Rolon
+        </div>
+
+      </div>
+
+      <!-- CARD 2 -->
+      <div class="card">
+
+        <div class="partido">
+          FUERZA REPUBLICANA
+        </div>
+
+        <div class="contenido">
+
+          <div class="foto">
+            <img src="https://simuladoroficial.tsje.gov.py/imagenes_candidaturas/paraguay_internas_municipales_2026/3879.25859.webp" alt="">
+          </div>
+
+          <div class="lista">
+            <h2>LISTA</h2>
+            <div class="numero">4</div>
+            <div class="sigla">MFR</div>
+          </div>
+
+        </div>
+
+        <div class="nombre">
+          Gabriel Alfonzo
+        </div>
+
+      </div>
+
+      <!-- CARD 3 -->
+      <div class="card">
+
+        <div class="partido">
+          COLORADO AÑETETE
+        </div>
+
+        <div class="contenido">
+
+          <div class="foto">
+            <img src="https://simuladoroficial.tsje.gov.py/imagenes_candidaturas/paraguay_internas_municipales_2026/3880.25860.webp" alt="">
+          </div>
+
+          <div class="lista">
+            <h2>LISTA</h2>
+            <div class="numero">6</div>
+            <div class="sigla">MCA</div>
+          </div>
+
+        </div>
+
+        <div class="nombre">
+          Capitán Mutti
+        </div>
+
+      </div>
+
+      <!-- CARD 4 -->
+      <div class="card blanco">
+        VOTO EN BLANCO
+      </div>
+
+    </div>
+
+    <div class="footer"></div>
+
+  </div>
+
+</body>
+</html>
