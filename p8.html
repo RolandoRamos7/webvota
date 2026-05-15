@@ -4,9 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Título de la Página</title>
-
-  <style>
-
     *{
       margin:0;
       padding:0;
@@ -16,16 +13,15 @@
 
     body{
       background:#e9e9e9;
+      width:100%;
       height:100vh;
       display:flex;
       flex-direction:column;
+      align-items:center;
     }
 
-    /* =========================
-       HEADER
-    ========================== */
-
-    .topbar{
+    /* HEADER */
+    .header{
       width:100%;
       display:flex;
       justify-content:space-between;
@@ -33,133 +29,88 @@
       padding:10px 40px;
     }
 
-    .logo{
-      width:180px;
+    .logo-left img{
+      width:190px;
     }
 
-    .right-section{
+    .header-center{
       text-align:center;
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      gap:5px;
-    }
-
-    .guide-text{
-      font-size:18px;
-      color:#000;
       margin-top:10px;
+      font-size:20px;
+      color:#000;
     }
 
-    .small-logo{
+    .logo-right img{
       width:70px;
     }
 
-    /* =========================
-       BODY CONTENT
-    ========================== */
-
-   .main{
+    /* CONTENIDO */
+    .container{
+      width:100%;
       flex:1;
       display:flex;
       flex-direction:column;
-      justify-content:center;
       align-items:center;
-      text-align:center;
-      margin-top:-40px;
+      justify-content:center;
     }
 
-    .machine{
-      width:320px;
+    .imagen-central{
+      width:430px;
       margin-bottom:30px;
     }
 
-    .title{
-      font-size:48px;
+    .texto{
+      width:70%;
+      text-align:center;
+      font-size:28px;
+      line-height:1.2;
       color:#000;
-      font-weight:400;
-      margin-bottom:120px;
+      margin-bottom:70px;
     }
 
+    .texto strong{
+      font-weight:bold;
+    }
 
-    /* =========================
-       BOTONES
-    ========================== */
-
-  
+    /* BOTON */
     .btn{
-      background:#3279b8;
-      color:#fff;
+      background:#3d7fbd;
+      color:white;
       border:none;
-      padding:18px 55px;
-      font-size:22px;
+      padding:18px 40px;
+      font-size:20px;
       border-radius:6px;
       cursor:pointer;
       transition:0.3s;
     }
 
     .btn:hover{
-      background:#245d8f;
+      background:#2f6aa0;
     }
 
-    .btn-green{
-      background:#5cb85c;
-    }
+    @media(max-width:900px){
 
-    .btn-green:hover{
-      background:#4cae4c;
-    }
-
-    /* =========================
-       TEXTOS
-    ========================== */
-
-    .text{
-      width:80%;
-      text-align:center;
-      font-size:30px;
-      line-height:1.2;
-      color:#000;
-    }
-
-    .text strong{
-      font-weight:900;
-    }
-
-    /* =========================
-       IMÁGENES
-    ========================== */
-
-    .image{
-      width:320px;
-      max-width:90%;
-      margin-bottom:30px;
-    }
-
-    /* =========================
-       RESPONSIVE
-    ========================== */
-   @media(max-width:768px){
-
-      .topbar{
-        flex-direction:column;
-        align-items:center;
-        gap:20px;
+      .texto{
+        width:90%;
+        font-size:22px;
       }
 
-      .title{
-        font-size:34px;
-        padding:0 20px;
+      .imagen-central{
+        width:320px;
       }
 
-      .machine{
-        width:240px;
+      .header-center{
+        font-size:16px;
       }
 
-      .btn-start{
-        padding:15px 50px;
-        font-size:20px;
+      .logo-left img{
+        width:140px;
       }
+
+      .logo-right img{
+        width:50px;
+      }
+    }
 
   </style>
 </head>
