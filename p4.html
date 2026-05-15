@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Listas Participantes</title>
+
+<title>Junta Municipal</title>
 
 <style>
 
@@ -11,126 +12,170 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family: Arial, sans-serif;
+    font-family:Arial, Helvetica, sans-serif;
 }
 
 body{
-    background:#2d2d2d;
-    padding:15px;
+    background:#2b2b2b;
+    overflow:hidden;
+}
+
+/* PANTALLA */
+.pantalla{
+
+    width:100%;
+    height:100vh;
+
     display:flex;
     justify-content:center;
-}
-
-.contenedor{
-    width:1100px;
-    max-width:100%;
-    margin:auto;
-    background:#dcdcdc;
-    padding:10px;
-}
-
-.titulo{
-    text-align:center;
-    font-size:28px;
-    font-weight:bold;
-    margin-bottom:10px;
-}
-
-.grid{
-    display:grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap:8px;
-}
-
-.card{
-    background:#f3f3f3;
-    border:2px solid #cfcfcf;
-    min-height:250px;
-    display:flex;
-    flex-direction:column;
-    justify-content:space-between;
     align-items:center;
-    padding:20px;
+}
+
+/* TABLERO */
+.tablero{
+
+    width:100vw;
+
+    background:#dcdcdc;
+
+    border:2px solid #8b8b8b;
+}
+
+/* BARRA SUPERIOR */
+.superior{
+
+    background:#5c5c5c;
+
+    color:white;
+
     text-align:center;
-    cursor:pointer;
-}
 
-.lista{
-    font-size:55px;
+    font-size:10px;
+
     font-weight:bold;
+
+    padding:5px;
 }
 
-.nombre{
-    font-size:26px;
-    font-weight:bold;
+/* GRID */
+.grid{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr 1fr;
+
+    gap:3px;
+
+    padding:3px;
 }
 
-.sigla{
-    font-size:24px;
-}
+/* TARJETAS */
+.card{
 
-.footer{
-    margin-top:10px;
+    background:#efefef;
+
+    border:1px solid #c5c5c5;
+
+    min-height:220px;
+
     display:flex;
-    gap:10px;
-    flex-wrap:wrap;
+
+    flex-direction:column;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:15px;
 }
 
-.btn{
-    background:#bdbdbd;
-    padding:15px 20px;
+/* LISTA */
+.lista{
+
+    font-size:55px;
+
     font-weight:bold;
-    border-radius:5px;
+
+    margin-top:5px;
+}
+
+/* PARTIDO */
+.partido{
+
+    font-size:22px;
+
+    font-weight:bold;
+}
+
+/* SIGLA */
+.sigla{
+
+    font-size:20px;
+
+    margin-bottom:5px;
+}
+
+/* BLANCO */
+.blanco{
+
+    font-size:28px;
+
+    font-weight:bold;
+
+    margin:auto;
 }
 
 /* RESPONSIVE */
+@media(max-width:768px){
 
-@media(max-width:900px){
+    .tablero{
 
-    .grid{
-        grid-template-columns:repeat(2,1fr);
-    }
+        width:100vw;
 
-}
-
-@media(max-width:600px){
-
-    body{
-        padding:10px;
-    }
-
-    .titulo{
-        font-size:22px;
+        transform:scale(1);
     }
 
     .grid{
-        grid-template-columns:1fr;
+
+        gap:2px;
+
+        padding:2px;
     }
 
     .card{
-        min-height:200px;
-        padding:15px;
+
+        min-height:140px;
+
+        padding:8px;
     }
 
     .lista{
-        font-size:42px;
+
+        font-size:28px;
     }
 
-    .nombre{
-        font-size:22px;
+    .partido{
+
+        font-size:12px;
     }
 
     .sigla{
-        font-size:20px;
+
+        font-size:10px;
     }
 
-    .footer{
-        flex-direction:column;
+    .blanco{
+
+        font-size:16px;
     }
 
-    .btn{
-        width:100%;
-        text-align:center;
+    .superior{
+
+        font-size:7px;
+
+        padding:3px;
     }
 
 }
@@ -140,49 +185,95 @@ body{
 
 <body>
 
-<div class="contenedor">
+<div class="pantalla">
 
-    <div class="titulo">
-        Listas participantes al cargo de JUNTA MUNICIPAL
-    </div>
+    <div class="tablero">
 
-    <div class="grid">
-
-        <div class="card" onclick="window.location.href='p5.html'">
-            <div class="lista">LISTA 2A</div>
-            <div class="nombre">HONOR COLORADO A</div>
-            <div class="sigla">MHC</div>
+        <div class="superior">
+            Listas participantes al cargo de JUNTA MUNICIPAL
         </div>
 
-        <div class="card">
-            <div class="lista">LISTA 2B</div>
-            <div class="nombre">HONOR COLORADO B</div>
-            <div class="sigla">MHC</div>
-        </div>
+        <div class="grid">
 
-        <div class="card">
-            <div class="lista">LISTA 4</div>
-            <div class="nombre">FUERZA REPUBLICANA</div>
-            <div class="sigla">MFR</div>
-        </div>
+            <!-- CARD 1 -->
+            <div class="card">
 
-        <div class="card">
-            <div class="lista">LISTA 6</div>
-            <div class="nombre">COLORADO AÑETETE</div>
-            <div class="sigla">MCA</div>
-        </div>
+                <div class="lista">
+                    LISTA 2A
+                </div>
 
-        <div class="card">
-            <div class="nombre" style="margin:auto;">
-                VOTO EN BLANCO
+                <div class="partido">
+                    HONOR COLORADO A
+                </div>
+
+                <div class="sigla">
+                    MHC
+                </div>
+
             </div>
+
+            <!-- CARD 2 -->
+            <div class="card">
+
+                <div class="lista">
+                    LISTA 2B
+                </div>
+
+                <div class="partido">
+                    HONOR COLORADO B
+                </div>
+
+                <div class="sigla">
+                    MHC
+                </div>
+
+            </div>
+
+            <!-- CARD 3 -->
+            <div class="card">
+
+                <div class="lista">
+                    LISTA 4
+                </div>
+
+                <div class="partido">
+                    FUERZA REPUBLICANA
+                </div>
+
+                <div class="sigla">
+                    MFR
+                </div>
+
+            </div>
+
+            <!-- CARD 4 -->
+            <div class="card">
+
+                <div class="lista">
+                    LISTA 6
+                </div>
+
+                <div class="partido">
+                    COLORADO AÑETETE
+                </div>
+
+                <div class="sigla">
+                    MCA
+                </div>
+
+            </div>
+
+            <!-- CARD 5 -->
+            <div class="card">
+
+                <div class="blanco">
+                    VOTO EN BLANCO
+                </div>
+
+            </div>
+
         </div>
 
-    </div>
-
-    <div class="footer">
-        <div class="btn">Vista alto contraste</div>
-        <div class="btn">Volver Atrás</div>
     </div>
 
 </div>
