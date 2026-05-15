@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Máquina de Votación</title>
+<title>Interfaz Elecciones</title>
 
 <style>
 
@@ -16,182 +16,208 @@
 }
 
 body{
-    background:#1f1f1f;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    min-height:100vh;
-    padding:20px;
-}
-
-/* MAQUINA */
-
-.maquina{
-    width:100%;
-    max-width:1200px;
-    background:#4a4a4a;
-    border-radius:20px;
-    padding:20px;
-    box-shadow:
-    inset 0 0 15px rgba(255,255,255,0.1),
-    0 0 25px rgba(0,0,0,0.8);
-}
-
-/* PANTALLA */
-
-.pantalla{
-    background:#dcdcdc;
-    border:12px solid #2e2e2e;
-    border-radius:15px;
+    background:#2b2b2b;
     overflow:hidden;
 }
 
-/* HEADER */
+/* PANTALLA */
+.pantalla{
+    width:100%;
+    height:100vh;
 
-.topbar{
-    background:#3a3a3a;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    overflow:hidden;
+}
+
+/* TABLERO */
+.tablero{
+
+    width:100vw;
+
+    max-width:100%;
+
+    background:#dcdcdc;
+
+    border:2px solid #8a8a8a;
+
+    transform:scale(1);
+
+    transform-origin:center;
+}
+
+/* BARRA SUPERIOR */
+.superior{
+
+    background:#5a5a5a;
+
     color:white;
-    padding:15px;
+
+    font-size:11px;
+
+    padding:5px 10px;
+
     text-align:center;
-    font-size:30px;
+
     font-weight:bold;
-    letter-spacing:1px;
 }
 
 /* GRID */
-
 .grid{
+
     display:grid;
+
     grid-template-columns:1fr 1fr;
-    gap:8px;
-    padding:8px;
+
+    gap:4px;
+
+    padding:4px;
 }
 
 /* CARD */
-
 .card{
-    background:#f4f4f4;
-    border:2px solid #cfcfcf;
-    min-height:280px;
-    padding:20px;
-    cursor:pointer;
-    transition:0.2s;
-    position:relative;
-}
 
-.card:hover{
-    transform:scale(1.01);
-    border:2px solid #0b63ff;
-    box-shadow:0 0 10px rgba(0,0,0,0.2);
-}
+    background:#efefef;
 
-.card.selected{
-    border:5px solid #00a651;
-    background:#e9fff0;
-}
+    border:1px solid #bdbdbd;
 
-/* PARTIDO */
+    min-height:240px;
 
-.partido{
-    text-align:center;
-    font-size:24px;
-    font-weight:bold;
-    margin-bottom:25px;
-}
-
-/* CONTENIDO */
-
-.contenido{
     display:flex;
+
+    flex-direction:column;
+
     justify-content:center;
+
     align-items:center;
-    gap:40px;
+
+    text-align:center;
+
+    padding:15px;
 }
 
-.foto img{
-    width:130px;
-    height:150px;
+/* TITULO */
+.titulo{
+
+    font-size:20px;
+
+    font-weight:bold;
+
+    margin-bottom:18px;
+}
+
+/* IMAGEN */
+.card img{
+
+    width:85px;
+
+    height:85px;
+
     object-fit:cover;
-    border:3px solid #cfcfcf;
+
+    margin-bottom:10px;
 }
 
 /* LISTA */
-
 .lista{
-    text-align:center;
-}
 
-.lista h2{
-    font-size:22px;
-}
+    font-size:55px;
 
-.numero{
-    font-size:80px;
     font-weight:bold;
-    line-height:80px;
+
+    line-height:1;
 }
 
 .sigla{
+
     font-size:22px;
-    margin-top:5px;
+
+    margin-bottom:10px;
 }
 
 /* NOMBRE */
-
 .nombre{
-    text-align:center;
-    margin-top:20px;
-    font-size:24px;
-    font-weight:bold;
+
+    font-size:20px;
 }
 
-/* BLANCO */
-
+/* VOTO EN BLANCO */
 .blanco{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    font-size:36px;
+
+    font-size:38px;
+
     font-weight:bold;
 }
 
-/* FOOTER */
+/* RESPONSIVE CELULAR */
+@media(max-width:768px){
 
-.footer{
-    background:#cfcfcf;
-    padding:18px;
-    text-align:center;
-    font-size:22px;
-    font-weight:bold;
-}
+    .pantalla{
 
-/* RESPONSIVE */
+        justify-content:center;
 
-@media(max-width:900px){
-
-    .grid{
-        grid-template-columns:1fr;
+        align-items:center;
     }
 
-    .contenido{
-        flex-direction:column;
-        gap:20px;
+    .tablero{
+
+        width:100vw;
+
+        transform:scale(1);
     }
 
-    .topbar{
-        font-size:22px;
+    .card{
+
+        min-height:180px;
+
+        padding:10px;
     }
 
-    .numero{
-        font-size:60px;
+    .titulo{
+
+        font-size:14px;
+
+        margin-bottom:10px;
     }
 
-    .partido{
-        font-size:20px;
+    .card img{
+
+        width:55px;
+
+        height:55px;
+
+        margin-bottom:6px;
+    }
+
+    .lista{
+
+        font-size:38px;
+    }
+
+    .sigla{
+
+        font-size:15px;
+
+        margin-bottom:6px;
     }
 
     .nombre{
-        font-size:20px;
+
+        font-size:15px;
+    }
+
+    .blanco{
+
+        font-size:24px;
+    }
+
+    .superior{
+
+        font-size:8px;
+
+        padding:4px;
     }
 
 }
@@ -201,35 +227,29 @@ body{
 
 <body>
 
-<div class="maquina">
+<div class="pantalla">
 
-    <div class="pantalla">
+    <div class="tablero">
 
-        <div class="topbar">
+        <div class="superior">
             Candidatos a INTENDENTE MUNICIPAL
         </div>
 
         <div class="grid">
 
             <!-- CARD 1 -->
-            <div class="card" onclick="seleccionar(this)">
+            <div class="card">
 
-                <div class="partido">
+                <div class="titulo">
                     HONOR COLORADO
                 </div>
 
-                <div class="contenido">
+                <img src="https://via.placeholder.com/100" alt="">
 
-                    <div class="foto">
-                        <img src="https://simuladoroficial.tsje.gov.py/imagenes_candidaturas/paraguay_internas_municipales_2026/3878.25858.webp">
-                    </div>
+                <div class="lista">2</div>
 
-                    <div class="lista">
-                        <h2>LISTA</h2>
-                        <div class="numero">2</div>
-                        <div class="sigla">MHC</div>
-                    </div>
-
+                <div class="sigla">
+                    MHC
                 </div>
 
                 <div class="nombre">
@@ -239,24 +259,18 @@ body{
             </div>
 
             <!-- CARD 2 -->
-            <div class="card" onclick="seleccionar(this)">
+            <div class="card">
 
-                <div class="partido">
+                <div class="titulo">
                     FUERZA REPUBLICANA
                 </div>
 
-                <div class="contenido">
+                <img src="https://via.placeholder.com/100" alt="">
 
-                    <div class="foto">
-                        <img src="https://simuladoroficial.tsje.gov.py/imagenes_candidaturas/paraguay_internas_municipales_2026/3879.25859.webp">
-                    </div>
+                <div class="lista">4</div>
 
-                    <div class="lista">
-                        <h2>LISTA</h2>
-                        <div class="numero">4</div>
-                        <div class="sigla">MFR</div>
-                    </div>
-
+                <div class="sigla">
+                    MFR
                 </div>
 
                 <div class="nombre">
@@ -266,24 +280,18 @@ body{
             </div>
 
             <!-- CARD 3 -->
-            <div class="card" onclick="seleccionar(this)">
+            <div class="card">
 
-                <div class="partido">
+                <div class="titulo">
                     COLORADO AÑETETE
                 </div>
 
-                <div class="contenido">
+                <img src="https://via.placeholder.com/100" alt="">
 
-                    <div class="foto">
-                        <img src="https://simuladoroficial.tsje.gov.py/imagenes_candidaturas/paraguay_internas_municipales_2026/3880.25860.webp">
-                    </div>
+                <div class="lista">6</div>
 
-                    <div class="lista">
-                        <h2>LISTA</h2>
-                        <div class="numero">6</div>
-                        <div class="sigla">MCA</div>
-                    </div>
-
+                <div class="sigla">
+                    MCA
                 </div>
 
                 <div class="nombre">
@@ -293,42 +301,19 @@ body{
             </div>
 
             <!-- CARD 4 -->
-            <div class="card blanco" onclick="seleccionar(this)">
-                VOTO EN BLANCO
+            <div class="card">
+
+                <div class="blanco">
+                    VOTO EN BLANCO
+                </div>
+
             </div>
 
         </div>
 
-        
-
     </div>
 
 </div>
-
-<script>
-
-function seleccionar(card){
-
-    // QUITAR SELECCION ANTERIOR
-    let cards = document.querySelectorAll(".card");
-
-    cards.forEach(c=>{
-        c.classList.remove("selected");
-    });
-
-    // MARCAR SELECCION
-    card.classList.add("selected");
-
-    // ESPERA COMO MAQUINA REAL
-    setTimeout(()=>{
-
-        window.location.href = "p4.html";
-
-    },700);
-
-}
-
-</script>
 
 </body>
 </html>
