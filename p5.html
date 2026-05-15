@@ -2,8 +2,9 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Máquina de Votación</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Candidatos Junta Municipal</title>
 
 <style>
 
@@ -15,191 +16,180 @@
 }
 
 body{
-    background:#1f1f1f;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    min-height:100vh;
-    padding:20px;
-}
-
-/* MAQUINA */
-
-.maquina{
-    width:100%;
-    max-width:1350px;
-    background:#4a4a4a;
-    border-radius:20px;
-    padding:20px;
-    box-shadow:
-    inset 0 0 15px rgba(255,255,255,0.1),
-    0 0 25px rgba(0,0,0,0.8);
+    background:#2b2b2b;
+    overflow:hidden;
 }
 
 /* PANTALLA */
-
 .pantalla{
-    background:#dcdcdc;
-    border:12px solid #2e2e2e;
-    border-radius:15px;
-    overflow:hidden;
+    width:100%;
+    height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
 }
 
-/* HEADER */
+/* TABLERO */
+.tablero{
+    width:100vw;
 
-.topbar{
-    background:#3a3a3a;
+    background:#dcdcdc;
+
+    border:2px solid #8b8b8b;
+}
+
+/* BARRA SUPERIOR */
+.superior{
+    background:#5c5c5c;
+
     color:white;
-    padding:15px;
+
     text-align:center;
-    font-size:28px;
+
+    font-size:10px;
+
     font-weight:bold;
-    letter-spacing:1px;
+
+    padding:5px;
 }
 
 /* TITULO */
+.titulo-central{
 
-.title{
-    text-align:center;
-    padding:20px 10px;
     background:#efefef;
-    border-bottom:2px solid #c0c0c0;
+
+    border:1px solid #c5c5c5;
+
+    text-align:center;
+
+    padding:10px;
 }
 
-.title h2{
-    font-size:24px;
-    margin-bottom:10px;
+.titulo-central h1{
+    font-size:26px;
 }
 
-.title h1{
-    font-size:52px;
-    font-weight:bold;
-    line-height:1.1;
+.titulo-central h2{
+    font-size:18px;
 }
 
 /* GRID */
-
 .grid{
+
     display:grid;
+
     grid-template-columns:repeat(4,1fr);
-    gap:8px;
-    padding:8px;
+
+    gap:3px;
+
+    padding:3px;
 }
 
-/* CARD */
-
+/* TARJETAS */
 .card{
-    background:#f4f4f4;
-    border:2px solid #d0d0d0;
-    min-height:180px;
+
+    background:#efefef;
+
+    border:1px solid #c5c5c5;
+
+    min-height:110px;
+
+    padding:8px;
+
+    text-align:center;
+
+    text-decoration:none;
+
+    color:black;
+
     display:flex;
+
     flex-direction:column;
+
     justify-content:space-between;
-    padding:12px;
-    cursor:pointer;
+
     transition:0.2s;
 }
 
-.card:hover{
-    transform:scale(1.02);
-    border:2px solid #0b63ff;
-    box-shadow:0 0 10px rgba(0,0,0,0.2);
+.card:active{
+    transform:scale(0.97);
 }
 
-.card.selected{
-    border:5px solid #00a651;
-    background:#e9fff0;
-}
+/* IMAGEN */
+.card img{
 
-/* TOP */
+    width:60px;
 
-.card-top{
-    display:flex;
-    justify-content:space-between;
-    align-items:flex-start;
-    gap:10px;
-}
+    height:60px;
 
-/* FOTO */
-
-.photo{
-    width:90px;
-    height:90px;
-    background:#d7d7d7;
-    border-radius:4px;
-    overflow:hidden;
-    border:2px solid #bdbdbd;
-}
-
-.photo img{
-    width:100%;
-    height:100%;
     object-fit:cover;
+
+    margin:auto;
 }
 
 /* OPCION */
+.opcion{
 
-.option{
-    font-size:28px;
+    font-size:18px;
+
     font-weight:bold;
-    text-align:center;
-    line-height:1.1;
 }
 
 /* NOMBRE */
+.nombre{
 
-.name{
-    text-align:center;
-    font-size:20px;
-    margin-top:12px;
-    color:#222;
-    font-weight:bold;
-}
+    font-size:12px;
 
-/* FOOTER */
-
-.footer{
-    background:#cfcfcf;
-    padding:18px;
-    text-align:center;
-    font-size:22px;
-    font-weight:bold;
+    margin-top:5px;
 }
 
 /* RESPONSIVE */
-
-@media(max-width:1000px){
-
-    .grid{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-}
-
-@media(max-width:650px){
+@media(max-width:768px){
 
     .grid{
-        grid-template-columns:1fr;
+        grid-template-columns:repeat(4,1fr);
     }
 
-    .title h1{
-        font-size:34px;
+    .card{
+
+        min-height:90px;
+
+        padding:5px;
     }
 
-    .title h2{
-        font-size:20px;
+    .card img{
+
+        width:40px;
+
+        height:40px;
     }
 
-    .option{
-        font-size:24px;
+    .opcion{
+
+        font-size:10px;
     }
 
-    .name{
-        font-size:18px;
+    .nombre{
+
+        font-size:8px;
     }
 
-    .topbar{
-        font-size:22px;
+    .titulo-central h1{
+
+        font-size:16px;
+    }
+
+    .titulo-central h2{
+
+        font-size:11px;
+    }
+
+    .superior{
+
+        font-size:7px;
+
+        padding:3px;
     }
 
 }
@@ -209,235 +199,211 @@ body{
 
 <body>
 
-<div class="maquina">
+<div class="pantalla">
 
-    <div class="pantalla">
+    <div class="tablero">
 
-        <div class="topbar">
-            ELECCIONES MUNICIPALES — Distrito: AYOLAS
+        <div class="superior">
+            Candidatos a JUNTA MUNICIPAL
         </div>
 
-        <div class="title">
-            <h2>Candidatos a JUNTA MUNICIPAL</h2>
-            <h1>Lista 2A<br>HONOR COLORADO A</h1>
+        <!-- TITULO -->
+        <div class="titulo-central">
+
+            <h2>Lista 2A</h2>
+
+            <h1>HONOR COLORADO A</h1>
+
         </div>
 
+        <!-- GRID -->
         <div class="grid">
 
-            <!-- 1 -->
-            <div class="card" onclick="seleccionar(this)">
-                <div class="card-top">
-                    <div class="photo">
-                        <img src="https://simuladoroficial.tsje.gov.py/imagenes_candidaturas/paraguay_internas_municipales_2026/3881.25861.webp">
-                    </div>
-                    <div class="option">
-                        Opción<br>1
-                    </div>
+            <!-- OPCION 1 -->
+            <a href="p6.html" class="card">
+
+                <img src="https://via.placeholder.com/60" alt="">
+
+                <div class="opcion">
+                    Opción 1
                 </div>
-                <div class="name">
+
+                <div class="nombre">
                     Willian Aquino
                 </div>
-            </div>
 
-            <!-- 2 -->
-            <div class="card" onclick="seleccionar(this)">
-                <div class="card-top">
-                    <div class="photo">
-                        <img src="https://simuladoroficial.tsje.gov.py/imagenes_candidaturas/paraguay_internas_municipales_2026/3881.25862.webp">
-                    </div>
-                    <div class="option">
-                        Opción<br>2
-                    </div>
+            </a>
+
+            <!-- OPCION 2 -->
+            <a href="p6.html" class="card">
+
+                <img src="https://via.placeholder.com/60" alt="">
+
+                <div class="opcion">
+                    Opción 2
                 </div>
-                <div class="name">
+
+                <div class="nombre">
                     Lilio Alvarenga Santacruz
                 </div>
-            </div>
 
-            <!-- 3 -->
-            <div class="card" onclick="seleccionar(this)">
-                <div class="card-top">
-                    <div class="photo">
-                        <img src="https://simuladoroficial.tsje.gov.py/imagenes_candidaturas/paraguay_internas_municipales_2026/3881.25863.webp">
-                    </div>
-                    <div class="option">
-                        Opción<br>3
-                    </div>
+            </a>
+
+            <!-- OPCION 3 -->
+            <a href="p6.html" class="card">
+
+                <img src="https://via.placeholder.com/60" alt="">
+
+                <div class="opcion">
+                    Opción 3
                 </div>
-                <div class="name">
+
+                <div class="nombre">
                     Profe. Luis Vera Cuellar
                 </div>
-            </div>
 
-            <!-- 4 -->
-            <div class="card" onclick="seleccionar(this)">
-                <div class="card-top">
-                    <div class="photo">
-                        <img src="https://simuladoroficial.tsje.gov.py/imagenes_candidaturas/paraguay_internas_municipales_2026/3881.25864.webp">
-                    </div>
-                    <div class="option">
-                        Opción<br>4
-                    </div>
+            </a>
+
+            <!-- OPCION 4 -->
+            <a href="p6.html" class="card">
+
+                <img src="https://via.placeholder.com/60" alt="">
+
+                <div class="opcion">
+                    Opción 4
                 </div>
-                <div class="name">
+
+                <div class="nombre">
                     Victor Manuel Espinola
                 </div>
-            </div>
 
-            <!-- 5 -->
-            <div class="card" onclick="seleccionar(this)">
-                <div class="card-top">
-                    <div class="photo">
-                        <img src="https://simuladoroficial.tsje.gov.py/imagenes_candidaturas/paraguay_internas_municipales_2026/3881.25865.webp">
-                    </div>
-                    <div class="option">
-                        Opción<br>5
-                    </div>
+            </a>
+
+            <!-- OPCION 5 -->
+            <a href="p6.html" class="card">
+
+                <img src="https://via.placeholder.com/60" alt="">
+
+                <div class="opcion">
+                    Opción 5
                 </div>
-                <div class="name">
+
+                <div class="nombre">
                     Dra. Talavera
                 </div>
-            </div>
 
-            <!-- 6 -->
-            <div class="card" onclick="seleccionar(this)">
-                <div class="card-top">
-                    <div class="photo">
-                        <img src="https://simuladoroficial.tsje.gov.py/imagenes_candidaturas/paraguay_internas_municipales_2026/3881.25866.webp">
-                    </div>
-                    <div class="option">
-                        Opción<br>6
-                    </div>
+            </a>
+
+            <!-- OPCION 6 -->
+            <a href="p6.html" class="card">
+
+                <img src="https://via.placeholder.com/60" alt="">
+
+                <div class="opcion">
+                    Opción 6
                 </div>
-                <div class="name">
+
+                <div class="nombre">
                     Willian Rodriguez
                 </div>
-            </div>
 
-            <!-- 7 -->
-            <div class="card" onclick="seleccionar(this)">
-                <div class="card-top">
-                    <div class="photo">
-                        <img src="https://simuladoroficial.tsje.gov.py/imagenes_candidaturas/paraguay_internas_municipales_2026/3881.25867.webp">
-                    </div>
-                    <div class="option">
-                        Opción<br>7
-                    </div>
+            </a>
+
+            <!-- OPCION 7 -->
+            <a href="p6.html" class="card">
+
+                <img src="https://via.placeholder.com/60" alt="">
+
+                <div class="opcion">
+                    Opción 7
                 </div>
-                <div class="name">
+
+                <div class="nombre">
                     Denis Flores
                 </div>
-            </div>
 
-            <!-- 8 -->
-            <div class="card" onclick="seleccionar(this)">
-                <div class="card-top">
-                    <div class="photo">
-                        <img src="https://simuladoroficial.tsje.gov.py/imagenes_candidaturas/paraguay_internas_municipales_2026/3881.25868.webp">
-                    </div>
-                    <div class="option">
-                        Opción<br>8
-                    </div>
+            </a>
+
+            <!-- OPCION 8 -->
+            <a href="p6.html" class="card">
+
+                <img src="https://via.placeholder.com/60" alt="">
+
+                <div class="opcion">
+                    Opción 8
                 </div>
-                <div class="name">
+
+                <div class="nombre">
                     Profe Jose Vera
                 </div>
-            </div>
 
-            <!-- 9 -->
-            <div class="card" onclick="seleccionar(this)">
-                <div class="card-top">
-                    <div class="photo">
-                        <img src="https://simuladoroficial.tsje.gov.py/imagenes_candidaturas/paraguay_internas_municipales_2026/3881.25869.webp">
-                    </div>
-                    <div class="option">
-                        Opción<br>9
-                    </div>
+            </a>
+
+            <!-- OPCION 9 -->
+            <a href="p6.html" class="card">
+
+                <img src="https://via.placeholder.com/60" alt="">
+
+                <div class="opcion">
+                    Opción 9
                 </div>
-                <div class="name">
+
+                <div class="nombre">
                     Dani Maciel
                 </div>
-            </div>
 
-            <!-- 10 -->
-            <div class="card" onclick="seleccionar(this)">
-                <div class="card-top">
-                    <div class="photo">
-                        <img src="https://simuladoroficial.tsje.gov.py/imagenes_candidaturas/paraguay_internas_municipales_2026/3881.25870.webp">
-                    </div>
-                    <div class="option">
-                        Opción<br>10
-                    </div>
+            </a>
+
+            <!-- OPCION 10 -->
+            <a href="p6.html" class="card">
+
+                <img src="https://via.placeholder.com/60" alt="">
+
+                <div class="opcion">
+                    Opción 10
                 </div>
-                <div class="name">
+
+                <div class="nombre">
                     Ing. Maria Colman
                 </div>
-            </div>
 
-            <!-- 11 -->
-            <div class="card" onclick="seleccionar(this)">
-                <div class="card-top">
-                    <div class="photo">
-                        <img src="https://simuladoroficial.tsje.gov.py/imagenes_candidaturas/paraguay_internas_municipales_2026/3881.25871.webp">
-                    </div>
-                    <div class="option">
-                        Opción<br>11
-                    </div>
+            </a>
+
+            <!-- OPCION 11 -->
+            <a href="p6.html" class="card">
+
+                <img src="https://via.placeholder.com/60" alt="">
+
+                <div class="opcion">
+                    Opción 11
                 </div>
-                <div class="name">
+
+                <div class="nombre">
                     Carlos Arrua
                 </div>
-            </div>
 
-            <!-- 12 -->
-            <div class="card" onclick="seleccionar(this)">
-                <div class="card-top">
-                    <div class="photo">
-                        <img src="https://simuladoroficial.tsje.gov.py/imagenes_candidaturas/paraguay_internas_municipales_2026/3881.25872.webp">
-                    </div>
-                    <div class="option">
-                        Opción<br>12
-                    </div>
+            </a>
+
+            <!-- OPCION 12 -->
+            <a href="p6.html" class="card">
+
+                <img src="https://via.placeholder.com/60" alt="">
+
+                <div class="opcion">
+                    Opción 12
                 </div>
-                <div class="name">
+
+                <div class="nombre">
                     Eladio Martinez
                 </div>
-            </div>
 
-        </div>
+            </a>
 
-        <div class="footer">
-            Toque un candidato para continuar
         </div>
 
     </div>
 
 </div>
-
-<script>
-
-function seleccionar(card){
-
-    // QUITAR SELECCION ANTERIOR
-    let cards = document.querySelectorAll(".card");
-
-    cards.forEach(c=>{
-        c.classList.remove("selected");
-    });
-
-    // MARCAR SELECCION
-    card.classList.add("selected");
-
-    // ESPERA COMO MAQUINA REAL
-    setTimeout(()=>{
-
-        window.location.href = "p6.html";
-
-    },700);
-
-}
-
-</script>
 
 </body>
 </html>
