@@ -22,7 +22,6 @@ body{
 
 /* PANTALLA */
 .pantalla{
-
     width:100%;
     height:100vh;
 
@@ -33,166 +32,112 @@ body{
 
 /* TABLERO */
 .tablero{
-
     width:100vw;
-
     background:#dcdcdc;
-
     border:2px solid #8a8a8a;
 }
 
 /* BARRA SUPERIOR */
 .superior{
-
     background:#5a5a5a;
-
     color:white;
-
     text-align:center;
-
     font-size:10px;
-
     font-weight:bold;
-
     padding:5px;
 }
 
 /* CONTENIDO */
 .contenido{
-
     display:grid;
-
     grid-template-columns:1fr 1fr 100px;
-
     gap:3px;
-
     padding:3px;
 }
 
 /* TARJETAS */
 .card{
-
     background:#efefef;
-
     border:1px solid #c5c5c5;
-
     text-align:center;
-
     padding:10px;
-
     min-height:320px;
 
     display:flex;
-
     flex-direction:column;
-
     justify-content:space-between;
 }
 
 /* TITULOS */
 .titulo{
-
     font-size:18px;
-
     font-weight:bold;
-
     border-bottom:1px solid #999;
-
     padding-bottom:5px;
 }
 
 .partido{
-
     font-size:22px;
-
     font-weight:bold;
-
     margin-top:15px;
 }
 
 .lista{
-
     font-size:26px;
-
     font-weight:bold;
-
     margin-top:20px;
 }
 
 /* IMAGEN */
 .card img{
-
     width:90px;
-
     height:90px;
-
     object-fit:cover;
-
     margin:auto;
 }
 
 /* NOMBRE */
 .nombre{
-
     font-size:20px;
-
     font-weight:bold;
 }
 
 .opcion{
-
     font-size:18px;
 }
 
 /* BOTON */
-
 .boton{
-
     background:#5b5b5b;
-
     color:white;
-
     text-decoration:none;
-
     padding:10px;
-
     border-radius:4px;
-
     width:120px;
-
     margin:auto;
-
     font-weight:bold;
 }
 
-/* LATERAL */
-.lateral{
-
-    display:flex;
-
-    flex-direction:column;
-
-    gap:3px;
-}
-
 /* BOTONES LATERALES */
-
 .side-buttons{
     display:flex;
     flex-direction:column;
-    gap:4px;
+    gap:3px;
 }
 
 .side-btn{
     flex:1;
+
     display:flex;
     flex-direction:column;
     justify-content:center;
     align-items:center;
+
     color:#fff;
     text-align:center;
     font-weight:bold;
-    padding:20px 10px;
+
+    padding:10px 5px;
 }
 
 .orange{
@@ -203,86 +148,75 @@ body{
     background:#00b100;
 }
 
+/* ICONOS RESPONSIVE */
 .icon{
-    font-size:70px;
-    margin-bottom:15px;
-     display:flex;
+    font-size:clamp(28px, 6vw, 70px);
+    margin-bottom:10px;
+    line-height:1;
 }
 
+/* TEXTO RESPONSIVE */
 .side-text{
-    font-size:20px;
+    font-size:clamp(10px, 2vw, 20px);
     line-height:1.1;
- display:flex;
-
 }
-
 
 /* RESPONSIVE */
 @media(max-width:768px){
 
     .contenido{
-
         grid-template-columns:1fr 1fr 70px;
     }
 
     .card{
-
         min-height:220px;
-
         padding:6px;
     }
 
     .titulo{
-
         font-size:11px;
     }
 
     .partido{
-
         font-size:14px;
     }
 
     .lista{
-
         font-size:16px;
     }
 
     .card img{
-
         width:55px;
-
         height:55px;
     }
 
     .nombre{
-
         font-size:10px;
     }
 
     .opcion{
-
         font-size:8px;
     }
 
     .boton{
-
         width:80px;
-
         padding:6px;
-
         font-size:10px;
     }
 
-    .side{
-
-        font-size:8px;
+    .superior{
+        font-size:7px;
+        padding:3px;
     }
 
-    .superior{
+    /* MÁS PEQUEÑO EN CELULAR */
+    .icon{
+        font-size:32px;
+        margin-bottom:6px;
+    }
 
-        font-size:7px;
-
-        padding:3px;
+    .side-text{
+        font-size:9px;
     }
 
 }
@@ -365,25 +299,25 @@ body{
             </div>
 
             <!-- BOTONES LATERALES -->
-        <div class="side-buttons">
+            <div class="side-buttons">
 
-            <div class="side-btn orange" onclick="window.location.href='p3.html'">
-                <div class="icon">↻</div>
-                <div class="side-text">
-                    Reiniciar<br>Seleccion
+                <div class="side-btn orange" onclick="window.location.href='p3.html'">
+                    <div class="icon">↻</div>
+                    <div class="side-text">
+                        Reiniciar<br>Selección
+                    </div>
                 </div>
-            </div>
 
-            <div class="side-btn green" onclick="window.location.href='p7.html'">
-                <div class="icon">🖨</div>
-                <div class="side-text">
-                    Imprimir<br>Seleccion
+                <div class="side-btn green" onclick="window.location.href='p7.html'">
+                    <div class="icon">🖨</div>
+                    <div class="side-text">
+                        Imprimir<br>Selección
+                    </div>
                 </div>
+
             </div>
 
         </div>
-
-    </div>
     </div>
 
 </div>
