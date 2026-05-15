@@ -145,6 +145,23 @@ body{
 }
 
 /* BOTON */
+    .side-buttons{
+    display:flex;
+    flex-direction:column;
+    gap:4px;
+}
+
+.side-btn{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    color:#fff;
+    text-align:center;
+    font-weight:bold;
+    padding:20px 10px;
+}
 .boton{
 
     background:#5b5b5b;
@@ -354,16 +371,11 @@ body{
             </div>
 
             <!-- LATERAL -->
-            <div class="lateral">
-
-                <a href="index.html" class="side reiniciar">
-                    Reiniciar<br>Selección
-                </a>
-
-                <a href="p7.html" class="side imprimir">
-                    Imprimir<br>Selección
-                </a>
-
+           <div class="side-btn green" onclick="window.location.href='p7.html'">
+                <div class="icon">🖨</div>
+                <div class="side-text">
+                    Imprimir<br>Seleccion
+                </div>
             </div>
 
         </div>
