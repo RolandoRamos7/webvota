@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Opciones Seleccionadas</title>
 
 <style>
@@ -15,159 +16,262 @@
 }
 
 body{
-   display:flex;
-    background:#2d2d2d;
-    padding:20px;
-}
-
-.container{
-    max-width:1100px;
-    margin:auto;
-    background:#dcdcdc;
-    border:2px solid #8f8f8f;
-}
-
-.topbar{
-    background:#5d5d5d;
-    color:#fff;
-    padding:8px 15px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    font-size:13px;
-}
-
-.topbar h2{
-    font-size:20px;
-    font-weight:bold;
-}
-
-.main{
-    display:grid;
-    grid-template-columns:1fr 1fr 130px;
-    gap:4px;
-    padding:4px;
-}
-
-.card{
-    background:#efefef;
-    border:2px solid #d0d0d0;
-    padding:15px;
-    text-align:center;
-    min-height:550px;
-    display:flex;
-    flex-direction:column;
-    justify-content:space-between;
-}
-
-.card-title{
-    font-size:28px;
-    font-weight:bold;
-    border-bottom:2px solid #bdbdbd;
-    padding-bottom:10px;
-    margin-bottom:20px;
-}
-
-.party{
-    font-size:34px;
-    font-weight:bold;
-    margin-bottom:35px;
-}
-
-.lista{
-    font-size:32px;
-    font-weight:bold;
-    margin-bottom:25px;
-}
-
-.photo{
-    width:160px;
-    height:160px;
-    margin:0 auto 25px;
+    background:#2b2b2b;
     overflow:hidden;
 }
 
-.photo img{
+/* PANTALLA */
+.pantalla{
+
     width:100%;
-    height:100%;
-    object-fit:cover;
-}
+    height:100vh;
 
-.name{
-    font-size:34px;
-    font-weight:bold;
-    margin-bottom:8px;
-}
-
-.option{
-    font-size:28px;
-    margin-bottom:35px;
-}
-
-.btn-modificar{
-    background:#5f6364;
-    color:#fff;
-    font-size:24px;
-    font-weight:bold;
-    border:none;
-    padding:14px 35px;
-    border-radius:5px;
-    cursor:pointer;
-}
-
-.btn-modificar:hover{
-    background:#474b4c;
-}
-
-.side-buttons{
     display:flex;
-    flex-direction:column;
-    gap:4px;
-}
-
-.side-btn{
-    flex:1;
-    display:flex;
-    flex-direction:column;
     justify-content:center;
     align-items:center;
-    color:#fff;
+}
+
+/* TABLERO */
+.tablero{
+
+    width:100vw;
+
+    background:#dcdcdc;
+
+    border:2px solid #8a8a8a;
+}
+
+/* BARRA SUPERIOR */
+.superior{
+
+    background:#5a5a5a;
+
+    color:white;
+
     text-align:center;
+
+    font-size:10px;
+
     font-weight:bold;
-    padding:20px 10px;
+
+    padding:5px;
 }
 
-.orange{
-    background:#ff7b00;
+/* CONTENIDO */
+.contenido{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr 100px;
+
+    gap:3px;
+
+    padding:3px;
 }
 
-.green{
-    background:#00b100;
+/* TARJETAS */
+.card{
+
+    background:#efefef;
+
+    border:1px solid #c5c5c5;
+
+    text-align:center;
+
+    padding:10px;
+
+    min-height:320px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:space-between;
 }
 
-.icon{
-    font-size:70px;
-    margin-bottom:15px;
+/* TITULOS */
+.titulo{
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    border-bottom:1px solid #999;
+
+    padding-bottom:5px;
 }
 
-.side-text{
+.partido{
+
+    font-size:22px;
+
+    font-weight:bold;
+
+    margin-top:15px;
+}
+
+.lista{
+
+    font-size:26px;
+
+    font-weight:bold;
+
+    margin-top:20px;
+}
+
+/* IMAGEN */
+.card img{
+
+    width:90px;
+
+    height:90px;
+
+    object-fit:cover;
+
+    margin:auto;
+}
+
+/* NOMBRE */
+.nombre{
+
     font-size:20px;
-    line-height:1.1;
+
+    font-weight:bold;
 }
 
-@media(max-width:900px){
+.opcion{
 
-    .main{
-        grid-template-columns:1fr;
-    }
+    font-size:18px;
+}
 
-    .side-buttons{
-        flex-direction:row;
-        height:150px;
+/* BOTON */
+.boton{
+
+    background:#5b5b5b;
+
+    color:white;
+
+    text-decoration:none;
+
+    padding:10px;
+
+    border-radius:4px;
+
+    width:120px;
+
+    margin:auto;
+
+    font-weight:bold;
+}
+
+/* LATERAL */
+.lateral{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:3px;
+}
+
+/* BOTONES LATERALES */
+.side{
+
+    flex:1;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    color:white;
+
+    font-weight:bold;
+
+    text-decoration:none;
+
+    padding:10px;
+}
+
+.reiniciar{
+
+    background:orange;
+}
+
+.imprimir{
+
+    background:green;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+
+    .contenido{
+
+        grid-template-columns:1fr 1fr 70px;
     }
 
     .card{
-        min-height:auto;
+
+        min-height:220px;
+
+        padding:6px;
+    }
+
+    .titulo{
+
+        font-size:11px;
+    }
+
+    .partido{
+
+        font-size:14px;
+    }
+
+    .lista{
+
+        font-size:16px;
+    }
+
+    .card img{
+
+        width:55px;
+
+        height:55px;
+    }
+
+    .nombre{
+
+        font-size:10px;
+    }
+
+    .opcion{
+
+        font-size:8px;
+    }
+
+    .boton{
+
+        width:80px;
+
+        padding:6px;
+
+        font-size:10px;
+    }
+
+    .side{
+
+        font-size:8px;
+    }
+
+    .superior{
+
+        font-size:7px;
+
+        padding:3px;
     }
 
 }
@@ -177,79 +281,89 @@ body{
 
 <body>
 
-<div class="container">
+<div class="pantalla">
 
-    <div class="topbar">
-        <div>Elección: ASOCIACION NACIONAL REPUBLICANA</div>
-        <h2>Opciones seleccionadas</h2>
-        <div>Distrito: 1-AYOLAS</div>
-    </div>
+    <div class="tablero">
 
-    <div class="main">
-
-        <!-- INTENDENTE -->
-        <div class="card">
-
-            <div>
-                <div class="card-title">INTENDENTE MUNICIPAL</div>
-
-                <div class="party">HONOR COLORADO</div>
-
-                <div class="lista">LISTA 2</div>
-
-                <div class="photo">
-                    <img src="https://simuladoroficial.tsje.gov.py/imagenes_candidaturas/paraguay_internas_municipales_2026/3878.25858.webp" alt="">
-                </div>
-
-                <div class="name">Christian Rolon</div>
-            </div>
-
-            <div>
-                <button class="btn-modificar"onclick="window.location.href='p3.html'">Modificar</button>
-            </div>
-
+        <div class="superior">
+            Opciones seleccionadas
         </div>
 
-        <!-- JUNTA -->
-        <div class="card">
+        <div class="contenido">
 
-            <div>
-                <div class="card-title">JUNTA MUNICIPAL</div>
+            <!-- INTENDENTE -->
+            <div class="card">
 
-                <div class="party">HONOR COLORADO A</div>
-
-                <div class="lista">LISTA 2A</div>
-
-                <div class="photo">
-                    <img src="https://simuladoroficial.tsje.gov.py/imagenes_candidaturas/paraguay_internas_municipales_2026/3881.25865.webp" alt="">
+                <div class="titulo">
+                    INTENDENTE MUNICIPAL
                 </div>
 
-                <div class="name">Dra. Talavera</div>
-
-                <div class="option">Opción 5</div>
-            </div>
-
-            <div>
-                <button class="btn-modificar" onclick="window.location.href='p5.html'">Modificar</button>
-            </div>
-
-        </div>
-
-        <!-- BOTONES LATERALES -->
-        <div class="side-buttons">
-
-            <div class="side-btn orange" onclick="window.location.href='p3.html'">
-                <div class="icon">↻</div>
-                <div class="side-text">
-                    Reiniciar<br>Seleccion
+                <div class="partido">
+                    HONOR COLORADO
                 </div>
+
+                <div class="lista">
+                    LISTA 2
+                </div>
+
+                <img src="https://via.placeholder.com/90" alt="">
+
+                <div class="nombre">
+                    Christian Rolon
+                </div>
+
+                <a href="index.html" class="boton">
+                    Modificar
+                </a>
+
             </div>
 
-            <div class="side-btn green" onclick="window.location.href='p7.html'">
-                <div class="icon">🖨</div>
-                <div class="side-text">
-                    Imprimir<br>Seleccion
+            <!-- JUNTA -->
+            <div class="card">
+
+                <div class="titulo">
+                    JUNTA MUNICIPAL
                 </div>
+
+                <div class="partido">
+                    HONOR COLORADO A
+                </div>
+
+                <div class="lista">
+                    LISTA 2A
+                </div>
+
+                <img src="https://via.placeholder.com/90" alt="">
+
+                <div>
+
+                    <div class="nombre">
+                        Dra. Talavera
+                    </div>
+
+                    <div class="opcion">
+                        Opción 5
+                    </div>
+
+                </div>
+
+                <a href="p5.html" class="boton">
+                    Modificar
+                </a>
+
+            </div>
+
+            <!-- LATERAL -->
+            <div class="lateral">
+
+                <a href="index.html" class="side reiniciar">
+                    Reiniciar<br>Selección
+                </a>
+
+                <a href="p7.html" class="side imprimir">
+                    Imprimir<br>Selección
+                </a>
+
             </div>
 
         </div>
