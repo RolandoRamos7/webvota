@@ -1,219 +1,334 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Candidatos a Intendente Municipal</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      font-family: Arial, Helvetica, sans-serif;
-    }
+<title>Máquina de Votación</title>
 
-    body{
-      background:#2d2d2d;
-      padding:20px;
-      display:flex;
-    }
+<style>
 
-    .contenedor{
-      width:1100px;
-      margin:auto;
-      background:#d9d9d9;
-      border:2px solid #bdbdbd;
-    }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
 
-    .topbar{
-      background:#3b3b3b;
-      color:white;
-      padding:10px;
-      text-align:center;
-      font-weight:bold;
-      font-size:28px;
-    }
+body{
+    background:#1f1f1f;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    padding:20px;
+}
+
+/* MAQUINA */
+
+.maquina{
+    width:100%;
+    max-width:1200px;
+    background:#4a4a4a;
+    border-radius:20px;
+    padding:20px;
+    box-shadow:
+    inset 0 0 15px rgba(255,255,255,0.1),
+    0 0 25px rgba(0,0,0,0.8);
+}
+
+/* PANTALLA */
+
+.pantalla{
+    background:#dcdcdc;
+    border:12px solid #2e2e2e;
+    border-radius:15px;
+    overflow:hidden;
+}
+
+/* HEADER */
+
+.topbar{
+    background:#3a3a3a;
+    color:white;
+    padding:15px;
+    text-align:center;
+    font-size:30px;
+    font-weight:bold;
+    letter-spacing:1px;
+}
+
+/* GRID */
+
+.grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:8px;
+    padding:8px;
+}
+
+/* CARD */
+
+.card{
+    background:#f4f4f4;
+    border:2px solid #cfcfcf;
+    min-height:280px;
+    padding:20px;
+    cursor:pointer;
+    transition:0.2s;
+    position:relative;
+}
+
+.card:hover{
+    transform:scale(1.01);
+    border:2px solid #0b63ff;
+    box-shadow:0 0 10px rgba(0,0,0,0.2);
+}
+
+.card.selected{
+    border:5px solid #00a651;
+    background:#e9fff0;
+}
+
+/* PARTIDO */
+
+.partido{
+    text-align:center;
+    font-size:24px;
+    font-weight:bold;
+    margin-bottom:25px;
+}
+
+/* CONTENIDO */
+
+.contenido{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:40px;
+}
+
+.foto img{
+    width:130px;
+    height:150px;
+    object-fit:cover;
+    border:3px solid #cfcfcf;
+}
+
+/* LISTA */
+
+.lista{
+    text-align:center;
+}
+
+.lista h2{
+    font-size:22px;
+}
+
+.numero{
+    font-size:80px;
+    font-weight:bold;
+    line-height:80px;
+}
+
+.sigla{
+    font-size:22px;
+    margin-top:5px;
+}
+
+/* NOMBRE */
+
+.nombre{
+    text-align:center;
+    margin-top:20px;
+    font-size:24px;
+    font-weight:bold;
+}
+
+/* BLANCO */
+
+.blanco{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:36px;
+    font-weight:bold;
+}
+
+/* FOOTER */
+
+.footer{
+    background:#cfcfcf;
+    padding:18px;
+    text-align:center;
+    font-size:22px;
+    font-weight:bold;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
 
     .grid{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap:5px;
-      padding:5px;
-    }
-
-    .card{
-      background:#efefef;
-      border:1px solid #cfcfcf;
-      min-height:250px;
-      padding:20px;
-      position:relative;
-    }
-
-    .partido{
-      text-align:center;
-      font-size:22px;
-      font-weight:bold;
-      margin-bottom:25px;
+        grid-template-columns:1fr;
     }
 
     .contenido{
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      gap:40px;
+        flex-direction:column;
+        gap:20px;
     }
 
-    .foto img{
-      width:120px;
-      height:140px;
-      object-fit:cover;
-    }
-
-    .lista{
-      text-align:center;
-    }
-
-    .lista h2{
-      font-size:22px;
+    .topbar{
+        font-size:22px;
     }
 
     .numero{
-      font-size:70px;
-      font-weight:bold;
-      line-height:70px;
+        font-size:60px;
     }
 
-    .sigla{
-      font-size:20px;
-      margin-top:5px;
+    .partido{
+        font-size:20px;
     }
 
     .nombre{
-      text-align:center;
-      margin-top:20px;
-      font-size:22px;
+        font-size:20px;
     }
 
-    .blanco{
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      font-size:32px;
-      font-weight:bold;
-    }
+}
 
-    .footer{
-      height:40px;
-      background:#cfcfcf;
-      margin:5px;
-    }
-
-  </style>
+</style>
 </head>
 
 <body>
-  
 
-  <div class="contenedor">
+<div class="maquina">
 
-    <div class="topbar">
-      Candidatos a INTENDENTE MUNICIPAL
+    <div class="pantalla">
+
+        <div class="topbar">
+            Candidatos a INTENDENTE MUNICIPAL
+        </div>
+
+        <div class="grid">
+
+            <!-- CARD 1 -->
+            <div class="card" onclick="seleccionar(this)">
+
+                <div class="partido">
+                    HONOR COLORADO
+                </div>
+
+                <div class="contenido">
+
+                    <div class="foto">
+                        <img src="https://simuladoroficial.tsje.gov.py/imagenes_candidaturas/paraguay_internas_municipales_2026/3878.25858.webp">
+                    </div>
+
+                    <div class="lista">
+                        <h2>LISTA</h2>
+                        <div class="numero">2</div>
+                        <div class="sigla">MHC</div>
+                    </div>
+
+                </div>
+
+                <div class="nombre">
+                    Christian Rolon
+                </div>
+
+            </div>
+
+            <!-- CARD 2 -->
+            <div class="card" onclick="seleccionar(this)">
+
+                <div class="partido">
+                    FUERZA REPUBLICANA
+                </div>
+
+                <div class="contenido">
+
+                    <div class="foto">
+                        <img src="https://simuladoroficial.tsje.gov.py/imagenes_candidaturas/paraguay_internas_municipales_2026/3879.25859.webp">
+                    </div>
+
+                    <div class="lista">
+                        <h2>LISTA</h2>
+                        <div class="numero">4</div>
+                        <div class="sigla">MFR</div>
+                    </div>
+
+                </div>
+
+                <div class="nombre">
+                    Gabriel Alfonzo
+                </div>
+
+            </div>
+
+            <!-- CARD 3 -->
+            <div class="card" onclick="seleccionar(this)">
+
+                <div class="partido">
+                    COLORADO AÑETETE
+                </div>
+
+                <div class="contenido">
+
+                    <div class="foto">
+                        <img src="https://simuladoroficial.tsje.gov.py/imagenes_candidaturas/paraguay_internas_municipales_2026/3880.25860.webp">
+                    </div>
+
+                    <div class="lista">
+                        <h2>LISTA</h2>
+                        <div class="numero">6</div>
+                        <div class="sigla">MCA</div>
+                    </div>
+
+                </div>
+
+                <div class="nombre">
+                    Capitán Mutti
+                </div>
+
+            </div>
+
+            <!-- CARD 4 -->
+            <div class="card blanco" onclick="seleccionar(this)">
+                VOTO EN BLANCO
+            </div>
+
+        </div>
+
+        
+
     </div>
 
-    <div class="grid" onclick="window.location.href='p4.html'">
+</div>
 
-      <!-- CARD 1 -->
-      <div class="card" class="btn-start">
+<script>
 
-        <div class="partido">
-          HONOR COLORADO
-        </div>
+function seleccionar(card){
 
-        <div class="contenido">
+    // QUITAR SELECCION ANTERIOR
+    let cards = document.querySelectorAll(".card");
 
-          <div class="foto">
-            <img src="https://simuladoroficial.tsje.gov.py/imagenes_candidaturas/paraguay_internas_municipales_2026/3878.25858.webp" alt="">
-          </div>
+    cards.forEach(c=>{
+        c.classList.remove("selected");
+    });
 
-          <div class="lista">
-            <h2>LISTA</h2>
-            <div class="numero">2</div>
-            <div class="sigla">MHC</div>
-          </div>
+    // MARCAR SELECCION
+    card.classList.add("selected");
 
-        </div>
+    // ESPERA COMO MAQUINA REAL
+    setTimeout(()=>{
 
-        <div class="nombre">
-          Christian Rolon
-        </div>
+        window.location.href = "p4.html";
 
-      </div>
+    },700);
 
-      <!-- CARD 2 -->
-      <div class="card">
+}
 
-        <div class="partido">
-          FUERZA REPUBLICANA
-        </div>
-
-        <div class="contenido">
-
-          <div class="foto">
-            <img src="https://simuladoroficial.tsje.gov.py/imagenes_candidaturas/paraguay_internas_municipales_2026/3879.25859.webp" alt="">
-          </div>
-
-          <div class="lista">
-            <h2>LISTA</h2>
-            <div class="numero">4</div>
-            <div class="sigla">MFR</div>
-          </div>
-
-        </div>
-
-        <div class="nombre">
-          Gabriel Alfonzo
-        </div>
-
-      </div>
-
-      <!-- CARD 3 -->
-      <div class="card">
-
-        <div class="partido">
-          COLORADO AÑETETE
-        </div>
-
-        <div class="contenido">
-
-          <div class="foto">
-            <img src="https://simuladoroficial.tsje.gov.py/imagenes_candidaturas/paraguay_internas_municipales_2026/3880.25860.webp" alt="">
-          </div>
-
-          <div class="lista">
-            <h2>LISTA</h2>
-            <div class="numero">6</div>
-            <div class="sigla">MCA</div>
-          </div>
-
-        </div>
-
-        <div class="nombre">
-          Capitán Mutti
-        </div>
-
-      </div>
-
-      <!-- CARD 4 -->
-      <div class="card blanco">
-        VOTO EN BLANCO
-      </div>
-
-    </div>
-
-    <div class="footer"></div>
-
-  </div>
+</script>
 
 </body>
 </html>
