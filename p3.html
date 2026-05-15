@@ -17,12 +17,10 @@
       background:#2d2d2d;
       padding:20px;
       display:flex;
-      justify-content:center;
     }
 
     .contenedor{
       width:1100px;
-      max-width:100%;
       margin:auto;
       background:#d9d9d9;
       border:2px solid #bdbdbd;
@@ -111,53 +109,6 @@
       margin:5px;
     }
 
-    /* RESPONSIVE PARA CELULARES */
-    @media(max-width:768px){
-
-      body{
-        padding:10px;
-      }
-
-      .grid{
-        grid-template-columns:1fr;
-      }
-
-      .topbar{
-        font-size:22px;
-      }
-
-      .card{
-        min-height:auto;
-        padding:15px;
-      }
-
-      .contenido{
-        flex-direction:column;
-        gap:20px;
-      }
-
-      .foto img{
-        width:140px;
-        height:160px;
-      }
-
-      .numero{
-        font-size:60px;
-      }
-
-      .partido,
-      .nombre{
-        font-size:20px;
-      }
-
-      .blanco{
-        min-height:200px;
-        font-size:26px;
-        text-align:center;
-      }
-
-    }
-
   </style>
 </head>
 
@@ -173,7 +124,7 @@
     <div class="grid" onclick="window.location.href='p4.html'">
 
       <!-- CARD 1 -->
-      <div class="card">
+      <div class="card" class="btn-start">
 
         <div class="partido">
           HONOR COLORADO
