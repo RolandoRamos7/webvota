@@ -2,10 +2,13 @@
 <html lang="es">
 
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Listas participantes a cargo de JUNTA MUNICIPAL</title>
+<title>Candidatos a Junta Municipal</title>
+
 
 <style>
 
@@ -21,21 +24,26 @@
 
 html,
 body {
+
     width: 100%;
     height: 100%;
+
     background: #292929;
+
     font-family: Arial, Helvetica, sans-serif;
 }
 
 
 /* =========================================================
    PANTALLA PRINCIPAL
-   1060 x 598
    ========================================================= */
 
 .pantalla {
+
     width: 1060px;
+
     height: 100vh;
+
     min-height: 598px;
 
     margin: 0 auto;
@@ -45,6 +53,7 @@ body {
     overflow: hidden;
 
     display: flex;
+
     flex-direction: column;
 }
 
@@ -54,12 +63,15 @@ body {
    ========================================================= */
 
 .barra-superior {
+
     width: 100%;
-    height: 45px;
+
+    height: 47px;
 
     flex-shrink: 0;
 
     display: flex;
+
     align-items: flex-start;
 
     background: #d2d2d2;
@@ -71,16 +83,22 @@ body {
    ========================================================= */
 
 .logo-izquierdo {
+
     width: 135px;
+
     height: 42px;
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 }
 
 .logo-izquierdo img {
+
     width: 103px;
+
     height: 39px;
 
     object-fit: contain;
@@ -88,31 +106,37 @@ body {
 
 
 /* =========================================================
-   INFORMACIÓN SUPERIOR
+   INFORMACIÓN
    ========================================================= */
 
 .informacion {
+
     width: 860px;
-    height: 45px;
+
+    height: 47px;
 
     position: relative;
 }
 
 
-/* TEXTO DE ELECCIÓN */
+/* TEXTO SUPERIOR */
 
 .datos-eleccion {
+
     position: absolute;
 
     top: 2px;
+
     left: 0;
 
     width: 100%;
+
     height: 13px;
 
     color: #000;
 
     font-size: 8px;
+
     font-weight: bold;
 
     white-space: nowrap;
@@ -126,22 +150,29 @@ body {
    ========================================================= */
 
 .titulo {
+
     position: absolute;
 
     left: 0;
-    top: 19px;
+
+    top: 20px;
 
     width: 725px;
-    height: 24px;
+
+    height: 25px;
 
     background: white;
+
     color: #000;
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
     font-size: 14px;
+
     font-weight: bold;
 }
 
@@ -151,16 +182,22 @@ body {
    ========================================================= */
 
 .logo-derecho {
+
     width: 65px;
+
     height: 42px;
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 }
 
 .logo-derecho img {
+
     width: 38px;
+
     height: 38px;
 
     object-fit: contain;
@@ -168,45 +205,22 @@ body {
 
 
 /* =========================================================
-   CUADRÍCULA
+   ENCABEZADO DE LA LISTA
    ========================================================= */
 
-.listas {
+.encabezado-lista {
 
     width: 100%;
 
-    flex: 1;
+    height: 75px;
 
-    min-height: 0;
+    flex-shrink: 0;
 
-    padding: 0 5px 5px 5px;
+    background: #ff0505;
 
-    display: grid;
-
-    grid-template-columns:
-        minmax(0, 1fr)
-        minmax(0, 1fr);
-
-    grid-template-rows:
-        minmax(0, 1fr)
-        minmax(0, 1fr);
-
-    gap: 5px;
-}
-
-
-/* =========================================================
-   BOTONES
-   ========================================================= */
-
-.lista {
-
-    width: 100%;
-    height: 100%;
+    color: white;
 
     border: 1px solid #aaa;
-
-    text-decoration: none;
 
     display: flex;
 
@@ -214,15 +228,91 @@ body {
 
     align-items: center;
 
-    justify-content: space-between;
+    justify-content: center;
+
+    text-align: center;
+}
+
+
+/* NÚMERO DE LISTA */
+
+.encabezado-lista .numero {
+
+    font-size: 24px;
+
+    font-weight: bold;
+
+    line-height: 27px;
+}
+
+
+/* NOMBRE DEL PARTIDO */
+
+.encabezado-lista .partido {
+
+    font-size: 25px;
+
+    font-weight: bold;
+
+    line-height: 29px;
+}
+
+
+/* =========================================================
+   CUADRÍCULA DE OPCIONES
+   ========================================================= */
+
+.opciones {
+
+    width: 100%;
+
+    flex: 1;
+
+    min-height: 0;
+
+    padding: 5px 5px 5px 5px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    grid-template-rows:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 5px;
+}
+
+
+/* =========================================================
+   TARJETA DEL CANDIDATO
+   ========================================================= */
+
+.opcion {
+
+    width: 100%;
+
+    height: 100%;
+
+    min-height: 0;
+
+    background: #ffffff;
+
+    border: 1px solid #d0d0d0;
 
     position: relative;
 
+    display: flex;
+
+    align-items: center;
+
     overflow: hidden;
 
-    cursor: pointer;
+    text-decoration: none;
 
-    color: inherit;
+    color: #000;
+
+    cursor: pointer;
 
     transition: filter 0.15s ease;
 }
@@ -230,129 +320,115 @@ body {
 
 /* EFECTO AL PASAR EL MOUSE */
 
-.lista:hover {
-    filter: brightness(0.96);
+.opcion:hover {
+
+    filter: brightness(0.95);
 }
 
 
-/* EFECTO AL HACER CLICK */
+/* EFECTO AL PRESIONAR */
 
-.lista:active {
+.opcion:active {
+
     filter: brightness(0.85);
 }
 
 
 /* =========================================================
-   COLORES
+   FOTO DEL CANDIDATO
    ========================================================= */
 
-.lista-1 {
-    background: #ff0505;
-    color: white;
-}
+.foto-candidato {
 
-.lista-5 {
-    background: #ffad63;
-    color: black;
-}
+    width: 115px;
 
-.lista-9 {
-    background: #ffea0a;
-    color: black;
-}
+    height: 100%;
 
-.lista-blanco {
-    background: #ffffff;
-    color: black;
-}
-
-
-/* =========================================================
-   NÚMERO DE LISTA
-   ========================================================= */
-
-.numero {
-
-    width: 100%;
-
-    text-align: center;
-
-    font-size: 40px;
-
-    font-weight: bold;
-
-    line-height: 45px;
-
-    padding-top: 0;
-}
-
-
-/* =========================================================
-   PARTIDO
-   ========================================================= */
-
-.partido {
-
-    width: 100%;
-
-    text-align: center;
-
-    font-size: 21px;
-
-    font-weight: bold;
-
-    padding: 0 10px;
-
-    position: absolute;
-
-    top: 103px;
-
-    left: 0;
-}
-
-
-/* =========================================================
-   SIGLA
-   ========================================================= */
-
-.sigla {
-
-    width: 100%;
-
-    text-align: center;
-
-    font-size: 21px;
-
-    position: absolute;
-
-    bottom: 0;
-
-    left: 0;
-
-    padding-bottom: 2px;
-}
-
-
-/* =========================================================
-   VOTO EN BLANCO
-   ========================================================= */
-
-.lista-blanco {
+    min-height: 0;
 
     display: flex;
 
     align-items: center;
 
     justify-content: center;
+
+    flex-shrink: 0;
+
+    overflow: hidden;
 }
 
-.voto-blanco {
 
-    font-size: 29px;
+.foto-candidato img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: contain;
+
+    object-position: center bottom;
+}
+
+
+/* =========================================================
+   INFORMACIÓN DE OPCIÓN
+   ========================================================= */
+
+.info-opcion {
+
+    flex: 1;
+
+    height: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding-right: 5px;
+}
+
+
+/* =========================================================
+   TEXTO OPCIÓN
+   ========================================================= */
+
+.numero-opcion {
+
+    font-size: 21px;
 
     font-weight: bold;
 
+    line-height: 24px;
+}
+
+
+/* =========================================================
+   NOMBRE
+   ========================================================= */
+
+.nombre-candidato {
+
+    position: absolute;
+
+    bottom: 10px;
+
+    left: 0;
+
+    width: 100%;
+
     text-align: center;
+
+    font-size: 14px;
+
+    font-weight: normal;
+
+    white-space: nowrap;
 }
 
 
@@ -364,7 +440,7 @@ body {
 
     width: 100%;
 
-    height: 49px;
+    height: 43px;
 
     flex-shrink: 0;
 
@@ -379,7 +455,7 @@ body {
 
 
 /* =========================================================
-   BOTÓN CONTRASTE
+   CONTRASTE
    ========================================================= */
 
 .contraste {
@@ -387,8 +463,6 @@ body {
     width: 115px;
 
     height: 100%;
-
-    border-right: 1px solid #bbb;
 
     display: flex;
 
@@ -401,15 +475,16 @@ body {
     color: #333;
 
     font-size: 9px;
+
+    border-right: 1px solid #bbb;
 }
 
 
-/* ICONO CONTRASTE */
-
 .icono-contraste {
 
-    width: 34px;
-    height: 34px;
+    width: 30px;
+
+    height: 30px;
 
     background: #666;
 
@@ -423,7 +498,7 @@ body {
 
     justify-content: center;
 
-    font-size: 24px;
+    font-size: 23px;
 }
 
 
@@ -445,22 +520,21 @@ body {
 
     padding-left: 8px;
 
-    border-right: 1px solid #bbb;
-
     color: #333;
 
     font-size: 9px;
+
+    border-right: 1px solid #bbb;
 
     cursor: pointer;
 }
 
 
-/* ICONO VOLVER */
-
 .icono-volver {
 
-    width: 34px;
-    height: 34px;
+    width: 30px;
+
+    height: 30px;
 
     background: #666;
 
@@ -472,9 +546,7 @@ body {
 
     justify-content: center;
 
-    font-size: 27px;
-
-    line-height: 1;
+    font-size: 25px;
 }
 
 
@@ -495,39 +567,51 @@ body {
         margin: 0;
     }
 
+
     .informacion {
 
         width: calc(100% - 200px);
     }
+
 
     .titulo {
 
         width: 84%;
     }
 
-    .numero {
 
-        font-size: clamp(25px, 4vw, 40px);
+    .encabezado-lista .numero {
+
+        font-size: clamp(18px, 3vw, 24px);
     }
 
-    .partido {
 
-        font-size: clamp(12px, 2vw, 21px);
+    .encabezado-lista .partido {
 
-        top: 28%;
+        font-size: clamp(17px, 3vw, 25px);
     }
 
-    .sigla {
 
-        font-size: clamp(13px, 2vw, 21px);
+    .foto-candidato {
+
+        width: 40%;
     }
 
-    .voto-blanco {
 
-        font-size: clamp(18px, 3vw, 29px);
+    .numero-opcion {
+
+        font-size: clamp(15px, 2.5vw, 21px);
     }
+
+
+    .nombre-candidato {
+
+        font-size: clamp(9px, 1.6vw, 14px);
+    }
+
 
     body {
+
         overflow-x: hidden;
     }
 }
@@ -540,80 +624,139 @@ body {
 @media (max-width: 600px) {
 
     .barra-superior {
+
         height: 45px;
     }
 
+
     .logo-izquierdo {
+
         width: 90px;
     }
 
+
     .logo-izquierdo img {
+
         width: 75px;
+
         height: 32px;
     }
 
+
     .logo-derecho {
+
         width: 45px;
     }
 
+
     .logo-derecho img {
+
         width: 30px;
+
         height: 30px;
     }
 
+
     .datos-eleccion {
+
         font-size: 5px;
     }
 
+
     .titulo {
+
         top: 19px;
+
         height: 23px;
+
         font-size: 10px;
     }
 
-    .listas {
-        padding: 0 3px 3px 3px;
+
+    .encabezado-lista {
+
+        height: 65px;
+    }
+
+
+    .encabezado-lista .numero {
+
+        font-size: 18px;
+
+        line-height: 20px;
+    }
+
+
+    .encabezado-lista .partido {
+
+        font-size: 18px;
+
+        line-height: 22px;
+    }
+
+
+    .opciones {
+
+        padding: 3px;
+
         gap: 3px;
     }
 
-    .numero {
-        font-size: 25px;
-        line-height: 30px;
+
+    .foto-candidato {
+
+        width: 38%;
     }
 
-    .partido {
-        top: 35%;
-        font-size: 10px;
+
+    .numero-opcion {
+
+        font-size: 12px;
+
+        line-height: 15px;
     }
 
-    .sigla {
-        font-size: 11px;
+
+    .nombre-candidato {
+
+        bottom: 4px;
+
+        font-size: 7px;
     }
 
-    .voto-blanco {
-        font-size: 16px;
-    }
 
     .barra-inferior {
+
         height: 40px;
     }
 
+
     .contraste {
+
         width: 105px;
+
         font-size: 7px;
     }
 
+
     .volver {
+
         width: 90px;
+
         font-size: 7px;
     }
+
 
     .icono-contraste,
     .icono-volver {
+
         width: 28px;
+
         height: 28px;
+
         font-size: 19px;
     }
+
 }
 
 </style>
@@ -649,6 +792,7 @@ body {
 
         <div class="informacion">
 
+
             <div class="datos-eleccion">
 
                 Elección:
@@ -677,9 +821,10 @@ body {
 
             <div class="titulo">
 
-                Listas participantes al cargo de JUNTA MUNICIPAL
+                Candidatos a JUNTA MUNICIPAL
 
             </div>
+
 
         </div>
 
@@ -694,43 +839,184 @@ body {
 
         </div>
 
+
     </div>
 
 
 
     <!-- =====================================================
-         LISTAS
+         ENCABEZADO DE LISTA
          ===================================================== -->
 
-    <div class="listas">
+    <div class="encabezado-lista">
+
+
+        <div class="numero">
+
+            Lista 1
+
+        </div>
+
+
+        <div class="partido">
+
+            PARTIDO COLORADO
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- =====================================================
+         OPCIONES
+         ===================================================== -->
+
+    <div class="opciones">
 
 
         <!-- =================================================
-             LISTA 1
+             OPCIÓN 1
+             ================================================= -->
+
+        <div class="opcion">
+
+            <div class="foto-candidato">
+
+                <img
+                    src="imagenes/willian-aquino.png"
+                    alt="Willian Aquino">
+
+            </div>
+
+
+            <div class="info-opcion">
+
+                <div class="numero-opcion">
+
+                    Opción<br>1
+
+                </div>
+
+            </div>
+
+
+            <div class="nombre-candidato">
+
+                WILLIAN AQUINO
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             OPCIÓN 2
+             ================================================= -->
+
+        <div class="opcion">
+
+            <div class="foto-candidato">
+
+                <img
+                    src="imagenes/carlos-ramirez.png"
+                    alt="Carlos Ramirez">
+
+            </div>
+
+
+            <div class="info-opcion">
+
+                <div class="numero-opcion">
+
+                    Opción<br>2
+
+                </div>
+
+            </div>
+
+
+            <div class="nombre-candidato">
+
+                CARLOS RAMIREZ
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             OPCIÓN 3
+             ================================================= -->
+
+        <div class="opcion">
+
+            <div class="foto-candidato">
+
+                <img
+                    src="imagenes/beby-cardozо.png"
+                    alt="Beby Cardozo">
+
+            </div>
+
+
+            <div class="info-opcion">
+
+                <div class="numero-opcion">
+
+                    Opción<br>3
+
+                </div>
+
+            </div>
+
+
+            <div class="nombre-candidato">
+
+                BEBY CARDOZO
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             OPCIÓN 4 - DRA. TALAVERA
+             LLEVA A p6.html
              ================================================= -->
 
         <a
-            href="p5.html"
-            class="lista lista-1"
+            href="p6.html"
+            class="opcion"
         >
 
-            <div class="numero">
+            <div class="foto-candidato">
 
-                LISTA 1
-
-            </div>
-
-
-            <div class="partido">
-
-                PARTIDO COLORADO
+                <img
+                    src="imagenes/dra-talavera.png"
+                    alt="Dra. Talavera">
 
             </div>
 
 
-            <div class="sigla">
+            <div class="info-opcion">
 
-                ANR
+                <div class="numero-opcion">
+
+                    Opción<br>4
+
+                </div>
+
+            </div>
+
+
+            <div class="nombre-candidato">
+
+                DRA. TALAVERA
 
             </div>
 
@@ -739,87 +1025,290 @@ body {
 
 
         <!-- =================================================
-             LISTA 5
+             OPCIÓN 5
              ================================================= -->
 
-        <a
-            href="p4.html"
-            class="lista lista-5"
-        >
+        <div class="opcion">
 
-            <div class="numero">
+            <div class="foto-candidato">
 
-                LISTA 5
-
-            </div>
-
-
-            <div class="partido">
-
-                ALIANZA RECUPERANDO EL PARAISO
+                <img
+                    src="imagenes/diego-matias-barreto.png"
+                    alt="Diego Matias Barreto">
 
             </div>
 
 
-            <div class="sigla">
+            <div class="info-opcion">
 
-                REP
+                <div class="numero-opcion">
+
+                    Opción<br>5
+
+                </div>
 
             </div>
 
-        </a>
+
+            <div class="nombre-candidato">
+
+                DIEGO MATIAS BARRETO
+
+            </div>
+
+        </div>
 
 
 
         <!-- =================================================
-             LISTA 9
+             OPCIÓN 6
              ================================================= -->
 
-        <a
-            href="p4.html"
-            class="lista lista-9"
-        >
+        <div class="opcion">
 
-            <div class="numero">
+            <div class="foto-candidato">
 
-                LISTA 9
-
-            </div>
-
-
-            <div class="partido">
-
-                PARTIDO ENCUENTRO NACIONAL
+                <img
+                    src="imagenes/rodrigo-benitez.png"
+                    alt="Rodrigo Benitez">
 
             </div>
 
 
-            <div class="sigla">
+            <div class="info-opcion">
 
-                PEN
+                <div class="numero-opcion">
+
+                    Opción<br>6
+
+                </div>
 
             </div>
 
-        </a>
+
+            <div class="nombre-candidato">
+
+                RODRIGO BENITEZ
+
+            </div>
+
+        </div>
 
 
 
         <!-- =================================================
-             VOTO EN BLANCO
+             OPCIÓN 7
              ================================================= -->
 
-        <a
-            href="p4.html"
-            class="lista lista-blanco"
-        >
+        <div class="opcion">
 
-            <div class="voto-blanco">
+            <div class="foto-candidato">
 
-                VOTO EN BLANCO
+                <img
+                    src="imagenes/victor-manuel-espinola.png"
+                    alt="Victor Manuel Espinola">
 
             </div>
 
-        </a>
+
+            <div class="info-opcion">
+
+                <div class="numero-opcion">
+
+                    Opción<br>7
+
+                </div>
+
+            </div>
+
+
+            <div class="nombre-candidato">
+
+                VICTOR MANUEL ESPINOLA
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             OPCIÓN 8
+             ================================================= -->
+
+        <div class="opcion">
+
+            <div class="foto-candidato">
+
+                <img
+                    src="imagenes/rosana-villalba.png"
+                    alt="Rosana Villalba">
+
+            </div>
+
+
+            <div class="info-opcion">
+
+                <div class="numero-opcion">
+
+                    Opción<br>8
+
+                </div>
+
+            </div>
+
+
+            <div class="nombre-candidato">
+
+                ROSANA VILLALBA
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             OPCIÓN 9
+             ================================================= -->
+
+        <div class="opcion">
+
+            <div class="foto-candidato">
+
+                <img
+                    src="imagenes/miguel-marin.png"
+                    alt="Miguel Marin">
+
+            </div>
+
+
+            <div class="info-opcion">
+
+                <div class="numero-opcion">
+
+                    Opción<br>9
+
+                </div>
+
+            </div>
+
+
+            <div class="nombre-candidato">
+
+                MIGUEL MARIN
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             OPCIÓN 10
+             ================================================= -->
+
+        <div class="opcion">
+
+            <div class="foto-candidato">
+
+                <img
+                    src="imagenes/denis-flores.png"
+                    alt="Denis Flores">
+
+            </div>
+
+
+            <div class="info-opcion">
+
+                <div class="numero-opcion">
+
+                    Opción<br>10
+
+                </div>
+
+            </div>
+
+
+            <div class="nombre-candidato">
+
+                DENIS FLORES
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             OPCIÓN 11
+             ================================================= -->
+
+        <div class="opcion">
+
+            <div class="foto-candidato">
+
+                <img
+                    src="imagenes/christian-cuevas.png"
+                    alt="Christian Cuevas">
+
+            </div>
+
+
+            <div class="info-opcion">
+
+                <div class="numero-opcion">
+
+                    Opción<br>11
+
+                </div>
+
+            </div>
+
+
+            <div class="nombre-candidato">
+
+                CHRISTIAN CUEVAS
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             OPCIÓN 12
+             ================================================= -->
+
+        <div class="opcion">
+
+            <div class="foto-candidato">
+
+                <img
+                    src="imagenes/lilio-alvarenga.png"
+                    alt="Lilio Alvarenga Santacruz">
+
+            </div>
+
+
+            <div class="info-opcion">
+
+                <div class="numero-opcion">
+
+                    Opción<br>12
+
+                </div>
+
+            </div>
+
+
+            <div class="nombre-candidato">
+
+                LILIO ALVARENGA SANTACRUZ
+
+            </div>
+
+        </div>
 
 
     </div>
@@ -843,6 +1332,7 @@ body {
 
             </div>
 
+
             <div>
 
                 Vista alto<br>
@@ -853,7 +1343,8 @@ body {
         </div>
 
 
-        <!-- VOLVER ATRÁS -->
+
+        <!-- VOLVER -->
 
         <div
             class="volver"
@@ -865,6 +1356,7 @@ body {
                 ←
 
             </div>
+
 
             <div>
 
