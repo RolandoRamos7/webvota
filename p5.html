@@ -14,7 +14,7 @@
 <style>
 
 /* =========================================================
-   RESET
+   RESET GENERAL
    ========================================================= */
 
 * {
@@ -25,10 +25,14 @@
 
 html,
 body {
+
     width: 100%;
     height: 100%;
+
     background: #292929;
+
     font-family: Arial, Helvetica, sans-serif;
+
 }
 
 
@@ -249,7 +253,7 @@ body {
 
 
 /* =========================================================
-   CUADRÍCULA
+   CUADRÍCULA DE CANDIDATOS
    ========================================================= */
 
 .opciones {
@@ -276,7 +280,7 @@ body {
 
 
 /* =========================================================
-   TARJETA
+   TARJETA DE CANDIDATO
    ========================================================= */
 
 .opcion {
@@ -287,7 +291,7 @@ body {
     min-width: 0;
     min-height: 0;
 
-    background: white;
+    background: #ffffff;
 
     border: 1px solid #d0d0d0;
 
@@ -337,14 +341,13 @@ body {
 
     flex-shrink: 0;
 
-    background: #fff;
+    background: #ffffff;
 
     border: 1px solid #eeeeee;
 
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
     overflow: hidden;
@@ -399,7 +402,7 @@ body {
 
 
 /* =========================================================
-   NOMBRE
+   NOMBRE DEL CANDIDATO
    ========================================================= */
 
 .nombre-candidato {
@@ -429,6 +432,7 @@ body {
 
 /* =========================================================
    BARRA INFERIOR
+   OCUPA TODO EL ANCHO
    ========================================================= */
 
 .barra-inferior {
@@ -489,7 +493,6 @@ body {
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
     font-size: 19px;
@@ -498,7 +501,7 @@ body {
 
 
 /* =========================================================
-   VOLVER
+   BOTÓN VOLVER
    ========================================================= */
 
 .volver {
@@ -538,7 +541,6 @@ body {
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
     font-size: 21px;
@@ -555,9 +557,12 @@ body {
     html,
     body {
 
-        background: #d2d2d2;
+        width: 100%;
+        height: 100%;
 
         overflow: hidden;
+
+        background: #d2d2d2;
 
     }
 
@@ -607,24 +612,6 @@ body {
     }
 
 
-    .logo-derecho {
-
-        width: 7vw;
-
-        height: 7vh;
-
-    }
-
-
-    .logo-derecho img {
-
-        width: 5vw;
-
-        height: auto;
-
-    }
-
-
     .datos-eleccion {
 
         top: 2px;
@@ -641,6 +628,24 @@ body {
         height: 3.2vh;
 
         font-size: 1.7vw;
+
+    }
+
+
+    .logo-derecho {
+
+        width: 7vw;
+
+        height: 7vh;
+
+    }
+
+
+    .logo-derecho img {
+
+        width: 5vw;
+
+        height: auto;
 
     }
 
@@ -708,7 +713,11 @@ body {
     }
 
 
+    /* BARRA COMPLETA */
+
     .barra-inferior {
+
+        width: 100%;
 
         height: 6vh;
 
@@ -762,6 +771,8 @@ body {
 
         overflow: hidden;
 
+        background: #d2d2d2;
+
     }
 
 
@@ -772,6 +783,8 @@ body {
         height: 100vh;
 
         min-height: 0;
+
+        margin: 0;
 
     }
 
@@ -907,7 +920,11 @@ body {
     }
 
 
+    /* BARRA INFERIOR COMPLETA */
+
     .barra-inferior {
+
+        width: 100%;
 
         height: 7vh;
 
@@ -963,6 +980,8 @@ body {
     <div class="barra-superior">
 
 
+        <!-- LOGO IZQUIERDO -->
+
         <div class="logo-izquierdo">
 
             <img
@@ -971,6 +990,8 @@ body {
 
         </div>
 
+
+        <!-- INFORMACIÓN -->
 
         <div class="informacion">
 
@@ -1011,6 +1032,8 @@ body {
         </div>
 
 
+        <!-- LOGO DERECHO -->
+
         <div class="logo-derecho">
 
             <img
@@ -1031,11 +1054,16 @@ body {
     <div class="encabezado-lista">
 
         <div class="numero">
+
             Lista 1
+
         </div>
 
+
         <div class="partido">
+
             PARTIDO COLORADO
+
         </div>
 
     </div>
@@ -1061,16 +1089,22 @@ body {
 
             </div>
 
+
             <div class="info-opcion">
 
                 <div class="numero-opcion">
+
                     Opción<br>1
+
                 </div>
 
             </div>
 
+
             <div class="nombre-candidato">
+
                 WILLIAN AQUINO
+
             </div>
 
         </div>
@@ -1089,16 +1123,22 @@ body {
 
             </div>
 
+
             <div class="info-opcion">
 
                 <div class="numero-opcion">
+
                     Opción<br>2
+
                 </div>
 
             </div>
 
+
             <div class="nombre-candidato">
+
                 CARLOS RAMIREZ
+
             </div>
 
         </div>
@@ -1117,16 +1157,22 @@ body {
 
             </div>
 
+
             <div class="info-opcion">
 
                 <div class="numero-opcion">
+
                     Opción<br>3
+
                 </div>
 
             </div>
 
+
             <div class="nombre-candidato">
+
                 BEBY CARDOZO
+
             </div>
 
         </div>
@@ -1150,16 +1196,22 @@ body {
 
             </div>
 
+
             <div class="info-opcion">
 
                 <div class="numero-opcion">
+
                     Opción<br>4
+
                 </div>
 
             </div>
 
+
             <div class="nombre-candidato">
+
                 DRA. TALAVERA
+
             </div>
 
         </a>
@@ -1178,16 +1230,22 @@ body {
 
             </div>
 
+
             <div class="info-opcion">
 
                 <div class="numero-opcion">
+
                     Opción<br>5
+
                 </div>
 
             </div>
 
+
             <div class="nombre-candidato">
+
                 DIEGO MATIAS BARRETO
+
             </div>
 
         </div>
@@ -1206,16 +1264,22 @@ body {
 
             </div>
 
+
             <div class="info-opcion">
 
                 <div class="numero-opcion">
+
                     Opción<br>6
+
                 </div>
 
             </div>
 
+
             <div class="nombre-candidato">
+
                 RODRIGO BENITEZ
+
             </div>
 
         </div>
@@ -1234,16 +1298,22 @@ body {
 
             </div>
 
+
             <div class="info-opcion">
 
                 <div class="numero-opcion">
+
                     Opción<br>7
+
                 </div>
 
             </div>
 
+
             <div class="nombre-candidato">
+
                 VICTOR MANUEL ESPINOLA
+
             </div>
 
         </div>
@@ -1262,16 +1332,22 @@ body {
 
             </div>
 
+
             <div class="info-opcion">
 
                 <div class="numero-opcion">
+
                     Opción<br>8
+
                 </div>
 
             </div>
 
+
             <div class="nombre-candidato">
+
                 ROSANA VILLALBA
+
             </div>
 
         </div>
@@ -1290,16 +1366,22 @@ body {
 
             </div>
 
+
             <div class="info-opcion">
 
                 <div class="numero-opcion">
+
                     Opción<br>9
+
                 </div>
 
             </div>
 
+
             <div class="nombre-candidato">
+
                 MIGUEL MARIN
+
             </div>
 
         </div>
@@ -1318,16 +1400,22 @@ body {
 
             </div>
 
+
             <div class="info-opcion">
 
                 <div class="numero-opcion">
+
                     Opción<br>10
+
                 </div>
 
             </div>
 
+
             <div class="nombre-candidato">
+
                 DENIS FLORES
+
             </div>
 
         </div>
@@ -1346,16 +1434,22 @@ body {
 
             </div>
 
+
             <div class="info-opcion">
 
                 <div class="numero-opcion">
+
                     Opción<br>11
+
                 </div>
 
             </div>
 
+
             <div class="nombre-candidato">
+
                 CHRISTIAN CUEVAS
+
             </div>
 
         </div>
@@ -1374,16 +1468,22 @@ body {
 
             </div>
 
+
             <div class="info-opcion">
 
                 <div class="numero-opcion">
+
                     Opción<br>12
+
                 </div>
 
             </div>
 
+
             <div class="nombre-candidato">
+
                 LILIO ALVARENGA SANTACRUZ
+
             </div>
 
         </div>
@@ -1395,24 +1495,35 @@ body {
 
     <!-- =====================================================
          BARRA INFERIOR
+         COMPLETA TODO EL ANCHO
          ===================================================== -->
 
     <div class="barra-inferior">
 
 
+        <!-- CONTRASTE -->
+
         <div class="contraste">
 
             <div class="icono-contraste">
+
                 ◐
+
             </div>
 
+
             <div>
+
                 Vista alto<br>
                 contraste
+
             </div>
 
         </div>
 
+
+
+        <!-- VOLVER -->
 
         <div
             class="volver"
@@ -1420,12 +1531,17 @@ body {
         >
 
             <div class="icono-volver">
+
                 ←
+
             </div>
 
+
             <div>
+
                 Volver<br>
                 Atrás
+
             </div>
 
         </div>
