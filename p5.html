@@ -14,7 +14,7 @@
 <style>
 
 /* =========================================================
-   CONFIGURACIÓN GENERAL
+   RESET
    ========================================================= */
 
 * {
@@ -29,22 +29,30 @@ body {
     width: 100%;
     height: 100%;
 
+    margin: 0;
+    padding: 0;
+
     background: #292929;
 
     font-family: Arial, Helvetica, sans-serif;
 
+    overflow: hidden;
 }
 
 
 /* =========================================================
-   PANTALLA DEL SIMULADOR
-   MEDIDA EXACTA DE LA CAPTURA
+   PANTALLA PRINCIPAL
    ========================================================= */
 
 .pantalla {
 
     width: 1060px;
-    height: 598px;
+
+    max-width: 100vw;
+
+    height: 100vh;
+
+    min-height: 598px;
 
     margin: 0 auto;
 
@@ -66,6 +74,7 @@ body {
 .barra-superior {
 
     width: 100%;
+
     height: 47px;
 
     flex-shrink: 0;
@@ -86,14 +95,16 @@ body {
 .logo-izquierdo {
 
     width: 135px;
+
     height: 43px;
+
+    flex-shrink: 0;
 
     display: flex;
 
     align-items: center;
-    justify-content: center;
 
-    flex-shrink: 0;
+    justify-content: center;
 
 }
 
@@ -101,6 +112,7 @@ body {
 .logo-izquierdo img {
 
     width: 103px;
+
     height: 39px;
 
     object-fit: contain;
@@ -116,11 +128,11 @@ body {
 
     flex: 1;
 
+    min-width: 0;
+
     height: 47px;
 
     position: relative;
-
-    min-width: 0;
 
 }
 
@@ -130,6 +142,7 @@ body {
     position: absolute;
 
     top: 2px;
+
     left: 0;
 
     width: 100%;
@@ -165,9 +178,9 @@ body {
 
     height: 25px;
 
-    background: white;
+    background: #ffffff;
 
-    color: #000;
+    color: #000000;
 
     display: flex;
 
@@ -189,14 +202,16 @@ body {
 .logo-derecho {
 
     width: 65px;
+
     height: 43px;
+
+    flex-shrink: 0;
 
     display: flex;
 
     align-items: center;
-    justify-content: center;
 
-    flex-shrink: 0;
+    justify-content: center;
 
 }
 
@@ -204,6 +219,7 @@ body {
 .logo-derecho img {
 
     width: 38px;
+
     height: 38px;
 
     object-fit: contain;
@@ -212,7 +228,7 @@ body {
 
 
 /* =========================================================
-   ENCABEZADO LISTA
+   ENCABEZADO DE LISTA
    ========================================================= */
 
 .encabezado-lista {
@@ -225,9 +241,9 @@ body {
 
     background: #ff0505;
 
-    color: white;
+    color: #ffffff;
 
-    border: 1px solid #aaa;
+    border: 1px solid #aaaaaa;
 
     display: flex;
 
@@ -273,7 +289,7 @@ body {
 
 
 /* =========================================================
-   CUADRÍCULA
+   CUADRÍCULA DE CANDIDATOS
    ========================================================= */
 
 .opciones {
@@ -306,9 +322,11 @@ body {
 .opcion {
 
     width: 100%;
+
     height: 100%;
 
     min-width: 0;
+
     min-height: 0;
 
     background: #ffffff;
@@ -325,16 +343,14 @@ body {
 
     text-decoration: none;
 
-    color: #000;
+    color: #000000;
 
     cursor: pointer;
 
+    transition: filter 0.15s ease;
+
 }
 
-
-/* =========================================================
-   EFECTO AL PASAR EL MOUSE
-   ========================================================= */
 
 .opcion:hover {
 
@@ -357,6 +373,7 @@ body {
 .foto-candidato {
 
     width: 82px;
+
     height: 82px;
 
     margin-left: 7px;
@@ -385,6 +402,7 @@ body {
 .foto-candidato img {
 
     width: 100%;
+
     height: 100%;
 
     object-fit: contain;
@@ -395,7 +413,7 @@ body {
 
 
 /* =========================================================
-   ÁREA DE OPCIÓN
+   INFORMACIÓN DE OPCIÓN
    ========================================================= */
 
 .info-opcion {
@@ -412,11 +430,13 @@ body {
 
     text-align: center;
 
+    padding-right: 5px;
+
 }
 
 
 /* =========================================================
-   TEXTO OPCIÓN
+   OPCIÓN
    ========================================================= */
 
 .numero-opcion {
@@ -431,7 +451,7 @@ body {
 
 
 /* =========================================================
-   NOMBRE DEL CANDIDATO
+   NOMBRE
    ========================================================= */
 
 .nombre-candidato {
@@ -461,6 +481,8 @@ body {
 
 /* =========================================================
    BARRA INFERIOR
+   SIEMPRE OCUPA TODO EL ANCHO
+   Y QUEDA PEGADA ABAJO
    ========================================================= */
 
 .barra-inferior {
@@ -469,11 +491,13 @@ body {
 
     height: 43px;
 
+    min-height: 43px;
+
     flex-shrink: 0;
 
     background: #cccccc;
 
-    border-top: 1px solid #999;
+    border-top: 1px solid #999999;
 
     display: flex;
 
@@ -492,6 +516,8 @@ body {
 
     height: 100%;
 
+    flex-shrink: 0;
+
     display: flex;
 
     align-items: center;
@@ -500,11 +526,11 @@ body {
 
     padding-left: 8px;
 
-    color: #333;
+    color: #333333;
 
     font-size: 9px;
 
-    border-right: 1px solid #bbb;
+    border-right: 1px solid #bbbbbb;
 
 }
 
@@ -512,11 +538,14 @@ body {
 .icono-contraste {
 
     width: 31px;
+
     height: 31px;
 
-    background: #666;
+    flex-shrink: 0;
 
-    color: white;
+    background: #666666;
+
+    color: #ffffff;
 
     display: flex;
 
@@ -539,6 +568,8 @@ body {
 
     height: 100%;
 
+    flex-shrink: 0;
+
     display: flex;
 
     align-items: center;
@@ -547,11 +578,11 @@ body {
 
     padding-left: 8px;
 
-    color: #333;
+    color: #333333;
 
     font-size: 9px;
 
-    border-right: 1px solid #bbb;
+    border-right: 1px solid #bbbbbb;
 
     cursor: pointer;
 
@@ -561,11 +592,14 @@ body {
 .icono-volver {
 
     width: 31px;
+
     height: 31px;
 
-    background: #666;
+    flex-shrink: 0;
 
-    color: white;
+    background: #666666;
+
+    color: #ffffff;
 
     display: flex;
 
@@ -579,7 +613,7 @@ body {
 
 
 /* =========================================================
-   TABLET / CELULAR
+   TABLET
    ========================================================= */
 
 @media (max-width: 1060px) {
@@ -597,6 +631,8 @@ body {
     .pantalla {
 
         width: 100vw;
+
+        max-width: 100vw;
 
         height: 100vh;
 
@@ -742,11 +778,17 @@ body {
     }
 
 
+    /* =====================================================
+       BARRA INFERIOR COMPLETA
+       ===================================================== */
+
     .barra-inferior {
+
+        width: 100%;
 
         height: 7.19vh;
 
-        width: 100%;
+        min-height: 0;
 
     }
 
@@ -788,6 +830,17 @@ body {
    ========================================================= */
 
 @media (max-width: 600px) {
+
+    .pantalla {
+
+        width: 100vw;
+
+        height: 100vh;
+
+        min-height: 0;
+
+    }
+
 
     .datos-eleccion {
 
@@ -844,6 +897,17 @@ body {
     }
 
 
+    .barra-inferior {
+
+        width: 100%;
+
+        height: 7vh;
+
+        min-height: 0;
+
+    }
+
+
     .contraste {
 
         width: 16vw;
@@ -858,6 +922,18 @@ body {
         width: 13vw;
 
         font-size: 1.5vw;
+
+    }
+
+
+    .icono-contraste,
+    .icono-volver {
+
+        width: 5.5vw;
+
+        height: 5.5vw;
+
+        font-size: 3.5vw;
 
     }
 
@@ -881,6 +957,8 @@ body {
     <div class="barra-superior">
 
 
+        <!-- LOGO IZQUIERDO -->
+
         <div class="logo-izquierdo">
 
             <img
@@ -889,6 +967,8 @@ body {
 
         </div>
 
+
+        <!-- INFORMACIÓN -->
 
         <div class="informacion">
 
@@ -929,6 +1009,8 @@ body {
         </div>
 
 
+        <!-- LOGO DERECHO -->
+
         <div class="logo-derecho">
 
             <img
@@ -943,7 +1025,7 @@ body {
 
 
     <!-- =====================================================
-         ENCABEZADO LISTA 1
+         LISTA 1
          ===================================================== -->
 
     <div class="encabezado-lista">
@@ -1074,7 +1156,9 @@ body {
 
 
 
-        <!-- OPCIÓN 4 -->
+        <!-- =================================================
+             OPCIÓN 4 - DRA. TALAVERA
+             ================================================= -->
 
         <a
             href="p6.html"
@@ -1388,10 +1472,13 @@ body {
 
     <!-- =====================================================
          BARRA INFERIOR
+         COMPLETA TODO EL ANCHO
          ===================================================== -->
 
     <div class="barra-inferior">
 
+
+        <!-- CONTRASTE -->
 
         <div class="contraste">
 
@@ -1411,6 +1498,9 @@ body {
 
         </div>
 
+
+
+        <!-- VOLVER -->
 
         <div
             class="volver"
