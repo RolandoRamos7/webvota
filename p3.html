@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,11 @@
 <title>Candidatos a Intendente Municipal</title>
 
 <style>
+
+/* =========================================================
+   CONFIGURACIÓN GENERAL
+   ========================================================= */
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -16,63 +22,97 @@
 html,
 body {
     width: 100%;
-    min-height: 100%;
+    height: 100%;
     background: #292929;
     font-family: Arial, Helvetica, sans-serif;
 }
 
-/* =====================================================
-   CONTENEDOR PRINCIPAL
-   MEDIDA EXACTA DE LA CAPTURA
-   ===================================================== */
+
+/* =========================================================
+   PANTALLA PRINCIPAL
+   ========================================================= */
 
 .pantalla {
+
     width: 1060px;
-    height: 598px;
+
+    /* OCUPA TODA LA ALTURA */
+    height: 100vh;
+
+    min-height: 598px;
+
     margin: 0 auto;
+
     background: #d2d2d2;
+
     overflow: hidden;
+
     position: relative;
+
+    display: flex;
+    flex-direction: column;
 }
 
 
-/* =====================================================
+/* =========================================================
    ENCABEZADO
-   ===================================================== */
+   ========================================================= */
 
 .barra-superior {
+
     width: 100%;
+
     height: 52px;
+
+    flex-shrink: 0;
+
     display: flex;
+
     align-items: flex-start;
+
     background: #d2d2d2;
+
     position: relative;
 }
 
 
-/* LOGO IZQUIERDO */
+/* =========================================================
+   LOGO IZQUIERDO
+   ========================================================= */
 
 .logo-izquierdo {
+
     width: 135px;
+
     height: 48px;
 
     display: flex;
+
     justify-content: center;
+
     align-items: center;
 }
 
 .logo-izquierdo img {
+
     width: 103px;
+
     height: 39px;
+
     object-fit: contain;
 }
 
 
-/* INFORMACIÓN CENTRAL */
+/* =========================================================
+   INFORMACIÓN CENTRAL
+   ========================================================= */
 
 .informacion {
+
     width: 860px;
+
     height: 52px;
+
     position: relative;
 }
 
@@ -80,99 +120,135 @@ body {
 /* TEXTO SUPERIOR */
 
 .datos-eleccion {
+
     position: absolute;
+
     top: 3px;
+
     left: 0;
 
     width: 100%;
+
     height: 13px;
 
     text-align: left;
 
     color: #000;
+
     font-size: 8px;
+
     font-weight: bold;
+
     white-space: nowrap;
 }
 
 
-/* TÍTULO NEGRO */
+/* =========================================================
+   TÍTULO
+   ========================================================= */
 
 .titulo {
+
     position: absolute;
 
     left: 0;
+
     top: 21px;
 
     width: 725px;
+
     height: 27px;
 
     background: #000;
+
     color: white;
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
     font-size: 14px;
+
     font-weight: bold;
 }
 
 
-/* LOGO DERECHO */
+/* =========================================================
+   LOGO DERECHO
+   ========================================================= */
 
 .logo-derecho {
+
     width: 65px;
+
     height: 48px;
 
     display: flex;
+
     justify-content: center;
+
     align-items: center;
 }
 
 .logo-derecho img {
+
     width: 38px;
+
     height: 38px;
+
     object-fit: contain;
 }
 
 
-/* =====================================================
-   CUADRÍCULA
-   ===================================================== */
+/* =========================================================
+   CUADRÍCULA DE CANDIDATOS
+   ========================================================= */
 
 .candidatos {
 
-    width: 1060px;
-    height: 497px;
+    width: 100%;
 
-    padding: 0 5px 0 5px;
+    /* OCUPA TODO EL ESPACIO DISPONIBLE */
+    flex: 1;
+
+    min-height: 0;
+
+    padding: 0 5px 5px 5px;
 
     display: grid;
 
-    grid-template-columns: 525px 525px;
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1fr);
 
-    grid-template-rows: 247px 246px;
+    grid-template-rows:
+        minmax(0, 1fr)
+        minmax(0, 1fr);
 
-    column-gap: 5px;
-    row-gap: 5px;
+    gap: 5px;
 }
 
 
-/* =====================================================
+/* =========================================================
    TARJETAS
-   ===================================================== */
+   ========================================================= */
 
 .candidato {
 
-    width: 525px;
-    height: 247px;
+    width: 100%;
+
+    height: 100%;
+
+    min-height: 0;
 
     border: 1px solid #aaa;
 
     position: relative;
 
     display: flex;
+
     flex-direction: column;
 
     align-items: center;
@@ -181,32 +257,45 @@ body {
 }
 
 
-/* COLORES */
+/* =========================================================
+   COLORES
+   ========================================================= */
 
 .colorado {
+
     background: #ff0505;
+
     color: white;
 }
 
+
 .alianza {
+
     background: #ffad63;
+
     color: black;
 }
+
 
 .patriotas {
+
     background: #9eb2d8;
+
     color: black;
 }
+
 
 .blanco {
+
     background: white;
+
     color: black;
 }
 
 
-/* =====================================================
+/* =========================================================
    NOMBRE DEL PARTIDO
-   ===================================================== */
+   ========================================================= */
 
 .partido {
 
@@ -214,65 +303,81 @@ body {
 
     height: 42px;
 
+    flex-shrink: 0;
+
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
     padding-top: 5px;
 
     font-size: 20px;
+
     font-weight: bold;
 
     text-align: center;
 }
 
 
-/* =====================================================
-   ÁREA DE FOTO + LISTA
-   ===================================================== */
+/* =========================================================
+   ÁREA FOTO + LISTA
+   ========================================================= */
 
 .contenido-candidato {
 
     width: 100%;
-    height: 145px;
+
+    flex: 1;
+
+    min-height: 0;
 
     display: flex;
 
     align-items: center;
+
     justify-content: center;
 
     gap: 72px;
 }
 
 
-/* FOTO */
+/* =========================================================
+   FOTO
+   ========================================================= */
 
 .foto {
 
     width: 118px;
+
     height: 118px;
 
     background: white;
 
     display: flex;
+
     justify-content: center;
+
     align-items: center;
 
     flex-shrink: 0;
 }
 
+
 .foto img {
 
     width: 100%;
+
     height: 100%;
 
     object-fit: cover;
 }
 
 
-/* =====================================================
+/* =========================================================
    DATOS DE LISTA
-   ===================================================== */
+   ========================================================= */
 
 .datos {
 
@@ -281,8 +386,11 @@ body {
     text-align: center;
 
     display: flex;
+
     flex-direction: column;
+
     align-items: center;
+
     justify-content: center;
 }
 
@@ -292,6 +400,7 @@ body {
 .texto-lista {
 
     font-size: 21px;
+
     font-weight: bold;
 
     line-height: 22px;
@@ -303,6 +412,7 @@ body {
 .numero-lista {
 
     font-size: 40px;
+
     font-weight: bold;
 
     line-height: 39px;
@@ -319,9 +429,9 @@ body {
 }
 
 
-/* =====================================================
+/* =========================================================
    NOMBRE DEL CANDIDATO
-   ===================================================== */
+   ========================================================= */
 
 .nombre {
 
@@ -334,59 +444,71 @@ body {
     text-align: center;
 
     font-size: 20px;
+
     font-weight: normal;
 
     white-space: nowrap;
 }
 
 
-/* =====================================================
+/* =========================================================
    VOTO EN BLANCO
-   ===================================================== */
+   ========================================================= */
 
 .blanco {
 
     display: flex;
 
     align-items: center;
+
     justify-content: center;
 }
+
 
 .texto-blanco {
 
     font-size: 29px;
+
     font-weight: bold;
 
     text-align: center;
 }
 
 
-/* =====================================================
+/* =========================================================
    BARRA INFERIOR
-   ===================================================== */
+   ========================================================= */
 
 .barra-inferior {
 
-    width: 1060px;
+    width: 100%;
+
     height: 49px;
+
+    flex-shrink: 0;
 
     background: #cccccc;
 
     border-top: 1px solid #999;
 
     display: flex;
+
     align-items: center;
 }
 
 
-/* CONTRASTE */
+/* =========================================================
+   CONTRASTE
+   ========================================================= */
 
 .contraste {
 
     width: 126px;
+
     height: 100%;
 
     display: flex;
+
     align-items: center;
 
     padding-left: 8px;
@@ -401,11 +523,14 @@ body {
 }
 
 
-/* ICONO */
+/* =========================================================
+   ICONO CONTRASTE
+   ========================================================= */
 
 .icono-contraste {
 
     width: 34px;
+
     height: 34px;
 
     background: #666;
@@ -415,274 +540,608 @@ body {
     border-radius: 3px;
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
     font-size: 25px;
 }
 
 
-/* =====================================================
-   RESPONSIVE
-   MANTIENE PROPORCIÓN EN PANTALLAS PEQUEÑAS
-   ===================================================== */
+/* =========================================================
+   PANTALLAS MENORES
+   ========================================================= */
 
 @media (max-width: 1060px) {
 
     .pantalla {
 
-        transform-origin: top center;
+        width: 100%;
 
-        /* La interfaz se reduce proporcionalmente */
-        width: 1060px;
+        height: 100vh;
 
-        margin-left: 50%;
-        transform: translateX(-50%) scale(
-            calc(100vw / 1060)
-        );
+        min-height: 598px;
+
+        margin: 0;
+
+        transform: none;
     }
 
+
+    .informacion {
+
+        width: calc(100% - 200px);
+    }
+
+
+    .titulo {
+
+        width: 84%;
+    }
+
+
+    .partido {
+
+        font-size: clamp(12px, 2vw, 20px);
+    }
+
+
+    .contenido-candidato {
+
+        gap: clamp(10px, 5vw, 72px);
+    }
+
+
+    .foto {
+
+        width: clamp(65px, 11vw, 118px);
+
+        height: clamp(65px, 11vw, 118px);
+    }
+
+
+    .texto-lista {
+
+        font-size: clamp(13px, 2vw, 21px);
+    }
+
+
+    .numero-lista {
+
+        font-size: clamp(25px, 4vw, 40px);
+    }
+
+
+    .sigla {
+
+        font-size: clamp(13px, 2vw, 21px);
+    }
+
+
+    .nombre {
+
+        font-size: clamp(10px, 1.8vw, 20px);
+    }
+
+
+    .texto-blanco {
+
+        font-size: clamp(18px, 3vw, 29px);
+    }
+
+
     body {
+
         overflow-x: hidden;
     }
 }
 
+
+/* =========================================================
+   PANTALLAS MUY PEQUEÑAS
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .barra-superior {
+
+        height: 45px;
+    }
+
+
+    .logo-izquierdo {
+
+        width: 90px;
+    }
+
+
+    .logo-izquierdo img {
+
+        width: 75px;
+
+        height: 32px;
+    }
+
+
+    .logo-derecho {
+
+        width: 45px;
+    }
+
+
+    .logo-derecho img {
+
+        width: 30px;
+
+        height: 30px;
+    }
+
+
+    .datos-eleccion {
+
+        font-size: 5px;
+
+        top: 2px;
+    }
+
+
+    .titulo {
+
+        top: 19px;
+
+        height: 23px;
+
+        font-size: 10px;
+    }
+
+
+    .candidatos {
+
+        padding: 0 3px 3px 3px;
+
+        gap: 3px;
+    }
+
+
+    .partido {
+
+        height: 35px;
+
+        font-size: 10px;
+    }
+
+
+    .contenido-candidato {
+
+        gap: 8px;
+    }
+
+
+    .foto {
+
+        width: 60px;
+
+        height: 60px;
+    }
+
+
+    .datos {
+
+        width: 60px;
+    }
+
+
+    .texto-lista {
+
+        font-size: 11px;
+
+        line-height: 13px;
+    }
+
+
+    .numero-lista {
+
+        font-size: 23px;
+
+        line-height: 23px;
+    }
+
+
+    .sigla {
+
+        font-size: 11px;
+
+        line-height: 13px;
+    }
+
+
+    .nombre {
+
+        bottom: 10px;
+
+        font-size: 10px;
+    }
+
+
+    .texto-blanco {
+
+        font-size: 16px;
+    }
+
+
+    .barra-inferior {
+
+        height: 40px;
+    }
+
+
+    .contraste {
+
+        width: 105px;
+
+        font-size: 7px;
+    }
+
+
+    .icono-contraste {
+
+        width: 28px;
+
+        height: 28px;
+
+        font-size: 19px;
+    }
+}
+
 </style>
+
 </head>
 
 
 <body>
 
+
 <div class="pantalla">
 
 
-    <!-- =================================================
+    <!-- =====================================================
          ENCABEZADO
-         ================================================= -->
+         ===================================================== -->
 
     <div class="barra-superior">
 
+
+        <!-- LOGO IZQUIERDO -->
+
         <div class="logo-izquierdo">
-            <img src="https://simuladoroficial.tsje.gov.py/img/paraguay/logo_eleccion.png" alt="Elecciones">
+
+            <img
+                src="https://simuladoroficial.tsje.gov.py/img/paraguay/logo_eleccion.png"
+                alt="Elecciones Paraguay">
+
         </div>
 
 
+        <!-- INFORMACIÓN -->
+
         <div class="informacion">
 
+
             <div class="datos-eleccion">
-                Elección: &nbsp; ELECCIONES MUNICIPALES
+
+                Elección:
+                &nbsp; ELECCIONES MUNICIPALES
+
                 &nbsp;&nbsp;
-                Departamento: &nbsp; 8-MISIONES
+
+                Departamento:
+                &nbsp; 8-MISIONES
+
                 &nbsp;&nbsp;
-                Distrito: &nbsp; 1-AYOLAS
+
+                Distrito:
+                &nbsp; 1-AYOLAS
+
                 &nbsp;&nbsp;
+
                 Zona:
+
                 &nbsp;&nbsp;&nbsp;&nbsp;
+
                 Local:
+
             </div>
 
 
             <div class="titulo">
+
                 Candidatos a INTENDENTE MUNICIPAL
+
             </div>
 
+
         </div>
 
+
+        <!-- LOGO DERECHO -->
 
         <div class="logo-derecho">
-            <img src="https://simuladoroficial.tsje.gov.py/img/paraguay/logo_votar.png" alt="Logo">
+
+            <img
+                src="https://simuladoroficial.tsje.gov.py/img/paraguay/logo_votar.png"
+                alt="Logo">
+
         </div>
+
 
     </div>
 
 
 
-    <!-- =================================================
-         CANDIDATOS
-         ================================================= -->
+    <!-- =====================================================
+         CUADRO DE CANDIDATOS
+         ===================================================== -->
 
     <div class="candidatos">
 
 
-        <!-- =============================================
+        <!-- =================================================
              PARTIDO COLORADO
-             ============================================= -->
+             ================================================= -->
 
         <div class="candidato colorado">
 
+
             <div class="partido">
+
                 PARTIDO COLORADO
+
             </div>
 
 
             <div class="contenido-candidato">
 
+
                 <div class="foto">
+
                     <img
                         src="https://simuladoroficial.tsje.gov.py/imagenes_candidaturas/paraguay_generales_municipales_2026/756.4952.webp"
                         alt="Capitan Mutti">
+
                 </div>
 
 
                 <div class="datos">
 
+
                     <div class="texto-lista">
+
                         LISTA
+
                     </div>
+
 
                     <div class="numero-lista">
+
                         1
+
                     </div>
+
 
                     <div class="sigla">
+
                         ANR
+
                     </div>
 
+
                 </div>
+
 
             </div>
 
 
             <div class="nombre">
+
                 CAPITAN MUTTI
+
             </div>
+
 
         </div>
 
 
 
-        <!-- =============================================
-             ALIANZA
-             ============================================= -->
+        <!-- =================================================
+             ALIANZA RECUPERANDO EL PARAISO
+             ================================================= -->
 
         <div class="candidato alianza">
 
+
             <div class="partido">
+
                 ALIANZA RECUPERANDO EL PARAISO
+
             </div>
 
 
             <div class="contenido-candidato">
 
+
                 <div class="foto">
+
                     <img
                         src="https://simuladoroficial.tsje.gov.py/imagenes_candidaturas/paraguay_generales_municipales_2026/757.4953.webp"
                         alt="Denis Dario Dioff Hadid">
+
                 </div>
 
 
                 <div class="datos">
 
+
                     <div class="texto-lista">
+
                         LISTA
+
                     </div>
+
 
                     <div class="numero-lista">
+
                         5
+
                     </div>
+
 
                     <div class="sigla">
+
                         REP
+
                     </div>
 
+
                 </div>
+
 
             </div>
 
 
             <div class="nombre">
+
                 DENIS DARIO DIOFF HADID
+
             </div>
+
 
         </div>
 
 
 
-        <!-- =============================================
-             PATRIOTAS
-             ============================================= -->
+        <!-- =================================================
+             PARTIDO PATRIOTAS INDEPENDIENTES
+             ================================================= -->
 
         <div class="candidato patriotas">
 
+
             <div class="partido">
+
                 PARTIDO PATRIOTAS INDEPENDIENTES
+
             </div>
 
 
             <div class="contenido-candidato">
 
+
                 <div class="foto">
+
                     <img
                         src="https://simuladoroficial.tsje.gov.py/imagenes_candidaturas/paraguay_generales_municipales_2026/758.4954.webp"
                         alt="Andres Morel Espinola">
+
                 </div>
 
 
                 <div class="datos">
 
+
                     <div class="texto-lista">
+
                         LISTA
+
                     </div>
+
 
                     <div class="numero-lista">
+
                         6
+
                     </div>
+
 
                     <div class="sigla">
+
                         PPI
+
                     </div>
 
+
                 </div>
+
 
             </div>
 
 
             <div class="nombre">
+
                 ANDRES MOREL ESPINOLA
+
             </div>
+
 
         </div>
 
 
 
-        <!-- =============================================
+        <!-- =================================================
              VOTO EN BLANCO
-             ============================================= -->
+             ================================================= -->
 
         <div class="candidato blanco">
 
+
             <div class="texto-blanco">
+
                 VOTO EN BLANCO
+
             </div>
 
+
         </div>
+
 
     </div>
 
 
 
-    <!-- =================================================
+    <!-- =====================================================
          BARRA INFERIOR
-         ================================================= -->
+         ===================================================== -->
 
     <div class="barra-inferior">
 
+
         <div class="contraste">
 
+
             <div class="icono-contraste">
+
                 ◐
+
             </div>
 
+
             <div>
+
                 Vista alto<br>
                 contraste
+
             </div>
+
 
         </div>
 
+
     </div>
+
 
 </div>
 
+
 </body>
+
 </html>
