@@ -1,330 +1,486 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Candidatos a Intendente Municipal</title>
+<title>Candidatos a Intendente Municipal</title>
 
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #222;
-            color: #000;
-        }
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+    background: #292929;
+    font-family: Arial, Helvetica, sans-serif;
+}
 
-        /* CONTENEDOR PRINCIPAL */
-        .pantalla {
-            width: 100%;
-            min-height: 100vh;
-            background: #d4d4d4;
-            overflow: hidden;
-        }
+/* =====================================================
+   CONTENEDOR PRINCIPAL
+   MEDIDA EXACTA DE LA CAPTURA
+   ===================================================== */
 
-        /* BARRA SUPERIOR */
-        .barra-superior {
-            height: 47px;
-            background: #d4d4d4;
-            display: flex;
-            align-items: center;
-            border-bottom: 1px solid #777;
-        }
+.pantalla {
+    width: 1060px;
+    height: 598px;
+    margin: 0 auto;
+    background: #d2d2d2;
+    overflow: hidden;
+    position: relative;
+}
 
-        /* LOGO IZQUIERDO */
-        .logo-izquierdo {
-            width: 135px;
-            height: 42px;
-            margin-left: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
 
-        .logo-izquierdo img {
-            max-width: 125px;
-            max-height: 38px;
-            object-fit: contain;
-        }
+/* =====================================================
+   ENCABEZADO
+   ===================================================== */
 
-        /* INFORMACIÓN SUPERIOR */
-        .informacion {
-            flex: 1;
-            height: 47px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
+.barra-superior {
+    width: 100%;
+    height: 52px;
+    display: flex;
+    align-items: flex-start;
+    background: #d2d2d2;
+    position: relative;
+}
 
-        .datos-eleccion {
-            width: 100%;
-            height: 18px;
-            font-size: 8px;
-            font-weight: bold;
-            text-align: center;
-            white-space: nowrap;
-        }
 
-        .titulo {
-            width: 68%;
-            height: 25px;
-            background: #000;
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 14px;
-            font-weight: bold;
-        }
+/* LOGO IZQUIERDO */
 
-        /* LOGO DERECHO */
-        .logo-derecho {
-            width: 70px;
-            height: 42px;
-            margin-right: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+.logo-izquierdo {
+    width: 135px;
+    height: 48px;
 
-        .logo-derecho img {
-            max-width: 45px;
-            max-height: 38px;
-            object-fit: contain;
-        }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-        /* GRILLA DE CANDIDATOS */
-        .candidatos {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            grid-template-rows: 207px 207px;
-            gap: 5px;
-            padding: 0 4px 5px 4px;
-        }
+.logo-izquierdo img {
+    width: 103px;
+    height: 39px;
+    object-fit: contain;
+}
 
-        /* TARJETA */
-        .candidato {
-            position: relative;
-            border: 1px solid #aaa;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
-            overflow: hidden;
-        }
 
-        /* COLORES */
-        .colorado {
-            background: #ff0505;
-            color: white;
-        }
+/* INFORMACIÓN CENTRAL */
 
-        .alianza {
-            background: #ffad63;
-            color: black;
-        }
+.informacion {
+    width: 860px;
+    height: 52px;
+    position: relative;
+}
 
-        .patriotas {
-            background: #9eb2d8;
-            color: black;
-        }
 
-        .blanco {
-            background: #fff;
-            color: black;
-            justify-content: center;
-        }
+/* TEXTO SUPERIOR */
 
-        /* NOMBRE DEL PARTIDO */
-        .partido {
-            width: 100%;
-            text-align: center;
-            font-size: 17px;
-            font-weight: bold;
-            margin-top: 17px;
-            height: 28px;
-        }
+.datos-eleccion {
+    position: absolute;
+    top: 3px;
+    left: 0;
 
-        /* CONTENIDO INTERNO */
-        .contenido-candidato {
-            width: 100%;
-            height: 125px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 60px;
-        }
+    width: 100%;
+    height: 13px;
 
-        /* FOTO */
-        .foto {
-            width: 100px;
-            height: 100px;
-            background: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+    text-align: left;
 
-        .foto img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+    color: #000;
+    font-size: 8px;
+    font-weight: bold;
+    white-space: nowrap;
+}
 
-        /* DATOS DE LISTA */
-        .datos {
-            width: 100px;
-            text-align: center;
-        }
 
-        .texto-lista {
-            font-size: 17px;
-            font-weight: bold;
-            margin-bottom: 0;
-        }
+/* TÍTULO NEGRO */
 
-        .numero-lista {
-            font-size: 31px;
-            line-height: 30px;
-            font-weight: bold;
-        }
+.titulo {
+    position: absolute;
 
-        .sigla {
-            font-size: 17px;
-            margin-top: 3px;
-        }
+    left: 0;
+    top: 21px;
 
-        /* NOMBRE DEL CANDIDATO */
-        .nombre {
-            width: 100%;
-            text-align: center;
-            font-size: 17px;
-            font-weight: normal;
-            margin-top: 2px;
-            white-space: nowrap;
-        }
+    width: 725px;
+    height: 27px;
 
-        /* VOTO EN BLANCO */
-        .texto-blanco {
-            font-size: 25px;
-            font-weight: bold;
-        }
+    background: #000;
+    color: white;
 
-        /* BARRA INFERIOR */
-        .barra-inferior {
-            height: 41px;
-            background: #ccc;
-            border-top: 1px solid #999;
-            display: flex;
-            align-items: center;
-        }
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-        .contraste {
-            width: 100px;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            gap: 7px;
-            padding-left: 7px;
-            font-size: 9px;
-            color: #444;
-        }
+    font-size: 14px;
+    font-weight: bold;
+}
 
-        .icono-contraste {
-            width: 28px;
-            height: 28px;
-            border-radius: 3px;
-            background: #666;
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-        }
 
-        /* RESPONSIVE */
-        @media (max-width: 700px) {
+/* LOGO DERECHO */
 
-            .datos-eleccion {
-                font-size: 6px;
-            }
+.logo-derecho {
+    width: 65px;
+    height: 48px;
 
-            .titulo {
-                width: 80%;
-                font-size: 11px;
-            }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-            .partido {
-                font-size: 12px;
-            }
+.logo-derecho img {
+    width: 38px;
+    height: 38px;
+    object-fit: contain;
+}
 
-            .contenido-candidato {
-                gap: 15px;
-            }
 
-            .foto {
-                width: 80px;
-                height: 80px;
-            }
+/* =====================================================
+   CUADRÍCULA
+   ===================================================== */
 
-            .datos {
-                width: 70px;
-            }
+.candidatos {
 
-            .texto-lista {
-                font-size: 13px;
-            }
+    width: 1060px;
+    height: 497px;
 
-            .numero-lista {
-                font-size: 25px;
-            }
+    padding: 0 5px 0 5px;
 
-            .sigla {
-                font-size: 13px;
-            }
+    display: grid;
 
-            .nombre {
-                font-size: 12px;
-            }
+    grid-template-columns: 525px 525px;
 
-            .texto-blanco {
-                font-size: 18px;
-            }
-        }
-    </style>
+    grid-template-rows: 247px 246px;
+
+    column-gap: 5px;
+    row-gap: 5px;
+}
+
+
+/* =====================================================
+   TARJETAS
+   ===================================================== */
+
+.candidato {
+
+    width: 525px;
+    height: 247px;
+
+    border: 1px solid #aaa;
+
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    overflow: hidden;
+}
+
+
+/* COLORES */
+
+.colorado {
+    background: #ff0505;
+    color: white;
+}
+
+.alianza {
+    background: #ffad63;
+    color: black;
+}
+
+.patriotas {
+    background: #9eb2d8;
+    color: black;
+}
+
+.blanco {
+    background: white;
+    color: black;
+}
+
+
+/* =====================================================
+   NOMBRE DEL PARTIDO
+   ===================================================== */
+
+.partido {
+
+    width: 100%;
+
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding-top: 5px;
+
+    font-size: 20px;
+    font-weight: bold;
+
+    text-align: center;
+}
+
+
+/* =====================================================
+   ÁREA DE FOTO + LISTA
+   ===================================================== */
+
+.contenido-candidato {
+
+    width: 100%;
+    height: 145px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 72px;
+}
+
+
+/* FOTO */
+
+.foto {
+
+    width: 118px;
+    height: 118px;
+
+    background: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-shrink: 0;
+}
+
+.foto img {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+/* =====================================================
+   DATOS DE LISTA
+   ===================================================== */
+
+.datos {
+
+    width: 100px;
+
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* LISTA */
+
+.texto-lista {
+
+    font-size: 21px;
+    font-weight: bold;
+
+    line-height: 22px;
+}
+
+
+/* NÚMERO */
+
+.numero-lista {
+
+    font-size: 40px;
+    font-weight: bold;
+
+    line-height: 39px;
+}
+
+
+/* SIGLA */
+
+.sigla {
+
+    font-size: 21px;
+
+    line-height: 23px;
+}
+
+
+/* =====================================================
+   NOMBRE DEL CANDIDATO
+   ===================================================== */
+
+.nombre {
+
+    position: absolute;
+
+    bottom: 20px;
+
+    width: 100%;
+
+    text-align: center;
+
+    font-size: 20px;
+    font-weight: normal;
+
+    white-space: nowrap;
+}
+
+
+/* =====================================================
+   VOTO EN BLANCO
+   ===================================================== */
+
+.blanco {
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.texto-blanco {
+
+    font-size: 29px;
+    font-weight: bold;
+
+    text-align: center;
+}
+
+
+/* =====================================================
+   BARRA INFERIOR
+   ===================================================== */
+
+.barra-inferior {
+
+    width: 1060px;
+    height: 49px;
+
+    background: #cccccc;
+
+    border-top: 1px solid #999;
+
+    display: flex;
+    align-items: center;
+}
+
+
+/* CONTRASTE */
+
+.contraste {
+
+    width: 126px;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+
+    padding-left: 8px;
+
+    gap: 8px;
+
+    font-size: 9px;
+
+    color: #333;
+
+    border-right: 1px solid #bbb;
+}
+
+
+/* ICONO */
+
+.icono-contraste {
+
+    width: 34px;
+    height: 34px;
+
+    background: #666;
+
+    color: white;
+
+    border-radius: 3px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 25px;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+   MANTIENE PROPORCIÓN EN PANTALLAS PEQUEÑAS
+   ===================================================== */
+
+@media (max-width: 1060px) {
+
+    .pantalla {
+
+        transform-origin: top center;
+
+        /* La interfaz se reduce proporcionalmente */
+        width: 1060px;
+
+        margin-left: 50%;
+        transform: translateX(-50%) scale(
+            calc(100vw / 1060)
+        );
+    }
+
+    body {
+        overflow-x: hidden;
+    }
+}
+
+</style>
 </head>
+
 
 <body>
 
 <div class="pantalla">
 
-    <!-- ========================= -->
-    <!-- BARRA SUPERIOR -->
-    <!-- ========================= -->
+
+    <!-- =================================================
+         ENCABEZADO
+         ================================================= -->
 
     <div class="barra-superior">
 
-        <!-- LOGO IZQUIERDO -->
         <div class="logo-izquierdo">
-            <img src="elecciones.png" alt="Elecciones Paraguay">
+            <img src="elecciones.png" alt="Elecciones">
         </div>
 
-        <!-- INFORMACIÓN -->
+
         <div class="informacion">
 
             <div class="datos-eleccion">
-                Elección: ELECCIONES MUNICIPALES&nbsp;&nbsp;&nbsp;
-                Departamento: 8-MISIONES&nbsp;&nbsp;&nbsp;
-                Distrito: 1-AYOLAS&nbsp;&nbsp;&nbsp;
-                Zona: &nbsp;&nbsp;&nbsp;
+                Elección: &nbsp; ELECCIONES MUNICIPALES
+                &nbsp;&nbsp;
+                Departamento: &nbsp; 8-MISIONES
+                &nbsp;&nbsp;
+                Distrito: &nbsp; 1-AYOLAS
+                &nbsp;&nbsp;
+                Zona:
+                &nbsp;&nbsp;&nbsp;&nbsp;
                 Local:
             </div>
+
 
             <div class="titulo">
                 Candidatos a INTENDENTE MUNICIPAL
@@ -332,7 +488,7 @@
 
         </div>
 
-        <!-- LOGO DERECHO -->
+
         <div class="logo-derecho">
             <img src="logo-tsje.png" alt="Logo">
         </div>
@@ -340,15 +496,17 @@
     </div>
 
 
-    <!-- ========================= -->
-    <!-- CANDIDATOS -->
-    <!-- ========================= -->
+
+    <!-- =================================================
+         CANDIDATOS
+         ================================================= -->
 
     <div class="candidatos">
 
-        <!-- ================================= -->
-        <!-- CANDIDATO 1 - PARTIDO COLORADO -->
-        <!-- ================================= -->
+
+        <!-- =============================================
+             PARTIDO COLORADO
+             ============================================= -->
 
         <div class="candidato colorado">
 
@@ -356,12 +514,15 @@
                 PARTIDO COLORADO
             </div>
 
+
             <div class="contenido-candidato">
 
                 <div class="foto">
-                    <img src="capitan-mutti.jpg"
-                         alt="Capitan Mutti">
+                    <img
+                        src="capitan-mutti.jpg"
+                        alt="Capitan Mutti">
                 </div>
+
 
                 <div class="datos">
 
@@ -381,6 +542,7 @@
 
             </div>
 
+
             <div class="nombre">
                 CAPITAN MUTTI
             </div>
@@ -388,9 +550,10 @@
         </div>
 
 
-        <!-- ================================= -->
-        <!-- CANDIDATO 2 - ALIANZA -->
-        <!-- ================================= -->
+
+        <!-- =============================================
+             ALIANZA
+             ============================================= -->
 
         <div class="candidato alianza">
 
@@ -398,12 +561,15 @@
                 ALIANZA RECUPERANDO EL PARAISO
             </div>
 
+
             <div class="contenido-candidato">
 
                 <div class="foto">
-                    <img src="denis-dario.jpg"
-                         alt="Denis Dario Dioff Hadid">
+                    <img
+                        src="denis-dario.jpg"
+                        alt="Denis Dario Dioff Hadid">
                 </div>
+
 
                 <div class="datos">
 
@@ -423,6 +589,7 @@
 
             </div>
 
+
             <div class="nombre">
                 DENIS DARIO DIOFF HADID
             </div>
@@ -430,9 +597,10 @@
         </div>
 
 
-        <!-- ================================= -->
-        <!-- CANDIDATO 3 - PATRIOTAS -->
-        <!-- ================================= -->
+
+        <!-- =============================================
+             PATRIOTAS
+             ============================================= -->
 
         <div class="candidato patriotas">
 
@@ -440,12 +608,15 @@
                 PARTIDO PATRIOTAS INDEPENDIENTES
             </div>
 
+
             <div class="contenido-candidato">
 
                 <div class="foto">
-                    <img src="andres-morel.jpg"
-                         alt="Andres Morel Espinola">
+                    <img
+                        src="andres-morel.jpg"
+                        alt="Andres Morel Espinola">
                 </div>
+
 
                 <div class="datos">
 
@@ -465,6 +636,7 @@
 
             </div>
 
+
             <div class="nombre">
                 ANDRES MOREL ESPINOLA
             </div>
@@ -472,9 +644,10 @@
         </div>
 
 
-        <!-- ================================= -->
-        <!-- VOTO EN BLANCO -->
-        <!-- ================================= -->
+
+        <!-- =============================================
+             VOTO EN BLANCO
+             ============================================= -->
 
         <div class="candidato blanco">
 
@@ -487,9 +660,10 @@
     </div>
 
 
-    <!-- ========================= -->
-    <!-- BARRA INFERIOR -->
-    <!-- ========================= -->
+
+    <!-- =================================================
+         BARRA INFERIOR
+         ================================================= -->
 
     <div class="barra-inferior">
 
