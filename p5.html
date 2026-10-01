@@ -4,14 +4,17 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
 <title>Candidatos a Junta Municipal</title>
+
 
 <style>
 
 /* =========================================================
-   CONFIGURACIÓN GENERAL
+   RESET
    ========================================================= */
 
 * {
@@ -31,12 +34,13 @@ body {
 
 /* =========================================================
    PANTALLA PRINCIPAL
+   PC = 846 x 598
    ========================================================= */
 
 .pantalla {
-    width: 1060px;
-    height: 100vh;
-    min-height: 598px;
+
+    width: 846px;
+    height: 598px;
 
     margin: 0 auto;
 
@@ -46,6 +50,7 @@ body {
 
     display: flex;
     flex-direction: column;
+
 }
 
 
@@ -54,8 +59,9 @@ body {
    ========================================================= */
 
 .barra-superior {
+
     width: 100%;
-    height: 47px;
+    height: 42px;
 
     flex-shrink: 0;
 
@@ -63,6 +69,7 @@ body {
     align-items: flex-start;
 
     background: #d2d2d2;
+
 }
 
 
@@ -71,19 +78,25 @@ body {
    ========================================================= */
 
 .logo-izquierdo {
-    width: 135px;
-    height: 42px;
+
+    width: 108px;
+    height: 40px;
 
     display: flex;
     align-items: center;
     justify-content: center;
+
+    flex-shrink: 0;
+
 }
 
 .logo-izquierdo img {
-    width: 103px;
-    height: 39px;
+
+    width: 83px;
+    height: 32px;
 
     object-fit: contain;
+
 }
 
 
@@ -92,54 +105,67 @@ body {
    ========================================================= */
 
 .informacion {
-    width: 860px;
-    height: 47px;
+
+    flex: 1;
+
+    height: 42px;
 
     position: relative;
+
+    min-width: 0;
+
 }
 
+
 .datos-eleccion {
+
     position: absolute;
 
     top: 2px;
     left: 0;
 
     width: 100%;
-    height: 13px;
+
+    height: 11px;
 
     color: #000;
 
-    font-size: 8px;
+    font-size: 6px;
+
     font-weight: bold;
 
     white-space: nowrap;
 
-    text-align: left;
+    overflow: hidden;
+
 }
 
 
-/* =========================================================
-   TÍTULO
-   ========================================================= */
-
 .titulo {
+
     position: absolute;
 
     left: 0;
-    top: 20px;
+    right: 0;
 
-    width: 725px;
-    height: 25px;
+    top: 18px;
+
+    height: 20px;
 
     background: white;
+
     color: #000;
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
-    font-size: 14px;
+    font-size: 11px;
+
     font-weight: bold;
+
 }
 
 
@@ -148,19 +174,25 @@ body {
    ========================================================= */
 
 .logo-derecho {
-    width: 65px;
-    height: 42px;
+
+    width: 52px;
+    height: 40px;
 
     display: flex;
     align-items: center;
     justify-content: center;
+
+    flex-shrink: 0;
+
 }
 
 .logo-derecho img {
-    width: 38px;
-    height: 38px;
+
+    width: 30px;
+    height: 30px;
 
     object-fit: contain;
+
 }
 
 
@@ -169,57 +201,77 @@ body {
    ========================================================= */
 
 .encabezado-lista {
+
     width: 100%;
-    height: 75px;
+    height: 59px;
 
     flex-shrink: 0;
 
     background: #ff0505;
+
     color: white;
 
     border: 1px solid #aaa;
 
     display: flex;
+
     flex-direction: column;
 
     align-items: center;
+
     justify-content: center;
 
     text-align: center;
+
 }
+
 
 .encabezado-lista .numero {
-    font-size: 24px;
+
+    font-size: 21px;
+
     font-weight: bold;
-    line-height: 27px;
+
+    line-height: 23px;
+
 }
 
+
 .encabezado-lista .partido {
-    font-size: 25px;
+
+    font-size: 22px;
+
     font-weight: bold;
-    line-height: 29px;
+
+    line-height: 25px;
+
 }
 
 
 /* =========================================================
-   CUADRÍCULA DE OPCIONES
+   CUADRÍCULA
    ========================================================= */
 
 .opciones {
+
     width: 100%;
 
     flex: 1;
+
     min-height: 0;
 
     padding: 5px;
 
     display: grid;
 
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
 
-    grid-template-rows: repeat(3, minmax(0, 1fr));
+    grid-template-rows:
+        repeat(3, minmax(0, 1fr));
 
-    gap: 5px;
+    gap: 4px;
+
 }
 
 
@@ -228,12 +280,14 @@ body {
    ========================================================= */
 
 .opcion {
+
     width: 100%;
     height: 100%;
 
+    min-width: 0;
     min-height: 0;
 
-    background: #ffffff;
+    background: white;
 
     border: 1px solid #d0d0d0;
 
@@ -252,14 +306,21 @@ body {
     cursor: pointer;
 
     transition: filter 0.15s ease;
+
 }
+
 
 .opcion:hover {
+
     filter: brightness(0.95);
+
 }
 
+
 .opcion:active {
+
     filter: brightness(0.85);
+
 }
 
 
@@ -269,14 +330,14 @@ body {
 
 .foto-candidato {
 
-    width: 82px;
-    height: 82px;
+    width: 65px;
+    height: 65px;
 
-    margin-left: 6px;
+    margin-left: 5px;
 
     flex-shrink: 0;
 
-    background: #ffffff;
+    background: #fff;
 
     border: 1px solid #eeeeee;
 
@@ -287,10 +348,9 @@ body {
     justify-content: center;
 
     overflow: hidden;
+
 }
 
-
-/* IMAGEN DENTRO DEL CUADRITO */
 
 .foto-candidato img {
 
@@ -300,6 +360,7 @@ body {
     object-fit: contain;
 
     object-position: center;
+
 }
 
 
@@ -315,29 +376,25 @@ body {
 
     display: flex;
 
-    flex-direction: column;
+    align-items: center;
 
     justify-content: center;
-
-    align-items: center;
 
     text-align: center;
 
     padding-right: 5px;
+
 }
 
 
-/* =========================================================
-   OPCIÓN 1, 2, 3...
-   ========================================================= */
-
 .numero-opcion {
 
-    font-size: 21px;
+    font-size: 17px;
 
     font-weight: bold;
 
-    line-height: 24px;
+    line-height: 19px;
+
 }
 
 
@@ -349,19 +406,24 @@ body {
 
     position: absolute;
 
-    bottom: 10px;
-
     left: 0;
+
+    bottom: 7px;
 
     width: 100%;
 
     text-align: center;
 
-    font-size: 14px;
+    font-size: 10px;
 
     font-weight: normal;
 
     white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: clip;
+
 }
 
 
@@ -373,7 +435,7 @@ body {
 
     width: 100%;
 
-    height: 43px;
+    height: 35px;
 
     flex-shrink: 0;
 
@@ -384,6 +446,7 @@ body {
     display: flex;
 
     align-items: center;
+
 }
 
 
@@ -393,7 +456,7 @@ body {
 
 .contraste {
 
-    width: 115px;
+    width: 105px;
 
     height: 100%;
 
@@ -401,28 +464,27 @@ body {
 
     align-items: center;
 
-    gap: 7px;
+    gap: 5px;
 
-    padding-left: 8px;
+    padding-left: 6px;
 
     color: #333;
 
-    font-size: 9px;
+    font-size: 7px;
 
     border-right: 1px solid #bbb;
+
 }
 
 
 .icono-contraste {
 
-    width: 30px;
-    height: 30px;
+    width: 27px;
+    height: 27px;
 
     background: #666;
 
     color: white;
-
-    border-radius: 2px;
 
     display: flex;
 
@@ -430,7 +492,8 @@ body {
 
     justify-content: center;
 
-    font-size: 23px;
+    font-size: 19px;
+
 }
 
 
@@ -440,7 +503,7 @@ body {
 
 .volver {
 
-    width: 100px;
+    width: 75px;
 
     height: 100%;
 
@@ -448,24 +511,25 @@ body {
 
     align-items: center;
 
-    gap: 7px;
+    gap: 5px;
 
-    padding-left: 8px;
+    padding-left: 5px;
 
     color: #333;
 
-    font-size: 9px;
+    font-size: 7px;
 
     border-right: 1px solid #bbb;
 
     cursor: pointer;
+
 }
 
 
 .icono-volver {
 
-    width: 30px;
-    height: 30px;
+    width: 27px;
+    height: 27px;
 
     background: #666;
 
@@ -477,151 +541,408 @@ body {
 
     justify-content: center;
 
-    font-size: 25px;
+    font-size: 21px;
+
 }
 
 
 /* =========================================================
-   RESPONSIVE
+   TABLET
    ========================================================= */
 
-@media (max-width: 1060px) {
+@media (max-width: 846px) {
+
+    html,
+    body {
+
+        background: #d2d2d2;
+
+        overflow: hidden;
+
+    }
+
 
     .pantalla {
-        width: 100%;
+
+        width: 100vw;
+
         height: 100vh;
-        min-height: 598px;
+
         margin: 0;
+
     }
+
+
+    .barra-superior {
+
+        height: 7vh;
+
+    }
+
+
+    .logo-izquierdo {
+
+        width: 13vw;
+
+        height: 7vh;
+
+    }
+
+
+    .logo-izquierdo img {
+
+        width: 10vw;
+
+        height: auto;
+
+        max-height: 6vh;
+
+    }
+
 
     .informacion {
-        width: calc(100% - 200px);
+
+        height: 7vh;
+
     }
+
+
+    .logo-derecho {
+
+        width: 7vw;
+
+        height: 7vh;
+
+    }
+
+
+    .logo-derecho img {
+
+        width: 5vw;
+
+        height: auto;
+
+    }
+
+
+    .datos-eleccion {
+
+        top: 2px;
+
+        font-size: 1.1vw;
+
+    }
+
 
     .titulo {
-        width: 84%;
+
+        top: 3vh;
+
+        height: 3.2vh;
+
+        font-size: 1.7vw;
+
     }
+
+
+    .encabezado-lista {
+
+        height: 10vh;
+
+    }
+
 
     .encabezado-lista .numero {
-        font-size: clamp(18px, 3vw, 24px);
+
+        font-size: 3.2vw;
+
+        line-height: 3.5vw;
+
     }
+
 
     .encabezado-lista .partido {
-        font-size: clamp(17px, 3vw, 25px);
+
+        font-size: 3.2vw;
+
+        line-height: 3.5vw;
+
     }
+
+
+    .opciones {
+
+        padding: 0.6vw;
+
+        gap: 0.5vw;
+
+    }
+
 
     .foto-candidato {
-        width: 75px;
-        height: 75px;
+
+        width: 9vw;
+
+        height: 9vw;
+
+        margin-left: 0.5vw;
+
     }
+
 
     .numero-opcion {
-        font-size: clamp(15px, 2.5vw, 21px);
+
+        font-size: 2.5vw;
+
+        line-height: 2.7vw;
+
     }
+
 
     .nombre-candidato {
-        font-size: clamp(9px, 1.6vw, 14px);
+
+        bottom: 1.1vw;
+
+        font-size: 1.5vw;
+
     }
 
-    body {
-        overflow-x: hidden;
+
+    .barra-inferior {
+
+        height: 6vh;
+
     }
+
+
+    .contraste {
+
+        width: 13vw;
+
+        font-size: 1.1vw;
+
+    }
+
+
+    .volver {
+
+        width: 10vw;
+
+        font-size: 1.1vw;
+
+    }
+
+
+    .icono-contraste,
+    .icono-volver {
+
+        width: 4.5vw;
+
+        height: 4.5vw;
+
+        font-size: 3vw;
+
+    }
+
 }
 
 
 /* =========================================================
-   PANTALLAS PEQUEÑAS
+   CELULAR
    ========================================================= */
 
 @media (max-width: 600px) {
 
-    .barra-superior {
-        height: 45px;
+    html,
+    body {
+
+        width: 100%;
+
+        height: 100%;
+
+        overflow: hidden;
+
     }
+
+
+    .pantalla {
+
+        width: 100vw;
+
+        height: 100vh;
+
+        min-height: 0;
+
+    }
+
+
+    .barra-superior {
+
+        height: 8vh;
+
+    }
+
 
     .logo-izquierdo {
-        width: 90px;
+
+        width: 15vw;
+
+        height: 8vh;
+
     }
+
 
     .logo-izquierdo img {
-        width: 75px;
-        height: 32px;
+
+        width: 12vw;
+
+        max-height: 7vh;
+
     }
 
-    .logo-derecho {
-        width: 45px;
+
+    .informacion {
+
+        height: 8vh;
+
     }
 
-    .logo-derecho img {
-        width: 30px;
-        height: 30px;
-    }
 
     .datos-eleccion {
-        font-size: 5px;
+
+        top: 1px;
+
+        font-size: 1.3vw;
+
     }
+
 
     .titulo {
-        top: 19px;
-        height: 23px;
-        font-size: 10px;
+
+        top: 3.5vh;
+
+        height: 3.5vh;
+
+        font-size: 2.1vw;
+
     }
+
+
+    .logo-derecho {
+
+        width: 8vw;
+
+        height: 8vh;
+
+    }
+
+
+    .logo-derecho img {
+
+        width: 6vw;
+
+    }
+
 
     .encabezado-lista {
-        height: 65px;
+
+        height: 11vh;
+
     }
+
 
     .encabezado-lista .numero {
-        font-size: 18px;
-        line-height: 20px;
+
+        font-size: 4.5vw;
+
+        line-height: 5vw;
+
     }
+
 
     .encabezado-lista .partido {
-        font-size: 18px;
-        line-height: 22px;
+
+        font-size: 4.5vw;
+
+        line-height: 5vw;
+
     }
+
 
     .opciones {
-        padding: 3px;
-        gap: 3px;
+
+        padding: 0.8vw;
+
+        gap: 0.7vw;
+
     }
+
 
     .foto-candidato {
-        width: 55px;
-        height: 55px;
-        margin-left: 3px;
+
+        width: 12vw;
+
+        height: 12vw;
+
+        margin-left: 0.7vw;
+
     }
+
 
     .numero-opcion {
-        font-size: 12px;
-        line-height: 15px;
+
+        font-size: 3.5vw;
+
+        line-height: 3.8vw;
+
     }
+
 
     .nombre-candidato {
-        bottom: 4px;
-        font-size: 7px;
+
+        bottom: 1.5vw;
+
+        font-size: 2vw;
+
     }
+
 
     .barra-inferior {
-        height: 40px;
+
+        height: 7vh;
+
     }
+
 
     .contraste {
-        width: 105px;
-        font-size: 7px;
+
+        width: 16vw;
+
+        font-size: 1.5vw;
+
     }
 
+
     .volver {
-        width: 90px;
-        font-size: 7px;
+
+        width: 13vw;
+
+        font-size: 1.5vw;
+
     }
+
 
     .icono-contraste,
     .icono-volver {
-        width: 28px;
-        height: 28px;
-        font-size: 19px;
+
+        width: 5.5vw;
+
+        height: 5.5vw;
+
+        font-size: 3.5vw;
+
     }
+
 }
 
 </style>
@@ -673,7 +994,7 @@ body {
 
                 Zona:
 
-                &nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;
 
                 Local:
 
@@ -814,7 +1135,6 @@ body {
 
         <!-- =================================================
              OPCIÓN 4 - DRA. TALAVERA
-             VA A p6.html
              ================================================= -->
 
         <a
