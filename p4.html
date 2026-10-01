@@ -2,13 +2,10 @@
 <html lang="es">
 
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Candidatos a Junta Municipal</title>
-
+<title>Listas participantes a cargo de JUNTA MUNICIPAL</title>
 
 <style>
 
@@ -24,26 +21,21 @@
 
 html,
 body {
-
     width: 100%;
     height: 100%;
-
     background: #292929;
-
     font-family: Arial, Helvetica, sans-serif;
 }
 
 
 /* =========================================================
    PANTALLA PRINCIPAL
+   1060 x 598
    ========================================================= */
 
 .pantalla {
-
     width: 1060px;
-
     height: 100vh;
-
     min-height: 598px;
 
     margin: 0 auto;
@@ -53,7 +45,6 @@ body {
     overflow: hidden;
 
     display: flex;
-
     flex-direction: column;
 }
 
@@ -63,15 +54,12 @@ body {
    ========================================================= */
 
 .barra-superior {
-
     width: 100%;
-
-    height: 47px;
+    height: 45px;
 
     flex-shrink: 0;
 
     display: flex;
-
     align-items: flex-start;
 
     background: #d2d2d2;
@@ -83,22 +71,16 @@ body {
    ========================================================= */
 
 .logo-izquierdo {
-
     width: 135px;
-
     height: 42px;
 
     display: flex;
-
     align-items: center;
-
     justify-content: center;
 }
 
 .logo-izquierdo img {
-
     width: 103px;
-
     height: 39px;
 
     object-fit: contain;
@@ -106,37 +88,31 @@ body {
 
 
 /* =========================================================
-   INFORMACIÓN
+   INFORMACIÓN SUPERIOR
    ========================================================= */
 
 .informacion {
-
     width: 860px;
-
-    height: 47px;
+    height: 45px;
 
     position: relative;
 }
 
 
-/* TEXTO SUPERIOR */
+/* TEXTO DE ELECCIÓN */
 
 .datos-eleccion {
-
     position: absolute;
 
     top: 2px;
-
     left: 0;
 
     width: 100%;
-
     height: 13px;
 
     color: #000;
 
     font-size: 8px;
-
     font-weight: bold;
 
     white-space: nowrap;
@@ -150,29 +126,22 @@ body {
    ========================================================= */
 
 .titulo {
-
     position: absolute;
 
     left: 0;
-
-    top: 20px;
+    top: 19px;
 
     width: 725px;
-
-    height: 25px;
+    height: 24px;
 
     background: white;
-
     color: #000;
 
     display: flex;
-
     align-items: center;
-
     justify-content: center;
 
     font-size: 14px;
-
     font-weight: bold;
 }
 
@@ -182,22 +151,16 @@ body {
    ========================================================= */
 
 .logo-derecho {
-
     width: 65px;
-
     height: 42px;
 
     display: flex;
-
     align-items: center;
-
     justify-content: center;
 }
 
 .logo-derecho img {
-
     width: 38px;
-
     height: 38px;
 
     object-fit: contain;
@@ -205,64 +168,10 @@ body {
 
 
 /* =========================================================
-   ENCABEZADO DE LA LISTA
+   CUADRÍCULA
    ========================================================= */
 
-.encabezado-lista {
-
-    width: 100%;
-
-    height: 75px;
-
-    flex-shrink: 0;
-
-    background: #ff0505;
-
-    color: white;
-
-    border: 1px solid #aaa;
-
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-
-    justify-content: center;
-
-    text-align: center;
-}
-
-
-/* NÚMERO DE LISTA */
-
-.encabezado-lista .numero {
-
-    font-size: 24px;
-
-    font-weight: bold;
-
-    line-height: 27px;
-}
-
-
-/* NOMBRE DEL PARTIDO */
-
-.encabezado-lista .partido {
-
-    font-size: 25px;
-
-    font-weight: bold;
-
-    line-height: 29px;
-}
-
-
-/* =========================================================
-   CUADRÍCULA DE OPCIONES
-   ========================================================= */
-
-.opciones {
+.listas {
 
     width: 100%;
 
@@ -270,49 +179,50 @@ body {
 
     min-height: 0;
 
-    padding: 5px 5px 5px 5px;
+    padding: 0 5px 5px 5px;
 
     display: grid;
 
     grid-template-columns:
-        repeat(4, minmax(0, 1fr));
+        minmax(0, 1fr)
+        minmax(0, 1fr);
 
     grid-template-rows:
-        repeat(3, minmax(0, 1fr));
+        minmax(0, 1fr)
+        minmax(0, 1fr);
 
     gap: 5px;
 }
 
 
 /* =========================================================
-   TARJETA DEL CANDIDATO
+   BOTONES
    ========================================================= */
 
-.opcion {
+.lista {
 
     width: 100%;
-
     height: 100%;
 
-    min-height: 0;
-
-    background: #ffffff;
-
-    border: 1px solid #d0d0d0;
-
-    position: relative;
-
-    display: flex;
-
-    align-items: center;
-
-    overflow: hidden;
+    border: 1px solid #aaa;
 
     text-decoration: none;
 
-    color: #000;
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    position: relative;
+
+    overflow: hidden;
 
     cursor: pointer;
+
+    color: inherit;
 
     transition: filter 0.15s ease;
 }
@@ -320,115 +230,129 @@ body {
 
 /* EFECTO AL PASAR EL MOUSE */
 
-.opcion:hover {
-
-    filter: brightness(0.95);
+.lista:hover {
+    filter: brightness(0.96);
 }
 
 
-/* EFECTO AL PRESIONAR */
+/* EFECTO AL HACER CLICK */
 
-.opcion:active {
-
+.lista:active {
     filter: brightness(0.85);
 }
 
 
 /* =========================================================
-   FOTO DEL CANDIDATO
+   COLORES
    ========================================================= */
 
-.foto-candidato {
+.lista-1 {
+    background: #ff0505;
+    color: white;
+}
 
-    width: 115px;
+.lista-5 {
+    background: #ffad63;
+    color: black;
+}
 
-    height: 100%;
+.lista-9 {
+    background: #ffea0a;
+    color: black;
+}
 
-    min-height: 0;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    flex-shrink: 0;
-
-    overflow: hidden;
+.lista-blanco {
+    background: #ffffff;
+    color: black;
 }
 
 
-.foto-candidato img {
+/* =========================================================
+   NÚMERO DE LISTA
+   ========================================================= */
+
+.numero {
 
     width: 100%;
 
-    height: 100%;
-
-    object-fit: contain;
-
-    object-position: center bottom;
-}
-
-
-/* =========================================================
-   INFORMACIÓN DE OPCIÓN
-   ========================================================= */
-
-.info-opcion {
-
-    flex: 1;
-
-    height: 100%;
-
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: center;
-
-    align-items: center;
-
     text-align: center;
 
-    padding-right: 5px;
+    font-size: 40px;
+
+    font-weight: bold;
+
+    line-height: 45px;
+
+    padding-top: 0;
 }
 
 
 /* =========================================================
-   TEXTO OPCIÓN
+   PARTIDO
    ========================================================= */
 
-.numero-opcion {
+.partido {
+
+    width: 100%;
+
+    text-align: center;
 
     font-size: 21px;
 
     font-weight: bold;
 
-    line-height: 24px;
+    padding: 0 10px;
+
+    position: absolute;
+
+    top: 103px;
+
+    left: 0;
 }
 
 
 /* =========================================================
-   NOMBRE
+   SIGLA
    ========================================================= */
 
-.nombre-candidato {
-
-    position: absolute;
-
-    bottom: 10px;
-
-    left: 0;
+.sigla {
 
     width: 100%;
 
     text-align: center;
 
-    font-size: 14px;
+    font-size: 21px;
 
-    font-weight: normal;
+    position: absolute;
 
-    white-space: nowrap;
+    bottom: 0;
+
+    left: 0;
+
+    padding-bottom: 2px;
+}
+
+
+/* =========================================================
+   VOTO EN BLANCO
+   ========================================================= */
+
+.lista-blanco {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+.voto-blanco {
+
+    font-size: 29px;
+
+    font-weight: bold;
+
+    text-align: center;
 }
 
 
@@ -440,7 +364,7 @@ body {
 
     width: 100%;
 
-    height: 43px;
+    height: 49px;
 
     flex-shrink: 0;
 
@@ -455,7 +379,7 @@ body {
 
 
 /* =========================================================
-   CONTRASTE
+   BOTÓN CONTRASTE
    ========================================================= */
 
 .contraste {
@@ -463,6 +387,8 @@ body {
     width: 115px;
 
     height: 100%;
+
+    border-right: 1px solid #bbb;
 
     display: flex;
 
@@ -475,16 +401,15 @@ body {
     color: #333;
 
     font-size: 9px;
-
-    border-right: 1px solid #bbb;
 }
 
 
+/* ICONO CONTRASTE */
+
 .icono-contraste {
 
-    width: 30px;
-
-    height: 30px;
+    width: 34px;
+    height: 34px;
 
     background: #666;
 
@@ -498,7 +423,7 @@ body {
 
     justify-content: center;
 
-    font-size: 23px;
+    font-size: 24px;
 }
 
 
@@ -520,21 +445,22 @@ body {
 
     padding-left: 8px;
 
+    border-right: 1px solid #bbb;
+
     color: #333;
 
     font-size: 9px;
-
-    border-right: 1px solid #bbb;
 
     cursor: pointer;
 }
 
 
+/* ICONO VOLVER */
+
 .icono-volver {
 
-    width: 30px;
-
-    height: 30px;
+    width: 34px;
+    height: 34px;
 
     background: #666;
 
@@ -546,7 +472,9 @@ body {
 
     justify-content: center;
 
-    font-size: 25px;
+    font-size: 27px;
+
+    line-height: 1;
 }
 
 
@@ -567,51 +495,39 @@ body {
         margin: 0;
     }
 
-
     .informacion {
 
         width: calc(100% - 200px);
     }
-
 
     .titulo {
 
         width: 84%;
     }
 
+    .numero {
 
-    .encabezado-lista .numero {
-
-        font-size: clamp(18px, 3vw, 24px);
+        font-size: clamp(25px, 4vw, 40px);
     }
 
+    .partido {
 
-    .encabezado-lista .partido {
+        font-size: clamp(12px, 2vw, 21px);
 
-        font-size: clamp(17px, 3vw, 25px);
+        top: 28%;
     }
 
+    .sigla {
 
-    .foto-candidato {
-
-        width: 40%;
+        font-size: clamp(13px, 2vw, 21px);
     }
 
+    .voto-blanco {
 
-    .numero-opcion {
-
-        font-size: clamp(15px, 2.5vw, 21px);
+        font-size: clamp(18px, 3vw, 29px);
     }
-
-
-    .nombre-candidato {
-
-        font-size: clamp(9px, 1.6vw, 14px);
-    }
-
 
     body {
-
         overflow-x: hidden;
     }
 }
@@ -624,139 +540,80 @@ body {
 @media (max-width: 600px) {
 
     .barra-superior {
-
         height: 45px;
     }
 
-
     .logo-izquierdo {
-
         width: 90px;
     }
 
-
     .logo-izquierdo img {
-
         width: 75px;
-
         height: 32px;
     }
 
-
     .logo-derecho {
-
         width: 45px;
     }
 
-
     .logo-derecho img {
-
         width: 30px;
-
         height: 30px;
     }
 
-
     .datos-eleccion {
-
         font-size: 5px;
     }
 
-
     .titulo {
-
         top: 19px;
-
         height: 23px;
-
         font-size: 10px;
     }
 
-
-    .encabezado-lista {
-
-        height: 65px;
-    }
-
-
-    .encabezado-lista .numero {
-
-        font-size: 18px;
-
-        line-height: 20px;
-    }
-
-
-    .encabezado-lista .partido {
-
-        font-size: 18px;
-
-        line-height: 22px;
-    }
-
-
-    .opciones {
-
-        padding: 3px;
-
+    .listas {
+        padding: 0 3px 3px 3px;
         gap: 3px;
     }
 
-
-    .foto-candidato {
-
-        width: 38%;
+    .numero {
+        font-size: 25px;
+        line-height: 30px;
     }
 
-
-    .numero-opcion {
-
-        font-size: 12px;
-
-        line-height: 15px;
+    .partido {
+        top: 35%;
+        font-size: 10px;
     }
 
-
-    .nombre-candidato {
-
-        bottom: 4px;
-
-        font-size: 7px;
+    .sigla {
+        font-size: 11px;
     }
 
+    .voto-blanco {
+        font-size: 16px;
+    }
 
     .barra-inferior {
-
         height: 40px;
     }
 
-
     .contraste {
-
         width: 105px;
-
         font-size: 7px;
     }
-
 
     .volver {
-
         width: 90px;
-
         font-size: 7px;
     }
-
 
     .icono-contraste,
     .icono-volver {
-
         width: 28px;
-
         height: 28px;
-
         font-size: 19px;
     }
-
 }
 
 </style>
@@ -792,7 +649,6 @@ body {
 
         <div class="informacion">
 
-
             <div class="datos-eleccion">
 
                 Elección:
@@ -821,10 +677,9 @@ body {
 
             <div class="titulo">
 
-                Candidatos a JUNTA MUNICIPAL
+                Listas participantes al cargo de JUNTA MUNICIPAL
 
             </div>
-
 
         </div>
 
@@ -839,184 +694,43 @@ body {
 
         </div>
 
-
     </div>
 
 
 
     <!-- =====================================================
-         ENCABEZADO DE LISTA
+         LISTAS
          ===================================================== -->
 
-    <div class="encabezado-lista">
-
-
-        <div class="numero">
-
-            Lista 1
-
-        </div>
-
-
-        <div class="partido">
-
-            PARTIDO COLORADO
-
-        </div>
-
-
-    </div>
-
-
-
-    <!-- =====================================================
-         OPCIONES
-         ===================================================== -->
-
-    <div class="opciones">
+    <div class="listas">
 
 
         <!-- =================================================
-             OPCIÓN 1
-             ================================================= -->
-
-        <div class="opcion">
-
-            <div class="foto-candidato">
-
-                <img
-                    src="https://simuladoroficial.tsje.gov.py/imagenes_candidaturas/paraguay_generales_municipales_2026/759.4955.webp"
-                    alt="Willian Aquino">
-
-            </div>
-
-
-            <div class="info-opcion">
-
-                <div class="numero-opcion">
-
-                    Opción<br>1
-
-                </div>
-
-            </div>
-
-
-            <div class="nombre-candidato">
-
-                WILLIAN AQUINO
-
-            </div>
-
-        </div>
-
-
-
-        <!-- =================================================
-             OPCIÓN 2
-             ================================================= -->
-
-        <div class="opcion">
-
-            <div class="foto-candidato">
-
-                <img
-                    src="https://simuladoroficial.tsje.gov.py/imagenes_candidaturas/paraguay_generales_municipales_2026/759.4956.webp"
-                    alt="Carlos Ramirez">
-
-            </div>
-
-
-            <div class="info-opcion">
-
-                <div class="numero-opcion">
-
-                    Opción<br>2
-
-                </div>
-
-            </div>
-
-
-            <div class="nombre-candidato">
-
-                CARLOS RAMIREZ
-
-            </div>
-
-        </div>
-
-
-
-        <!-- =================================================
-             OPCIÓN 3
-             ================================================= -->
-
-        <div class="opcion">
-
-            <div class="foto-candidato">
-
-                <img
-                    src="https://simuladoroficial.tsje.gov.py/imagenes_candidaturas/paraguay_generales_municipales_2026/759.4957.webp"
-                    alt="Beby Cardozo">
-
-            </div>
-
-
-            <div class="info-opcion">
-
-                <div class="numero-opcion">
-
-                    Opción<br>3
-
-                </div>
-
-            </div>
-
-
-            <div class="nombre-candidato">
-
-                BEBY CARDOZO
-
-            </div>
-
-        </div>
-
-
-
-        <!-- =================================================
-             OPCIÓN 4 - DRA. TALAVERA
-             LLEVA A p6.html
+             LISTA 1
              ================================================= -->
 
         <a
-            href="p5.html"
-            class="opcion"
+            href="p4.html"
+            class="lista lista-1"
         >
 
-            <div class="foto-candidato">
+            <div class="numero">
 
-                <img
-                    src="https://simuladoroficial.tsje.gov.py/imagenes_candidaturas/paraguay_generales_municipales_2026/759.4958.webp"
-                    alt="Dra. Talavera">
+                LISTA 1
 
             </div>
 
 
-            <div class="info-opcion">
+            <div class="partido">
 
-                <div class="numero-opcion">
-
-                    Opción<br>4
-
-                </div>
+                PARTIDO COLORADO
 
             </div>
 
 
-            <div class="nombre-candidato">
+            <div class="sigla">
 
-                DRA. TALAVERA
+                ANR
 
             </div>
 
@@ -1025,290 +739,87 @@ body {
 
 
         <!-- =================================================
-             OPCIÓN 5
+             LISTA 5
              ================================================= -->
 
-        <div class="opcion">
+        <a
+            href="p4.html"
+            class="lista lista-5"
+        >
 
-            <div class="foto-candidato">
+            <div class="numero">
 
-                <img
-                    src="https://simuladoroficial.tsje.gov.py/imagenes_candidaturas/paraguay_generales_municipales_2026/759.4959.webp"
-                    alt="Diego Matias Barreto">
-
-            </div>
-
-
-            <div class="info-opcion">
-
-                <div class="numero-opcion">
-
-                    Opción<br>5
-
-                </div>
+                LISTA 5
 
             </div>
 
 
-            <div class="nombre-candidato">
+            <div class="partido">
 
-                DIEGO MATIAS BARRETO
+                ALIANZA RECUPERANDO EL PARAISO
 
             </div>
 
-        </div>
+
+            <div class="sigla">
+
+                REP
+
+            </div>
+
+        </a>
 
 
 
         <!-- =================================================
-             OPCIÓN 6
+             LISTA 9
              ================================================= -->
 
-        <div class="opcion">
+        <a
+            href="p4.html"
+            class="lista lista-9"
+        >
 
-            <div class="foto-candidato">
+            <div class="numero">
 
-                <img
-                    src="https://simuladoroficial.tsje.gov.py/imagenes_candidaturas/paraguay_generales_municipales_2026/759.4960.webp"
-                    alt="Rodrigo Benitez">
-
-            </div>
-
-
-            <div class="info-opcion">
-
-                <div class="numero-opcion">
-
-                    Opción<br>6
-
-                </div>
+                LISTA 9
 
             </div>
 
 
-            <div class="nombre-candidato">
+            <div class="partido">
 
-                RODRIGO BENITEZ
+                PARTIDO ENCUENTRO NACIONAL
 
             </div>
 
-        </div>
+
+            <div class="sigla">
+
+                PEN
+
+            </div>
+
+        </a>
 
 
 
         <!-- =================================================
-             OPCIÓN 7
+             VOTO EN BLANCO
              ================================================= -->
 
-        <div class="opcion">
+        <a
+            href="p4.html"
+            class="lista lista-blanco"
+        >
 
-            <div class="foto-candidato">
+            <div class="voto-blanco">
 
-                <img
-                    src="https://simuladoroficial.tsje.gov.py/imagenes_candidaturas/paraguay_generales_municipales_2026/759.4961.webp"
-                    alt="Victor Manuel Espinola">
-
-            </div>
-
-
-            <div class="info-opcion">
-
-                <div class="numero-opcion">
-
-                    Opción<br>7
-
-                </div>
+                VOTO EN BLANCO
 
             </div>
 
-
-            <div class="nombre-candidato">
-
-                VICTOR MANUEL ESPINOLA
-
-            </div>
-
-        </div>
-
-
-
-        <!-- =================================================
-             OPCIÓN 8
-             ================================================= -->
-
-        <div class="opcion">
-
-            <div class="foto-candidato">
-
-                <img
-                    src="https://simuladoroficial.tsje.gov.py/imagenes_candidaturas/paraguay_generales_municipales_2026/759.4962.webp"
-                    alt="Rosana Villalba">
-
-            </div>
-
-
-            <div class="info-opcion">
-
-                <div class="numero-opcion">
-
-                    Opción<br>8
-
-                </div>
-
-            </div>
-
-
-            <div class="nombre-candidato">
-
-                ROSANA VILLALBA
-
-            </div>
-
-        </div>
-
-
-
-        <!-- =================================================
-             OPCIÓN 9
-             ================================================= -->
-
-        <div class="opcion">
-
-            <div class="foto-candidato">
-
-                <img
-                    src="https://simuladoroficial.tsje.gov.py/imagenes_candidaturas/paraguay_generales_municipales_2026/759.4963.webp"
-                    alt="Miguel Marin">
-
-            </div>
-
-
-            <div class="info-opcion">
-
-                <div class="numero-opcion">
-
-                    Opción<br>9
-
-                </div>
-
-            </div>
-
-
-            <div class="nombre-candidato">
-
-                MIGUEL MARIN
-
-            </div>
-
-        </div>
-
-
-
-        <!-- =================================================
-             OPCIÓN 10
-             ================================================= -->
-
-        <div class="opcion">
-
-            <div class="foto-candidato">
-
-                <img
-                    src="https://simuladoroficial.tsje.gov.py/imagenes_candidaturas/paraguay_generales_municipales_2026/759.4964.webp"
-                    alt="Denis Flores">
-
-            </div>
-
-
-            <div class="info-opcion">
-
-                <div class="numero-opcion">
-
-                    Opción<br>10
-
-                </div>
-
-            </div>
-
-
-            <div class="nombre-candidato">
-
-                DENIS FLORES
-
-            </div>
-
-        </div>
-
-
-
-        <!-- =================================================
-             OPCIÓN 11
-             ================================================= -->
-
-        <div class="opcion">
-
-            <div class="foto-candidato">
-
-                <img
-                    src="https://simuladoroficial.tsje.gov.py/imagenes_candidaturas/paraguay_generales_municipales_2026/759.4965.webp"
-                    alt="Christian Cuevas">
-
-            </div>
-
-
-            <div class="info-opcion">
-
-                <div class="numero-opcion">
-
-                    Opción<br>11
-
-                </div>
-
-            </div>
-
-
-            <div class="nombre-candidato">
-
-                CHRISTIAN CUEVAS
-
-            </div>
-
-        </div>
-
-
-
-        <!-- =================================================
-             OPCIÓN 12
-             ================================================= -->
-
-        <div class="opcion">
-
-            <div class="foto-candidato">
-
-                <img
-                    src="https://simuladoroficial.tsje.gov.py/imagenes_candidaturas/paraguay_generales_municipales_2026/759.4966.webp"
-                    alt="Lilio Alvarenga Santacruz">
-
-            </div>
-
-
-            <div class="info-opcion">
-
-                <div class="numero-opcion">
-
-                    Opción<br>12
-
-                </div>
-
-            </div>
-
-
-            <div class="nombre-candidato">
-
-                LILIO ALVARENGA SANTACRUZ
-
-            </div>
-
-        </div>
+        </a>
 
 
     </div>
@@ -1332,7 +843,6 @@ body {
 
             </div>
 
-
             <div>
 
                 Vista alto<br>
@@ -1343,8 +853,7 @@ body {
         </div>
 
 
-
-        <!-- VOLVER -->
+        <!-- VOLVER ATRÁS -->
 
         <div
             class="volver"
@@ -1356,7 +865,6 @@ body {
                 ←
 
             </div>
-
 
             <div>
 
