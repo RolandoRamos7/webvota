@@ -6,15 +6,15 @@
 <meta charset="UTF-8">
 
 <meta name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+      content="width=device-width, initial-scale=1.0">
 
-<title>Candidatos a Junta Municipal</title>
+<title>Candidatos a JUNTA MUNICIPAL</title>
 
 
 <style>
 
 /* =========================================================
-   RESET GENERAL
+   CONFIGURACIÓN GENERAL
    ========================================================= */
 
 * {
@@ -37,13 +37,13 @@ body {
 
 
 /* =========================================================
-   PANTALLA PRINCIPAL
-   PC = 846 x 598
+   PANTALLA DEL SIMULADOR
+   MEDIDA EXACTA DE LA CAPTURA
    ========================================================= */
 
 .pantalla {
 
-    width: 846px;
+    width: 1060px;
     height: 598px;
 
     margin: 0 auto;
@@ -53,26 +53,28 @@ body {
     overflow: hidden;
 
     display: flex;
+
     flex-direction: column;
 
 }
 
 
 /* =========================================================
-   ENCABEZADO
+   ENCABEZADO SUPERIOR
    ========================================================= */
 
 .barra-superior {
 
     width: 100%;
-    height: 42px;
+    height: 47px;
 
     flex-shrink: 0;
 
-    display: flex;
-    align-items: flex-start;
-
     background: #d2d2d2;
+
+    display: flex;
+
+    align-items: flex-start;
 
 }
 
@@ -83,10 +85,11 @@ body {
 
 .logo-izquierdo {
 
-    width: 108px;
-    height: 40px;
+    width: 135px;
+    height: 43px;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 
@@ -94,10 +97,11 @@ body {
 
 }
 
+
 .logo-izquierdo img {
 
-    width: 83px;
-    height: 32px;
+    width: 103px;
+    height: 39px;
 
     object-fit: contain;
 
@@ -112,7 +116,7 @@ body {
 
     flex: 1;
 
-    height: 42px;
+    height: 47px;
 
     position: relative;
 
@@ -130,11 +134,11 @@ body {
 
     width: 100%;
 
-    height: 11px;
+    height: 13px;
 
     color: #000;
 
-    font-size: 6px;
+    font-size: 8px;
 
     font-weight: bold;
 
@@ -145,16 +149,21 @@ body {
 }
 
 
+/* =========================================================
+   TÍTULO SUPERIOR
+   ========================================================= */
+
 .titulo {
 
     position: absolute;
 
+    top: 20px;
+
     left: 0;
-    right: 0;
 
-    top: 18px;
+    width: 100%;
 
-    height: 20px;
+    height: 25px;
 
     background: white;
 
@@ -166,7 +175,7 @@ body {
 
     justify-content: center;
 
-    font-size: 11px;
+    font-size: 14px;
 
     font-weight: bold;
 
@@ -179,10 +188,11 @@ body {
 
 .logo-derecho {
 
-    width: 52px;
-    height: 40px;
+    width: 65px;
+    height: 43px;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 
@@ -190,10 +200,11 @@ body {
 
 }
 
+
 .logo-derecho img {
 
-    width: 30px;
-    height: 30px;
+    width: 38px;
+    height: 38px;
 
     object-fit: contain;
 
@@ -201,13 +212,14 @@ body {
 
 
 /* =========================================================
-   ENCABEZADO DE LISTA
+   ENCABEZADO LISTA
    ========================================================= */
 
 .encabezado-lista {
 
     width: 100%;
-    height: 59px;
+
+    height: 84px;
 
     flex-shrink: 0;
 
@@ -230,30 +242,38 @@ body {
 }
 
 
+/* =========================================================
+   LISTA 1
+   ========================================================= */
+
 .encabezado-lista .numero {
 
-    font-size: 21px;
+    font-size: 24px;
 
     font-weight: bold;
 
-    line-height: 23px;
-
-}
-
-
-.encabezado-lista .partido {
-
-    font-size: 22px;
-
-    font-weight: bold;
-
-    line-height: 25px;
+    line-height: 28px;
 
 }
 
 
 /* =========================================================
-   CUADRÍCULA DE CANDIDATOS
+   PARTIDO COLORADO
+   ========================================================= */
+
+.encabezado-lista .partido {
+
+    font-size: 28px;
+
+    font-weight: bold;
+
+    line-height: 31px;
+
+}
+
+
+/* =========================================================
+   CUADRÍCULA
    ========================================================= */
 
 .opciones {
@@ -274,7 +294,7 @@ body {
     grid-template-rows:
         repeat(3, minmax(0, 1fr));
 
-    gap: 4px;
+    gap: 5px;
 
 }
 
@@ -309,21 +329,23 @@ body {
 
     cursor: pointer;
 
-    transition: filter 0.15s ease;
-
 }
 
 
+/* =========================================================
+   EFECTO AL PASAR EL MOUSE
+   ========================================================= */
+
 .opcion:hover {
 
-    filter: brightness(0.95);
+    filter: brightness(0.96);
 
 }
 
 
 .opcion:active {
 
-    filter: brightness(0.85);
+    filter: brightness(0.90);
 
 }
 
@@ -334,10 +356,10 @@ body {
 
 .foto-candidato {
 
-    width: 65px;
-    height: 65px;
+    width: 82px;
+    height: 82px;
 
-    margin-left: 5px;
+    margin-left: 7px;
 
     flex-shrink: 0;
 
@@ -348,12 +370,17 @@ body {
     display: flex;
 
     align-items: center;
+
     justify-content: center;
 
     overflow: hidden;
 
 }
 
+
+/* =========================================================
+   IMAGEN
+   ========================================================= */
 
 .foto-candidato img {
 
@@ -368,7 +395,7 @@ body {
 
 
 /* =========================================================
-   INFORMACIÓN DE OPCIÓN
+   ÁREA DE OPCIÓN
    ========================================================= */
 
 .info-opcion {
@@ -385,18 +412,20 @@ body {
 
     text-align: center;
 
-    padding-right: 5px;
-
 }
 
 
+/* =========================================================
+   TEXTO OPCIÓN
+   ========================================================= */
+
 .numero-opcion {
 
-    font-size: 17px;
+    font-size: 22px;
 
     font-weight: bold;
 
-    line-height: 19px;
+    line-height: 24px;
 
 }
 
@@ -411,13 +440,13 @@ body {
 
     left: 0;
 
-    bottom: 7px;
+    bottom: 10px;
 
     width: 100%;
 
     text-align: center;
 
-    font-size: 10px;
+    font-size: 14px;
 
     font-weight: normal;
 
@@ -432,14 +461,13 @@ body {
 
 /* =========================================================
    BARRA INFERIOR
-   OCUPA TODO EL ANCHO
    ========================================================= */
 
 .barra-inferior {
 
     width: 100%;
 
-    height: 35px;
+    height: 43px;
 
     flex-shrink: 0;
 
@@ -460,7 +488,7 @@ body {
 
 .contraste {
 
-    width: 105px;
+    width: 125px;
 
     height: 100%;
 
@@ -468,13 +496,13 @@ body {
 
     align-items: center;
 
-    gap: 5px;
+    gap: 7px;
 
-    padding-left: 6px;
+    padding-left: 8px;
 
     color: #333;
 
-    font-size: 7px;
+    font-size: 9px;
 
     border-right: 1px solid #bbb;
 
@@ -483,8 +511,8 @@ body {
 
 .icono-contraste {
 
-    width: 27px;
-    height: 27px;
+    width: 31px;
+    height: 31px;
 
     background: #666;
 
@@ -493,20 +521,21 @@ body {
     display: flex;
 
     align-items: center;
+
     justify-content: center;
 
-    font-size: 19px;
+    font-size: 23px;
 
 }
 
 
 /* =========================================================
-   BOTÓN VOLVER
+   VOLVER ATRÁS
    ========================================================= */
 
 .volver {
 
-    width: 75px;
+    width: 100px;
 
     height: 100%;
 
@@ -514,13 +543,13 @@ body {
 
     align-items: center;
 
-    gap: 5px;
+    gap: 7px;
 
-    padding-left: 5px;
+    padding-left: 8px;
 
     color: #333;
 
-    font-size: 7px;
+    font-size: 9px;
 
     border-right: 1px solid #bbb;
 
@@ -531,8 +560,8 @@ body {
 
 .icono-volver {
 
-    width: 27px;
-    height: 27px;
+    width: 31px;
+    height: 31px;
 
     background: #666;
 
@@ -541,237 +570,26 @@ body {
     display: flex;
 
     align-items: center;
+
     justify-content: center;
 
-    font-size: 21px;
+    font-size: 25px;
 
 }
 
 
 /* =========================================================
-   TABLET
+   TABLET / CELULAR
    ========================================================= */
 
-@media (max-width: 846px) {
+@media (max-width: 1060px) {
 
     html,
     body {
 
-        width: 100%;
-        height: 100%;
-
-        overflow: hidden;
-
         background: #d2d2d2;
 
-    }
-
-
-    .pantalla {
-
-        width: 100vw;
-
-        height: 100vh;
-
-        margin: 0;
-
-    }
-
-
-    .barra-superior {
-
-        height: 7vh;
-
-    }
-
-
-    .logo-izquierdo {
-
-        width: 13vw;
-
-        height: 7vh;
-
-    }
-
-
-    .logo-izquierdo img {
-
-        width: 10vw;
-
-        height: auto;
-
-        max-height: 6vh;
-
-    }
-
-
-    .informacion {
-
-        height: 7vh;
-
-    }
-
-
-    .datos-eleccion {
-
-        top: 2px;
-
-        font-size: 1.1vw;
-
-    }
-
-
-    .titulo {
-
-        top: 3vh;
-
-        height: 3.2vh;
-
-        font-size: 1.7vw;
-
-    }
-
-
-    .logo-derecho {
-
-        width: 7vw;
-
-        height: 7vh;
-
-    }
-
-
-    .logo-derecho img {
-
-        width: 5vw;
-
-        height: auto;
-
-    }
-
-
-    .encabezado-lista {
-
-        height: 10vh;
-
-    }
-
-
-    .encabezado-lista .numero {
-
-        font-size: 3.2vw;
-
-        line-height: 3.5vw;
-
-    }
-
-
-    .encabezado-lista .partido {
-
-        font-size: 3.2vw;
-
-        line-height: 3.5vw;
-
-    }
-
-
-    .opciones {
-
-        padding: 0.6vw;
-
-        gap: 0.5vw;
-
-    }
-
-
-    .foto-candidato {
-
-        width: 9vw;
-
-        height: 9vw;
-
-        margin-left: 0.5vw;
-
-    }
-
-
-    .numero-opcion {
-
-        font-size: 2.5vw;
-
-        line-height: 2.7vw;
-
-    }
-
-
-    .nombre-candidato {
-
-        bottom: 1.1vw;
-
-        font-size: 1.5vw;
-
-    }
-
-
-    /* BARRA COMPLETA */
-
-    .barra-inferior {
-
-        width: 100%;
-
-        height: 6vh;
-
-    }
-
-
-    .contraste {
-
-        width: 13vw;
-
-        font-size: 1.1vw;
-
-    }
-
-
-    .volver {
-
-        width: 10vw;
-
-        font-size: 1.1vw;
-
-    }
-
-
-    .icono-contraste,
-    .icono-volver {
-
-        width: 4.5vw;
-
-        height: 4.5vw;
-
-        font-size: 3vw;
-
-    }
-
-}
-
-
-/* =========================================================
-   CELULAR
-   ========================================================= */
-
-@media (max-width: 600px) {
-
-    html,
-    body {
-
-        width: 100%;
-
-        height: 100%;
-
         overflow: hidden;
-
-        background: #d2d2d2;
 
     }
 
@@ -791,102 +609,210 @@ body {
 
     .barra-superior {
 
-        height: 8vh;
+        height: 7.86vh;
 
     }
 
 
     .logo-izquierdo {
 
-        width: 15vw;
+        width: 12.74vw;
 
-        height: 8vh;
+        height: 7.86vh;
 
     }
 
 
     .logo-izquierdo img {
 
-        width: 12vw;
+        width: 9.72vw;
 
-        max-height: 7vh;
+        height: auto;
+
+        max-height: 6.5vh;
 
     }
 
 
     .informacion {
 
-        height: 8vh;
+        height: 7.86vh;
 
     }
 
 
     .datos-eleccion {
 
-        top: 1px;
+        top: 0.3vh;
 
-        font-size: 1.3vw;
+        font-size: 0.75vw;
 
     }
 
 
     .titulo {
 
-        top: 3.5vh;
+        top: 3.34vh;
 
-        height: 3.5vh;
+        height: 4.18vh;
 
-        font-size: 2.1vw;
+        font-size: 1.32vw;
 
     }
 
 
     .logo-derecho {
 
-        width: 8vw;
+        width: 6.13vw;
 
-        height: 8vh;
+        height: 7.86vh;
 
     }
 
 
     .logo-derecho img {
 
-        width: 6vw;
+        width: 3.58vw;
+
+        height: auto;
 
     }
 
 
     .encabezado-lista {
 
-        height: 11vh;
+        height: 14.05vh;
 
     }
 
 
     .encabezado-lista .numero {
 
-        font-size: 4.5vw;
+        font-size: 2.26vw;
 
-        line-height: 5vw;
+        line-height: 2.64vw;
 
     }
 
 
     .encabezado-lista .partido {
 
-        font-size: 4.5vw;
+        font-size: 2.64vw;
 
-        line-height: 5vw;
+        line-height: 2.92vw;
 
     }
 
 
     .opciones {
 
-        padding: 0.8vw;
+        padding: 0.47vw;
 
-        gap: 0.7vw;
+        gap: 0.47vw;
+
+    }
+
+
+    .foto-candidato {
+
+        width: 7.74vw;
+
+        height: 7.74vw;
+
+        margin-left: 0.66vw;
+
+    }
+
+
+    .numero-opcion {
+
+        font-size: 2.08vw;
+
+        line-height: 2.26vw;
+
+    }
+
+
+    .nombre-candidato {
+
+        bottom: 0.94vw;
+
+        font-size: 1.32vw;
+
+    }
+
+
+    .barra-inferior {
+
+        height: 7.19vh;
+
+        width: 100%;
+
+    }
+
+
+    .contraste {
+
+        width: 11.79vw;
+
+        font-size: 0.85vw;
+
+    }
+
+
+    .volver {
+
+        width: 9.43vw;
+
+        font-size: 0.85vw;
+
+    }
+
+
+    .icono-contraste,
+    .icono-volver {
+
+        width: 2.92vw;
+
+        height: 2.92vw;
+
+        font-size: 2.36vw;
+
+    }
+
+}
+
+
+/* =========================================================
+   CELULAR
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .datos-eleccion {
+
+        font-size: 1.1vw;
+
+    }
+
+
+    .titulo {
+
+        font-size: 2vw;
+
+    }
+
+
+    .encabezado-lista .numero {
+
+        font-size: 4vw;
+
+    }
+
+
+    .encabezado-lista .partido {
+
+        font-size: 4.3vw;
 
     }
 
@@ -896,8 +822,6 @@ body {
         width: 12vw;
 
         height: 12vw;
-
-        margin-left: 0.7vw;
 
     }
 
@@ -913,20 +837,9 @@ body {
 
     .nombre-candidato {
 
-        bottom: 1.5vw;
-
         font-size: 2vw;
 
-    }
-
-
-    /* BARRA INFERIOR COMPLETA */
-
-    .barra-inferior {
-
-        width: 100%;
-
-        height: 7vh;
+        bottom: 1.5vw;
 
     }
 
@@ -945,18 +858,6 @@ body {
         width: 13vw;
 
         font-size: 1.5vw;
-
-    }
-
-
-    .icono-contraste,
-    .icono-volver {
-
-        width: 5.5vw;
-
-        height: 5.5vw;
-
-        font-size: 3.5vw;
 
     }
 
@@ -980,8 +881,6 @@ body {
     <div class="barra-superior">
 
 
-        <!-- LOGO IZQUIERDO -->
-
         <div class="logo-izquierdo">
 
             <img
@@ -990,8 +889,6 @@ body {
 
         </div>
 
-
-        <!-- INFORMACIÓN -->
 
         <div class="informacion">
 
@@ -1032,8 +929,6 @@ body {
         </div>
 
 
-        <!-- LOGO DERECHO -->
-
         <div class="logo-derecho">
 
             <img
@@ -1048,7 +943,7 @@ body {
 
 
     <!-- =====================================================
-         LISTA 1
+         ENCABEZADO LISTA 1
          ===================================================== -->
 
     <div class="encabezado-lista">
@@ -1179,9 +1074,7 @@ body {
 
 
 
-        <!-- =================================================
-             OPCIÓN 4 - DRA. TALAVERA
-             ================================================= -->
+        <!-- OPCIÓN 4 -->
 
         <a
             href="p6.html"
@@ -1495,13 +1388,10 @@ body {
 
     <!-- =====================================================
          BARRA INFERIOR
-         COMPLETA TODO EL ANCHO
          ===================================================== -->
 
     <div class="barra-inferior">
 
-
-        <!-- CONTRASTE -->
 
         <div class="contraste">
 
@@ -1521,9 +1411,6 @@ body {
 
         </div>
 
-
-
-        <!-- VOLVER -->
 
         <div
             class="volver"
