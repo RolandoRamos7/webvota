@@ -33,12 +33,8 @@ body {
    ========================================================= */
 
 .pantalla {
-
     width: 1060px;
-
-    /* OCUPA TODA LA ALTURA */
     height: 100vh;
-
     min-height: 598px;
 
     margin: 0 auto;
@@ -46,8 +42,6 @@ body {
     background: #d2d2d2;
 
     overflow: hidden;
-
-    position: relative;
 
     display: flex;
     flex-direction: column;
@@ -59,20 +53,15 @@ body {
    ========================================================= */
 
 .barra-superior {
-
     width: 100%;
-
     height: 52px;
 
     flex-shrink: 0;
 
     display: flex;
-
     align-items: flex-start;
 
     background: #d2d2d2;
-
-    position: relative;
 }
 
 
@@ -81,24 +70,17 @@ body {
    ========================================================= */
 
 .logo-izquierdo {
-
     width: 135px;
-
     height: 48px;
 
     display: flex;
-
     justify-content: center;
-
     align-items: center;
 }
 
 .logo-izquierdo img {
-
     width: 103px;
-
     height: 39px;
-
     object-fit: contain;
 }
 
@@ -108,11 +90,8 @@ body {
    ========================================================= */
 
 .informacion {
-
     width: 860px;
-
     height: 52px;
-
     position: relative;
 }
 
@@ -120,15 +99,12 @@ body {
 /* TEXTO SUPERIOR */
 
 .datos-eleccion {
-
     position: absolute;
 
     top: 3px;
-
     left: 0;
 
     width: 100%;
-
     height: 13px;
 
     text-align: left;
@@ -136,7 +112,6 @@ body {
     color: #000;
 
     font-size: 8px;
-
     font-weight: bold;
 
     white-space: nowrap;
@@ -148,29 +123,22 @@ body {
    ========================================================= */
 
 .titulo {
-
     position: absolute;
 
     left: 0;
-
     top: 21px;
 
     width: 725px;
-
     height: 27px;
 
     background: #000;
-
     color: white;
 
     display: flex;
-
     align-items: center;
-
     justify-content: center;
 
     font-size: 14px;
-
     font-weight: bold;
 }
 
@@ -180,24 +148,17 @@ body {
    ========================================================= */
 
 .logo-derecho {
-
     width: 65px;
-
     height: 48px;
 
     display: flex;
-
     justify-content: center;
-
     align-items: center;
 }
 
 .logo-derecho img {
-
     width: 38px;
-
     height: 38px;
-
     object-fit: contain;
 }
 
@@ -207,12 +168,9 @@ body {
    ========================================================= */
 
 .candidatos {
-
     width: 100%;
 
-    /* OCUPA TODO EL ESPACIO DISPONIBLE */
     flex: 1;
-
     min-height: 0;
 
     padding: 0 5px 5px 5px;
@@ -232,15 +190,12 @@ body {
 
 
 /* =========================================================
-   TARJETAS
+   BOTONES / CUADROS DE CANDIDATOS
    ========================================================= */
 
 .candidato {
-
     width: 100%;
-
     height: 100%;
-
     min-height: 0;
 
     border: 1px solid #aaa;
@@ -248,12 +203,32 @@ body {
     position: relative;
 
     display: flex;
-
     flex-direction: column;
-
     align-items: center;
 
     overflow: hidden;
+
+    /* IMPORTANTE PARA QUE EL <a> NO CAMBIE DE ASPECTO */
+    text-decoration: none;
+    color: inherit;
+
+    cursor: pointer;
+
+    transition: filter 0.15s ease;
+}
+
+
+/* EFECTO AL PASAR EL MOUSE */
+
+.candidato:hover {
+    filter: brightness(0.95);
+}
+
+
+/* EFECTO AL HACER CLICK */
+
+.candidato:active {
+    filter: brightness(0.85);
 }
 
 
@@ -262,33 +237,22 @@ body {
    ========================================================= */
 
 .colorado {
-
     background: #ff0505;
-
     color: white;
 }
 
-
 .alianza {
-
     background: #ffad63;
-
     color: black;
 }
-
 
 .patriotas {
-
     background: #9eb2d8;
-
     color: black;
 }
 
-
 .blanco {
-
     background: white;
-
     color: black;
 }
 
@@ -298,23 +262,18 @@ body {
    ========================================================= */
 
 .partido {
-
     width: 100%;
-
     height: 42px;
 
     flex-shrink: 0;
 
     display: flex;
-
     align-items: center;
-
     justify-content: center;
 
     padding-top: 5px;
 
     font-size: 20px;
-
     font-weight: bold;
 
     text-align: center;
@@ -326,17 +285,14 @@ body {
    ========================================================= */
 
 .contenido-candidato {
-
     width: 100%;
 
     flex: 1;
-
     min-height: 0;
 
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
     gap: 72px;
@@ -348,27 +304,20 @@ body {
    ========================================================= */
 
 .foto {
-
     width: 118px;
-
     height: 118px;
 
     background: white;
 
     display: flex;
-
     justify-content: center;
-
     align-items: center;
 
     flex-shrink: 0;
 }
 
-
 .foto img {
-
     width: 100%;
-
     height: 100%;
 
     object-fit: cover;
@@ -380,17 +329,14 @@ body {
    ========================================================= */
 
 .datos {
-
     width: 100px;
 
     text-align: center;
 
     display: flex;
-
     flex-direction: column;
 
     align-items: center;
-
     justify-content: center;
 }
 
@@ -398,7 +344,6 @@ body {
 /* LISTA */
 
 .texto-lista {
-
     font-size: 21px;
 
     font-weight: bold;
@@ -410,7 +355,6 @@ body {
 /* NÚMERO */
 
 .numero-lista {
-
     font-size: 40px;
 
     font-weight: bold;
@@ -422,7 +366,6 @@ body {
 /* SIGLA */
 
 .sigla {
-
     font-size: 21px;
 
     line-height: 23px;
@@ -434,7 +377,6 @@ body {
    ========================================================= */
 
 .nombre {
-
     position: absolute;
 
     bottom: 20px;
@@ -456,17 +398,13 @@ body {
    ========================================================= */
 
 .blanco {
-
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 }
 
-
 .texto-blanco {
-
     font-size: 29px;
 
     font-weight: bold;
@@ -480,7 +418,6 @@ body {
    ========================================================= */
 
 .barra-inferior {
-
     width: 100%;
 
     height: 49px;
@@ -492,7 +429,6 @@ body {
     border-top: 1px solid #999;
 
     display: flex;
-
     align-items: center;
 }
 
@@ -502,13 +438,10 @@ body {
    ========================================================= */
 
 .contraste {
-
     width: 126px;
-
     height: 100%;
 
     display: flex;
-
     align-items: center;
 
     padding-left: 8px;
@@ -523,14 +456,10 @@ body {
 }
 
 
-/* =========================================================
-   ICONO CONTRASTE
-   ========================================================= */
+/* ICONO */
 
 .icono-contraste {
-
     width: 34px;
-
     height: 34px;
 
     background: #666;
@@ -540,9 +469,7 @@ body {
     border-radius: 3px;
 
     display: flex;
-
     align-items: center;
-
     justify-content: center;
 
     font-size: 25px;
@@ -550,89 +477,61 @@ body {
 
 
 /* =========================================================
-   PANTALLAS MENORES
+   RESPONSIVE
    ========================================================= */
 
 @media (max-width: 1060px) {
 
     .pantalla {
-
         width: 100%;
-
         height: 100vh;
-
         min-height: 598px;
 
         margin: 0;
-
-        transform: none;
     }
 
-
     .informacion {
-
         width: calc(100% - 200px);
     }
 
-
     .titulo {
-
         width: 84%;
     }
 
-
     .partido {
-
         font-size: clamp(12px, 2vw, 20px);
     }
 
-
     .contenido-candidato {
-
         gap: clamp(10px, 5vw, 72px);
     }
 
-
     .foto {
-
         width: clamp(65px, 11vw, 118px);
-
         height: clamp(65px, 11vw, 118px);
     }
 
-
     .texto-lista {
-
         font-size: clamp(13px, 2vw, 21px);
     }
 
-
     .numero-lista {
-
         font-size: clamp(25px, 4vw, 40px);
     }
 
-
     .sigla {
-
         font-size: clamp(13px, 2vw, 21px);
     }
 
-
     .nombre {
-
         font-size: clamp(10px, 1.8vw, 20px);
     }
 
-
     .texto-blanco {
-
         font-size: clamp(18px, 3vw, 29px);
     }
 
-
     body {
-
         overflow-x: hidden;
     }
 }
@@ -645,151 +544,97 @@ body {
 @media (max-width: 600px) {
 
     .barra-superior {
-
         height: 45px;
     }
 
-
     .logo-izquierdo {
-
         width: 90px;
     }
 
-
     .logo-izquierdo img {
-
         width: 75px;
-
         height: 32px;
     }
 
-
     .logo-derecho {
-
         width: 45px;
     }
 
-
     .logo-derecho img {
-
         width: 30px;
-
         height: 30px;
     }
 
-
     .datos-eleccion {
-
         font-size: 5px;
-
         top: 2px;
     }
 
-
     .titulo {
-
         top: 19px;
-
         height: 23px;
-
         font-size: 10px;
     }
 
-
     .candidatos {
-
         padding: 0 3px 3px 3px;
-
         gap: 3px;
     }
 
-
     .partido {
-
         height: 35px;
-
         font-size: 10px;
     }
 
-
     .contenido-candidato {
-
         gap: 8px;
     }
 
-
     .foto {
-
         width: 60px;
-
         height: 60px;
     }
 
-
     .datos {
-
         width: 60px;
     }
 
-
     .texto-lista {
-
         font-size: 11px;
-
         line-height: 13px;
     }
 
-
     .numero-lista {
-
         font-size: 23px;
-
         line-height: 23px;
     }
 
-
     .sigla {
-
         font-size: 11px;
-
         line-height: 13px;
     }
 
-
     .nombre {
-
         bottom: 10px;
-
         font-size: 10px;
     }
 
-
     .texto-blanco {
-
         font-size: 16px;
     }
 
-
     .barra-inferior {
-
         height: 40px;
     }
 
-
     .contraste {
-
         width: 105px;
-
         font-size: 7px;
     }
 
-
     .icono-contraste {
-
         width: 28px;
-
         height: 28px;
-
         font-size: 19px;
     }
 }
@@ -880,17 +725,18 @@ body {
 
 
     <!-- =====================================================
-         CUADRO DE CANDIDATOS
+         CUADROS DE CANDIDATOS
+         TODOS LLEVAN A p4.html
          ===================================================== -->
 
-    <div class="candidatos" href="pagina4.html" >
+    <div class="candidatos">
 
 
         <!-- =================================================
-             PARTIDO COLORADO
+             LISTA 1
              ================================================= -->
 
-        <div class="candidato colorado">
+        <a href="p4.html" class="candidato colorado">
 
 
             <div class="partido">
@@ -949,15 +795,15 @@ body {
             </div>
 
 
-        </div>
+        </a>
 
 
 
         <!-- =================================================
-             ALIANZA RECUPERANDO EL PARAISO
+             LISTA 5
              ================================================= -->
 
-        <div class="candidato alianza">
+        <a href="p4.html" class="candidato alianza">
 
 
             <div class="partido">
@@ -1016,15 +862,15 @@ body {
             </div>
 
 
-        </div>
+        </a>
 
 
 
         <!-- =================================================
-             PARTIDO PATRIOTAS INDEPENDIENTES
+             LISTA 6
              ================================================= -->
 
-        <div class="candidato patriotas">
+        <a href="p4.html" class="candidato patriotas">
 
 
             <div class="partido">
@@ -1083,7 +929,7 @@ body {
             </div>
 
 
-        </div>
+        </a>
 
 
 
@@ -1091,7 +937,7 @@ body {
              VOTO EN BLANCO
              ================================================= -->
 
-        <div class="candidato blanco">
+        <a href="p4.html" class="candidato blanco">
 
 
             <div class="texto-blanco">
@@ -1101,7 +947,7 @@ body {
             </div>
 
 
-        </div>
+        </a>
 
 
     </div>
