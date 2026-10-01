@@ -1,326 +1,1033 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Opciones Seleccionadas</title>
+<title>Opciones seleccionadas</title>
+
 
 <style>
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, Helvetica, sans-serif;
+/* =========================================================
+   CONFIGURACIÓN GENERAL
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-body{
-    background:#2b2b2b;
-    overflow:hidden;
+html,
+body {
+
+    width: 100%;
+    height: 100%;
+
+    background: #292929;
+
+    font-family: Arial, Helvetica, sans-serif;
+
 }
 
-/* PANTALLA */
-.pantalla{
-    width:100%;
-    height:100vh;
 
-    display:flex;
-    justify-content:center;
-    align-items:center;
+/* =========================================================
+   PANTALLA
+   ========================================================= */
+
+.pantalla {
+
+    width: 1060px;
+
+    height: 100vh;
+
+    min-height: 598px;
+
+    margin: 0 auto;
+
+    background: #d2d2d2;
+
+    overflow: hidden;
+
+    display: flex;
+
+    flex-direction: column;
+
 }
 
-/* TABLERO */
-.tablero{
-    width:100vw;
-    background:#dcdcdc;
-    border:2px solid #8a8a8a;
+
+/* =========================================================
+   ENCABEZADO
+   ========================================================= */
+
+.barra-superior {
+
+    width: 100%;
+
+    height: 47px;
+
+    flex-shrink: 0;
+
+    background: #d2d2d2;
+
+    display: flex;
+
+    align-items: flex-start;
+
 }
 
-/* BARRA SUPERIOR */
-.superior{
-    background:#5a5a5a;
-    color:white;
-    text-align:center;
-    font-size:10px;
-    font-weight:bold;
-    padding:5px;
+
+/* =========================================================
+   LOGO IZQUIERDO
+   ========================================================= */
+
+.logo-izquierdo {
+
+    width: 135px;
+
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
 }
 
-/* CONTENIDO */
-.contenido{
-    display:grid;
-    grid-template-columns:1fr 1fr 100px;
-    gap:3px;
-    padding:3px;
+.logo-izquierdo img {
+
+    width: 103px;
+
+    height: 39px;
+
+    object-fit: contain;
+
 }
 
-/* TARJETAS */
-.card{
-    background:#efefef;
-    border:1px solid #c5c5c5;
-    text-align:center;
-    padding:10px;
-    min-height:320px;
 
-    display:flex;
-    flex-direction:column;
-    justify-content:space-between;
+/* =========================================================
+   INFORMACIÓN
+   ========================================================= */
+
+.informacion {
+
+    width: 860px;
+
+    height: 47px;
+
+    position: relative;
+
 }
 
-/* TITULOS */
-.titulo{
-    font-size:18px;
-    font-weight:bold;
-    border-bottom:1px solid #999;
-    padding-bottom:5px;
+
+/* TEXTO SUPERIOR */
+
+.datos-eleccion {
+
+    position: absolute;
+
+    top: 2px;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 13px;
+
+    color: #000;
+
+    font-size: 8px;
+
+    font-weight: bold;
+
+    white-space: nowrap;
+
 }
 
-.partido{
-    font-size:22px;
-    font-weight:bold;
-    margin-top:15px;
+
+/* =========================================================
+   TÍTULO
+   ========================================================= */
+
+.titulo {
+
+    position: absolute;
+
+    top: 20px;
+
+    left: 0;
+
+    width: 725px;
+
+    height: 25px;
+
+    background: #5c6060;
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
 }
 
-.lista{
-    font-size:26px;
-    font-weight:bold;
-    margin-top:20px;
+
+/* =========================================================
+   LOGO DERECHO
+   ========================================================= */
+
+.logo-derecho {
+
+    width: 65px;
+
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
 }
+
+.logo-derecho img {
+
+    width: 38px;
+
+    height: 38px;
+
+    object-fit: contain;
+
+}
+
+
+/* =========================================================
+   CONTENIDO PRINCIPAL
+   ========================================================= */
+
+.contenido {
+
+    flex: 1;
+
+    min-height: 0;
+
+    padding: 3px 0 5px 5px;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1fr)
+        108px;
+
+    gap: 5px;
+
+}
+
+
+/* =========================================================
+   TARJETAS DE SELECCIÓN
+   ========================================================= */
+
+.seleccion {
+
+    height: 100%;
+
+    background: #ff0505;
+
+    border: 1px solid #aaa;
+
+    color: white;
+
+    position: relative;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    text-align: center;
+
+    overflow: hidden;
+
+}
+
+
+/* =========================================================
+   TÍTULO DE CADA SECCIÓN
+   ========================================================= */
+
+.titulo-seccion {
+
+    width: calc(100% - 10px);
+
+    height: 36px;
+
+    border-bottom: 1px solid #990000;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 21px;
+
+    font-weight: bold;
+
+}
+
+
+/* =========================================================
+   PARTIDO
+   ========================================================= */
+
+.nombre-partido {
+
+    margin-top: 20px;
+
+    font-size: 24px;
+
+    font-weight: bold;
+
+}
+
+
+/* =========================================================
+   LISTA
+   ========================================================= */
+
+.numero-lista {
+
+    margin-top: 31px;
+
+    font-size: 24px;
+
+    font-weight: bold;
+
+}
+
+
+/* =========================================================
+   FOTO DEL CANDIDATO
+   ========================================================= */
+
+.foto-seleccion {
+
+    width: 120px;
+
+    height: 120px;
+
+    margin-top: 17px;
+
+    background: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    overflow: hidden;
+
+}
+
 
 /* IMAGEN */
-.card img{
-    width:90px;
-    height:90px;
-    object-fit:cover;
-    margin:auto;
+
+.foto-seleccion img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: contain;
+
 }
 
-/* NOMBRE */
-.nombre{
-    font-size:20px;
-    font-weight:bold;
+
+/* =========================================================
+   NOMBRE
+   ========================================================= */
+
+.nombre-seleccion {
+
+    margin-top: 45px;
+
+    font-size: 23px;
+
+    font-weight: bold;
+
 }
 
-.opcion{
-    font-size:18px;
+
+/* =========================================================
+   OPCIÓN
+   ========================================================= */
+
+.opcion-seleccion {
+
+    margin-top: 5px;
+
+    font-size: 23px;
+
+    font-weight: normal;
+
 }
 
-/* BOTON */
-.boton{
-    background:#5b5b5b;
-    color:white;
-    text-decoration:none;
-    padding:10px;
-    border-radius:4px;
-    width:120px;
-    margin:auto;
-    font-weight:bold;
+
+/* =========================================================
+   BOTÓN MODIFICAR
+   ========================================================= */
+
+.boton-modificar {
+
+    position: absolute;
+
+    bottom: 5px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 130px;
+
+    height: 45px;
+
+    border: none;
+
+    border-radius: 5px;
+
+    background: #d3d3d3;
+
+    color: #000;
+
+    font-size: 19px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
 }
 
-/* BOTONES LATERALES */
-.side-buttons{
-    display:flex;
-    flex-direction:column;
-    gap:3px;
+
+/* EFECTO */
+
+.boton-modificar:hover {
+
+    background: #eeeeee;
+
 }
 
-.side-btn{
-    flex:1;
+.boton-modificar:active {
 
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
+    transform: translateX(-50%) scale(0.97);
 
-    color:#fff;
-    text-align:center;
-    font-weight:bold;
-
-    padding:10px 5px;
 }
 
-.orange{
-    background:#ff7b00;
+
+/* =========================================================
+   COLUMNA DERECHA
+   ========================================================= */
+
+.acciones {
+
+    height: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+
 }
 
-.green{
-    background:#00b100;
+
+/* =========================================================
+   BOTÓN REINICIAR
+   ========================================================= */
+
+.reiniciar {
+
+    flex: 0 0 132px;
+
+    background: #ff7900;
+
+    border: 1px solid #aaa;
+
+    color: white;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    cursor: pointer;
+
+    text-align: center;
+
 }
 
-/* ICONOS RESPONSIVE */
-.icon{
-    font-size:clamp(28px, 6vw, 70px);
-    margin-bottom:10px;
-    line-height:1;
+
+.icono-reiniciar {
+
+    font-size: 47px;
+
+    line-height: 42px;
+
+    font-weight: bold;
+
 }
 
-/* TEXTO RESPONSIVE */
-.side-text{
-    font-size:clamp(10px, 2vw, 20px);
-    line-height:1.1;
+
+.texto-reiniciar {
+
+    margin-top: 5px;
+
+    font-size: 16px;
+
+    line-height: 17px;
+
+    font-weight: bold;
+
 }
 
-/* RESPONSIVE */
-@media(max-width:768px){
 
-    .contenido{
-        grid-template-columns:1fr 1fr 70px;
+/* =========================================================
+   BOTÓN IMPRIMIR
+   ========================================================= */
+
+.imprimir {
+
+    flex: 1;
+
+    background: #00a000;
+
+    border: 1px solid #aaa;
+
+    color: white;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    cursor: pointer;
+
+    text-align: center;
+
+}
+
+
+.icono-imprimir {
+
+    font-size: 46px;
+
+    line-height: 45px;
+
+}
+
+
+.texto-imprimir {
+
+    margin-top: 7px;
+
+    font-size: 16px;
+
+    line-height: 17px;
+
+    font-weight: bold;
+
+}
+
+
+/* =========================================================
+   HOVER ACCIONES
+   ========================================================= */
+
+.reiniciar:hover {
+
+    filter: brightness(0.95);
+
+}
+
+.imprimir:hover {
+
+    filter: brightness(0.95);
+
+}
+
+
+/* =========================================================
+   BARRA INFERIOR
+   ========================================================= */
+
+.barra-inferior {
+
+    width: 100%;
+
+    height: 10px;
+
+    flex-shrink: 0;
+
+    background: #cccccc;
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1060px) {
+
+    .pantalla {
+
+        width: 100%;
+
+        height: 100vh;
+
+        min-height: 598px;
+
+        margin: 0;
+
     }
 
-    .card{
-        min-height:220px;
-        padding:6px;
+    .informacion {
+
+        width: calc(100% - 200px);
+
     }
 
-    .titulo{
-        font-size:11px;
+    .titulo {
+
+        width: 84%;
+
     }
 
-    .partido{
-        font-size:14px;
+}
+
+
+/* =========================================================
+   PANTALLAS PEQUEÑAS
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .contenido {
+
+        grid-template-columns:
+            minmax(0, 1fr)
+            minmax(0, 1fr)
+            80px;
+
+        gap: 3px;
+
+        padding-left: 3px;
+
     }
 
-    .lista{
-        font-size:16px;
+
+    .nombre-partido {
+
+        font-size: 15px;
+
     }
 
-    .card img{
-        width:55px;
-        height:55px;
+
+    .numero-lista {
+
+        font-size: 17px;
+
+        margin-top: 20px;
+
     }
 
-    .nombre{
-        font-size:10px;
+
+    .foto-seleccion {
+
+        width: 80px;
+
+        height: 80px;
+
     }
 
-    .opcion{
-        font-size:8px;
+
+    .nombre-seleccion {
+
+        font-size: 15px;
+
+        margin-top: 25px;
+
     }
 
-    .boton{
-        width:80px;
-        padding:6px;
-        font-size:10px;
+
+    .opcion-seleccion {
+
+        font-size: 15px;
+
     }
 
-    .superior{
-        font-size:7px;
-        padding:3px;
+
+    .titulo-seccion {
+
+        font-size: 14px;
+
     }
 
-    /* MÁS PEQUEÑO EN CELULAR */
-    .icon{
-        font-size:32px;
-        margin-bottom:6px;
+
+    .boton-modificar {
+
+        width: 95px;
+
+        height: 35px;
+
+        font-size: 14px;
+
     }
 
-    .side-text{
-        font-size:9px;
+
+    .texto-reiniciar,
+    .texto-imprimir {
+
+        font-size: 11px;
+
+    }
+
+
+    .icono-reiniciar,
+    .icono-imprimir {
+
+        font-size: 32px;
+
     }
 
 }
 
 </style>
+
 </head>
+
 
 <body>
 
+
 <div class="pantalla">
 
-    <div class="tablero">
 
-        <div class="superior">
-            Opciones seleccionadas
-        </div>
+    <!-- =====================================================
+         ENCABEZADO
+         ===================================================== -->
 
-        <div class="contenido">
+    <div class="barra-superior">
 
-            <!-- INTENDENTE -->
-            <div class="card">
 
-                <div class="titulo">
-                    INTENDENTE MUNICIPAL
-                </div>
+        <!-- LOGO IZQUIERDO -->
 
-                <div class="partido">
-                    HONOR COLORADO
-                </div>
+        <div class="logo-izquierdo">
 
-                <div class="lista">
-                    LISTA 2
-                </div>
-
-                <img src="https://simuladoroficial.tsje.gov.py/imagenes_candidaturas/paraguay_internas_municipales_2026/3878.25858.webp" alt="">
-
-                <div class="nombre">
-                    Christian Rolon
-                </div>
-
-                <a href="p3.html" class="boton">
-                    Modificar
-                </a>
-
-            </div>
-
-            <!-- JUNTA -->
-            <div class="card">
-
-                <div class="titulo">
-                    JUNTA MUNICIPAL
-                </div>
-
-                <div class="partido">
-                    HONOR COLORADO A
-                </div>
-
-                <div class="lista">
-                    LISTA 2A
-                </div>
-
-                <img src="https://simuladoroficial.tsje.gov.py/imagenes_candidaturas/paraguay_internas_municipales_2026/3881.25865.webp" alt="">
-
-                <div>
-
-                    <div class="nombre">
-                        Dra. Talavera
-                    </div>
-
-                    <div class="opcion">
-                        Opción 5
-                    </div>
-
-                </div>
-
-                <a href="p5.html" class="boton">
-                    Modificar
-                </a>
-
-            </div>
-
-            <!-- BOTONES LATERALES -->
-            <div class="side-buttons">
-
-                <div class="side-btn orange" onclick="window.location.href='p3.html'">
-                    <div class="icon">↻</div>
-                    <div class="side-text">
-                        Reiniciar<br>Selección
-                    </div>
-                </div>
-
-                <div class="side-btn green" onclick="window.location.href='p7.html'">
-                    <div class="icon">🖨</div>
-                    <div class="side-text">
-                        Imprimir<br>Selección
-                    </div>
-                </div>
-
-            </div>
+            <img
+                src="https://simuladoroficial.tsje.gov.py/img/paraguay/logo_eleccion.png"
+                alt="Elecciones Paraguay">
 
         </div>
+
+
+        <!-- INFORMACIÓN -->
+
+        <div class="informacion">
+
+
+            <div class="datos-eleccion">
+
+                Elección:
+                &nbsp; ELECCIONES MUNICIPALES
+
+                &nbsp;&nbsp;
+
+                Departamento:
+                &nbsp; 8-MISIONES
+
+                &nbsp;&nbsp;
+
+                Distrito:
+                &nbsp; 1-AYOLAS
+
+                &nbsp;&nbsp;
+
+                Zona:
+
+                &nbsp;&nbsp;&nbsp;&nbsp;
+
+                Local:
+
+            </div>
+
+
+            <div class="titulo">
+
+                Opciones seleccionadas
+
+            </div>
+
+
+        </div>
+
+
+        <!-- LOGO DERECHO -->
+
+        <div class="logo-derecho">
+
+            <img
+                src="https://simuladoroficial.tsje.gov.py/img/paraguay/logo_votar.png"
+                alt="Logo">
+
+        </div>
+
+
     </div>
+
+
+
+    <!-- =====================================================
+         CONTENIDO
+         ===================================================== -->
+
+    <div class="contenido">
+
+
+        <!-- =================================================
+             INTENDENTE MUNICIPAL
+             ================================================= -->
+
+        <div class="seleccion">
+
+
+            <div class="titulo-seccion">
+
+                INTENDENTE MUNICIPAL
+
+            </div>
+
+
+            <div class="nombre-partido">
+
+                PARTIDO COLORADO
+
+            </div>
+
+
+            <div class="numero-lista">
+
+                LISTA 1
+
+            </div>
+
+
+            <div class="foto-seleccion">
+
+                <img
+                    src="https://simuladoroficial.tsje.gov.py/imagenes_candidaturas/paraguay_generales_municipales_2026/756.4952.webp"
+                    alt="Capitan Mutti">
+
+            </div>
+
+
+            <div class="nombre-seleccion">
+
+                CAPITAN MUTTI
+
+            </div>
+
+
+            <button
+                class="boton-modificar"
+                onclick="window.location.href='index.html'"
+            >
+
+                Modificar
+
+            </button>
+
+
+        </div>
+
+
+
+        <!-- =================================================
+             JUNTA MUNICIPAL
+             ================================================= -->
+
+        <div class="seleccion">
+
+
+            <div class="titulo-seccion">
+
+                JUNTA MUNICIPAL
+
+            </div>
+
+
+            <div class="nombre-partido">
+
+                PARTIDO COLORADO
+
+            </div>
+
+
+            <div class="numero-lista">
+
+                LISTA 1
+
+            </div>
+
+
+            <div class="foto-seleccion">
+
+                <img
+                    src="https://simuladoroficial.tsje.gov.py/imagenes_candidaturas/paraguay_generales_municipales_2026/759.4958.webp"
+                    alt="Dra. Talavera">
+
+            </div>
+
+
+            <div class="nombre-seleccion">
+
+                DRA. TALAVERA
+
+            </div>
+
+
+            <div class="opcion-seleccion">
+
+                Opción 4
+
+            </div>
+
+
+            <button
+                class="boton-modificar"
+                onclick="window.location.href='p5.html'"
+            >
+
+                Modificar
+
+            </button>
+
+
+        </div>
+
+
+
+        <!-- =================================================
+             ACCIONES
+             ================================================= -->
+
+        <div class="acciones">
+
+
+            <!-- REINICIAR -->
+
+            <div
+                class="reiniciar"
+                onclick="reiniciarSeleccion()"
+            >
+
+
+                <div class="icono-reiniciar">
+
+                    ⟳
+
+                </div>
+
+
+                <div class="texto-reiniciar">
+
+                    Reiniciar<br>
+                    Selección
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- IMPRIMIR -->
+
+            <div
+                class="imprimir"
+                onclick="window.print()"
+            >
+
+
+                <div class="icono-imprimir">
+
+                    🖨
+
+                </div>
+
+
+                <div class="texto-imprimir">
+
+                    Imprimir<br>
+                    Selección
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- BARRA INFERIOR -->
+
+    <div class="barra-inferior"></div>
+
 
 </div>
 
+
+
+<script>
+
+/* =========================================================
+   REINICIAR SELECCIÓN
+   ========================================================= */
+
+function reiniciarSeleccion() {
+
+    window.location.href = "index.html";
+
+}
+
+</script>
+
+
 </body>
+
 </html>
